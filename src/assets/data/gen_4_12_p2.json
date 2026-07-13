@@ -1,0 +1,502 @@
+[
+  {
+    "id": "q_tf_051",
+    "type": "true_false",
+    "question": "辅助标志通常设置在主标志上面，用来补充说明主标志的含义。",
+    "answer": false,
+    "explanation": "辅助标志通常设置在主标志下面，补充说明限制等主标志的含义。",
+    "tags": [
+      "traffic_signs"
+    ]
+  },
+  {
+    "id": "q_tf_052",
+    "type": "true_false",
+    "question": "辅助标志上的“8-20”字样，表示该限制在早上8点至晚上20点的时段内有效。",
+    "answer": true,
+    "explanation": "辅助标志可以表示限制的时间，'8-20'表示在8点至20点的时段内有效。",
+    "tags": [
+      "traffic_signs"
+    ]
+  },
+  {
+    "id": "q_tf_053",
+    "type": "true_false",
+    "question": "带有“日曜・休日を除く”的辅助标志，表示该限制在周日和节假日仍然有效。",
+    "answer": false,
+    "explanation": "“日曜・休日を除く”表示除周日、节假日外（即平日）有效。",
+    "tags": [
+      "traffic_signs"
+    ]
+  },
+  {
+    "id": "q_tf_054",
+    "type": "true_false",
+    "question": "在识别标志时，如果有辅助标志指示“禁止超车区间的起点”，那么从该标志开始就不能超车了。",
+    "answer": true,
+    "explanation": "辅助标志可以标明限制开始的地点，如“从此处开始禁止超车”。",
+    "tags": [
+      "traffic_signs"
+    ]
+  },
+  {
+    "id": "q_tf_055",
+    "type": "true_false",
+    "question": "指示标志仅用于指示行车方向，不能用于指示人行横道的位置。",
+    "answer": false,
+    "explanation": "指示标志也可用于指示特定的交通方法或规定的场所，如人行横道及其预告。",
+    "tags": [
+      "traffic_signs"
+    ]
+  },
+  {
+    "id": "q_tf_056",
+    "type": "true_false",
+    "question": "标有“停”字的蓝底方形标志，表示此地绝对禁止停车。",
+    "answer": false,
+    "explanation": "标有“停”或“P”的指示标志表示可长时停车或临时停车的场所。",
+    "tags": [
+      "traffic_signs"
+    ]
+  },
+  {
+    "id": "q_tf_057",
+    "type": "true_false",
+    "question": "如果主标志下方有辅助标志画着某种特定车辆的图案，表示该限制只针对图示以外的车辆。",
+    "answer": false,
+    "explanation": "辅助标志可以表示“限制对象车辆的种类”，一般是针对图示的车辆种类进行限制或排除。",
+    "tags": [
+      "traffic_signs"
+    ]
+  },
+  {
+    "id": "q_tf_058",
+    "type": "true_false",
+    "question": "黄色带有禁止停车图标的标线表示禁止长时停车，但不禁止临时停车。",
+    "answer": false,
+    "explanation": "黄色实线标线表示禁止长时及临时停车。",
+    "tags": [
+      "traffic_signs"
+    ]
+  },
+  {
+    "id": "q_tf_059",
+    "type": "true_false",
+    "question": "黄色虚线标线表示禁止长时停车，但可以临时停车。",
+    "answer": true,
+    "explanation": "黄色虚线通常表示禁止长时停车，但并未禁止临时停车（具体视标示而定，日本交规中黄实线禁停，黄虚线禁长停）。",
+    "tags": [
+      "traffic_signs"
+    ]
+  },
+  {
+    "id": "q_tf_060",
+    "type": "true_false",
+    "question": "道路上的斜线标示区（导流线）表示车辆可以驶入并在其内部停车。",
+    "answer": false,
+    "explanation": "斜线标示表示该区域禁止驶入。",
+    "tags": [
+      "traffic_signs"
+    ]
+  },
+  {
+    "id": "q_tf_061",
+    "type": "true_false",
+    "question": "当警察及交通巡查员用手势或指挥灯疏导交通时，驾驶者可以根据自己的判断选择是否服从。",
+    "answer": false,
+    "explanation": "必须服从警察或交通巡查员的手势信号或指挥灯信号。",
+    "tags": [
+      "police_signals"
+    ]
+  },
+  {
+    "id": "q_tf_062",
+    "type": "true_false",
+    "question": "当警察的手势信号与交通信号灯的信号不一致时，必须以交通信号灯的信号优先。",
+    "answer": false,
+    "explanation": "手势信号或指挥灯信号和信号灯信号不一致时，以警察及交通巡查员的信号优先。",
+    "tags": [
+      "police_signals"
+    ]
+  },
+  {
+    "id": "q_tf_063",
+    "type": "true_false",
+    "question": "警察及交通巡查员有时会对通行方法等进行必要的指挥，此时必须服从指挥。",
+    "answer": true,
+    "explanation": "警察做出的指示和标志、标示所示的交通限制不一致时，以警察指示优先。",
+    "tags": [
+      "police_signals"
+    ]
+  },
+  {
+    "id": "q_tf_064",
+    "type": "true_false",
+    "question": "在交通量大的地方，只要注意避让车辆，就可以练习投掷棒球或溜旱冰。",
+    "answer": false,
+    "explanation": "在交通量大的地方做棒球投掷练习、溜旱冰等属于禁止的危险行为。",
+    "tags": [
+      "prohibited_acts"
+    ]
+  },
+  {
+    "id": "q_tf_065",
+    "type": "true_false",
+    "question": "醉酒后在道路上摇摇晃晃地闲逛、站立闲聊，是被禁止的行为。",
+    "answer": true,
+    "explanation": "在道路上禁止醉酒后摇晃闲逛、站立闲聊、席地而坐、躺卧等有碍交通的行为。",
+    "tags": [
+      "prohibited_acts"
+    ]
+  },
+  {
+    "id": "q_tf_066",
+    "type": "true_false",
+    "question": "只要不影响别人，可以在道路上席地而坐或者躺卧。",
+    "answer": false,
+    "explanation": "道路上禁止席地而坐、躺卧等有碍交通的行为。",
+    "tags": [
+      "prohibited_acts"
+    ]
+  },
+  {
+    "id": "q_tf_067",
+    "type": "true_false",
+    "question": "禁止向道路上丢弃或扔掷杂物。",
+    "answer": true,
+    "explanation": "向道路上丢弃、扔掷杂物属于危险行为，是被禁止的。",
+    "tags": [
+      "prohibited_acts"
+    ]
+  },
+  {
+    "id": "q_tf_068",
+    "type": "true_false",
+    "question": "在道路上洒下会造成路面损坏的污水是可以的。",
+    "answer": false,
+    "explanation": "禁止损坏道路，向道路上泼洒污水、垃圾、钉子、玻璃碎片等。",
+    "tags": [
+      "prohibited_acts"
+    ]
+  },
+  {
+    "id": "q_tf_069",
+    "type": "true_false",
+    "question": "乘车时，如果觉得车内太热，可以将身体伸出车窗外透风。",
+    "answer": false,
+    "explanation": "禁止从车内向外扔烟蒂等垃圾，或将身体、物品探出车外。",
+    "tags": [
+      "prohibited_acts"
+    ]
+  },
+  {
+    "id": "q_tf_070",
+    "type": "true_false",
+    "question": "行驶中，可以向车窗外扔烟蒂，只要确认后面没有车跟着即可。",
+    "answer": false,
+    "explanation": "禁止从车内向外扔烟蒂、纸屑、空罐等垃圾。",
+    "tags": [
+      "prohibited_acts"
+    ]
+  },
+  {
+    "id": "q_tf_071",
+    "type": "true_false",
+    "question": "行驶在路上的车辆或有轨电车，外部禁止任何人攀附。",
+    "answer": true,
+    "explanation": "从外部攀附行驶的车辆或有轨电车是禁止的危险行为。",
+    "tags": [
+      "prohibited_acts"
+    ]
+  },
+  {
+    "id": "q_tf_072",
+    "type": "true_false",
+    "question": "为了看清路牌，可以在夜间用强光手电筒照射驾驶者的眼睛。",
+    "answer": false,
+    "explanation": "禁止向道路上照射使驾驶者眩目的光束。",
+    "tags": [
+      "prohibited_acts"
+    ]
+  },
+  {
+    "id": "q_tf_073",
+    "type": "true_false",
+    "question": "在冬季可能结冰的道路上洒水是被禁止的。",
+    "answer": true,
+    "explanation": "在可能结冰时向道路上洒水极其危险，是被禁止的行为。",
+    "tags": [
+      "prohibited_acts"
+    ]
+  },
+  {
+    "id": "q_tf_074",
+    "type": "true_false",
+    "question": "在道路上陈列商品进行售卖，只要留下供车辆通行的空间就可以。",
+    "answer": false,
+    "explanation": "禁止在道路上陈列商品、堆放土木砂石等妨碍交通的物品。",
+    "tags": [
+      "prohibited_acts"
+    ]
+  },
+  {
+    "id": "q_tf_075",
+    "type": "true_false",
+    "question": "在信号灯附近设置与信号灯颜色类似的霓虹灯广告牌是被允许的。",
+    "answer": false,
+    "explanation": "无法看清信号灯、标志是危险的，禁止在信号灯附近设置颜色类似的霓虹灯等。",
+    "tags": [
+      "prohibited_acts"
+    ]
+  },
+  {
+    "id": "q_tf_076",
+    "type": "true_false",
+    "question": "发现交通标志歪了，为了做好事可以私自去随意移动或操作它。",
+    "answer": false,
+    "explanation": "禁止随意操作、移动或损坏信号灯、标志及标示。",
+    "tags": [
+      "prohibited_acts"
+    ]
+  },
+  {
+    "id": "q_tf_077",
+    "type": "true_false",
+    "question": "明知对方喝了酒，但由于距离很近，可以让他驾驶车辆送自己回家。",
+    "answer": false,
+    "explanation": "不要让饮酒者驾驶车辆，这是被严格禁止的。",
+    "tags": [
+      "prohibited_acts"
+    ]
+  },
+  {
+    "id": "q_tf_078",
+    "type": "true_false",
+    "question": "明知对方没有驾照，也可以让他短距离试驾一下汽车。",
+    "answer": false,
+    "explanation": "不要让无驾照者驾驶车辆。",
+    "tags": [
+      "prohibited_acts"
+    ]
+  },
+  {
+    "id": "q_tf_079",
+    "type": "true_false",
+    "question": "同乘者在乘车时可以向将要驾驶车辆的人敬酒、劝酒。",
+    "answer": false,
+    "explanation": "不要向将要驾驶车辆的人敬酒、劝酒。",
+    "tags": [
+      "prohibited_acts"
+    ]
+  },
+  {
+    "id": "q_tf_080",
+    "type": "true_false",
+    "question": "虽然车辆的装载重量超出了限制，但因为客户要求，驾驶者可以进行超载驾驶。",
+    "answer": false,
+    "explanation": "不要要求驾驶者超载（装载货物超出载重限制）驾驶。",
+    "tags": [
+      "prohibited_acts"
+    ]
+  },
+  {
+    "id": "q_tf_081",
+    "type": "true_false",
+    "question": "销售商明知买家会用该车辆超载运输，仍向其销售或交付造成超载的货物，这也是被禁止的。",
+    "answer": true,
+    "explanation": "禁止向驾驶者销售、交付造成超载的货物。",
+    "tags": [
+      "prohibited_acts"
+    ]
+  },
+  {
+    "id": "q_tf_082",
+    "type": "true_false",
+    "question": "辅助标志有时会说明该标志适用的车辆类型，如果不符合该类型则不受限制。",
+    "answer": true,
+    "explanation": "辅助标志可指定限制对象车辆的种类。",
+    "tags": [
+      "traffic_signs"
+    ]
+  },
+  {
+    "id": "q_tf_083",
+    "type": "true_false",
+    "question": "当辅助标志上画着自行车的图案，并标注“を除く”（除外）时，这意味着该限制不适用于自行车。",
+    "answer": true,
+    "explanation": "“を除く”表示图示车辆种类除外。",
+    "tags": [
+      "traffic_signs"
+    ]
+  },
+  {
+    "id": "q_tf_084",
+    "type": "true_false",
+    "question": "警察举起手臂，手掌面向交通时，其效力等同于交通信号的红灯，所有正对的车辆必须停止。",
+    "answer": true,
+    "explanation": "警察的手势信号可以代替信号灯。",
+    "tags": [
+      "police_signals"
+    ]
+  },
+  {
+    "id": "q_tf_085",
+    "type": "true_false",
+    "question": "在十字路口，只要是绿灯，即使警察在前方打出停止的手势，驾驶者也可以直接通过。",
+    "answer": false,
+    "explanation": "当手势和信号灯冲突时，以警察的手势信号优先。",
+    "tags": [
+      "police_signals"
+    ]
+  },
+  {
+    "id": "q_tf_086",
+    "type": "true_false",
+    "question": "交通巡查员无权指挥交通，只有正式的警察才能指挥交通。",
+    "answer": false,
+    "explanation": "警察及交通巡查员都有权用手势信号或指挥灯信号疏导交通。",
+    "tags": [
+      "police_signals"
+    ]
+  },
+  {
+    "id": "q_tf_087",
+    "type": "true_false",
+    "question": "在道路上随意堆放建筑材料是违法的，因为这会妨碍交通并可能引发事故。",
+    "answer": true,
+    "explanation": "禁止在道路上堆放土木砂石等妨碍交通的物品。",
+    "tags": [
+      "prohibited_acts"
+    ]
+  },
+  {
+    "id": "q_tf_088",
+    "type": "true_false",
+    "question": "只要不是故意，向道路上丢弃碎玻璃不用承担任何责任。",
+    "answer": false,
+    "explanation": "向道路上泼洒垃圾、钉子、玻璃碎片等被严格禁止，不论是否故意均属违法行为。",
+    "tags": [
+      "prohibited_acts"
+    ]
+  },
+  {
+    "id": "q_tf_089",
+    "type": "true_false",
+    "question": "乘客为了拍照，可以将头和手臂长时间伸出窗外。",
+    "answer": false,
+    "explanation": "禁止从车内向外探出身体或物品，非常危险。",
+    "tags": [
+      "prohibited_acts"
+    ]
+  },
+  {
+    "id": "q_tf_090",
+    "type": "true_false",
+    "question": "在举行节日庆典时，可以攀附在行驶的游行花车外部。",
+    "answer": false,
+    "explanation": "从外部攀附行驶的车辆或有轨电车是禁止的，即便是在庆典等特殊场合，若无特别许可也不允许。",
+    "tags": [
+      "prohibited_acts"
+    ]
+  },
+  {
+    "id": "q_tf_091",
+    "type": "true_false",
+    "question": "使用高强度车灯故意照射对向车道驾驶员的眼睛是一种恶劣且被禁止的行为。",
+    "answer": true,
+    "explanation": "禁止向道路上照射使驾驶者眩目的光束。",
+    "tags": [
+      "prohibited_acts"
+    ]
+  },
+  {
+    "id": "q_tf_092",
+    "type": "true_false",
+    "question": "只要路面没有积雪，向道路上洒水在任何天气下都是被允许的。",
+    "answer": false,
+    "explanation": "在可能结冰的情况下向道路上洒水是被禁止的。",
+    "tags": [
+      "prohibited_acts"
+    ]
+  },
+  {
+    "id": "q_tf_093",
+    "type": "true_false",
+    "question": "在距离路口较远的地方，即使警察给出停止的信号，也可以开到路口再停。",
+    "answer": false,
+    "explanation": "必须按照警察的指示在规定的停止线或安全位置停止。",
+    "tags": [
+      "police_signals"
+    ]
+  },
+  {
+    "id": "q_tf_094",
+    "type": "true_false",
+    "question": "禁止标志和指示标志不仅在颜色上不同，其主要作用也有根本的区别。",
+    "answer": true,
+    "explanation": "限制标志用于禁止或特别规定，指示标志用于指示特定交通方法或场所。",
+    "tags": [
+      "traffic_signs"
+    ]
+  },
+  {
+    "id": "q_tf_095",
+    "type": "true_false",
+    "question": "如果某条道路被标记为“行人专用”，那么所有的车辆，包括机动车和自行车，都绝对不能进入。",
+    "answer": false,
+    "explanation": "一般情况下禁止车辆进入，但可能有辅助标志允许特定时间或特定车辆（如当地居民）进入，具体视标志而定，但原则上是限制进入。",
+    "tags": [
+      "traffic_signs"
+    ]
+  },
+  {
+    "id": "q_tf_096",
+    "type": "true_false",
+    "question": "将车停在画有斜线的黄色区域内是允许的，只要不熄火。",
+    "answer": false,
+    "explanation": "斜线标示区域为禁止驶入区域，任何理由都不能驶入或停车。",
+    "tags": [
+      "traffic_signs"
+    ]
+  },
+  {
+    "id": "q_tf_097",
+    "type": "true_false",
+    "question": "如果你知道朋友昨晚喝醉了酒，第二天早上依然带有酒气，你也不应让他开车。",
+    "answer": true,
+    "explanation": "即使是前一晚喝过酒，第二天早晨驾驶也可能会受到酒的影响，不应驾驶。",
+    "tags": [
+      "prohibited_acts"
+    ]
+  },
+  {
+    "id": "q_tf_098",
+    "type": "true_false",
+    "question": "只要不是驾驶者本人喝酒，车上的其他乘客喝再多酒也不会影响行车安全。",
+    "answer": false,
+    "explanation": "虽然乘客可以喝酒，但醉酒乘客可能会干扰驾驶或在道路上做出危险行为，必须注意。",
+    "tags": [
+      "prohibited_acts"
+    ]
+  },
+  {
+    "id": "q_tf_099",
+    "type": "true_false",
+    "question": "要求货运司机多装一些货物以节省运输成本，只要超载一点点是可以接受的。",
+    "answer": false,
+    "explanation": "禁止要求驾驶者超载驾驶。",
+    "tags": [
+      "prohibited_acts"
+    ]
+  },
+  {
+    "id": "q_tf_100",
+    "type": "true_false",
+    "question": "只要路况良好，可以随时在道路上组织滑板比赛。",
+    "answer": false,
+    "explanation": "在交通量大的地方滑旱冰等是禁止的，占用道路进行比赛必须得到警方许可。",
+    "tags": [
+      "prohibited_acts"
+    ]
+  }
+]

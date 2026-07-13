@@ -1,0 +1,552 @@
+[
+  {
+    "id": "q_tf_p1_001",
+    "type": "true_false",
+    "question": "前方车辆为了向右转弯或向左变道而发出信号时，后方车辆不得妨碍其变更车线。",
+    "answer": true,
+    "explanation": "根据交通规则规定，前方车辆向左或向右变道发出信号时，后方车辆不得妨碍其变更车线。",
+    "tags": [
+      "traffic_rules",
+      "pages_32_41"
+    ]
+  },
+  {
+    "id": "q_tf_p1_002",
+    "type": "true_false",
+    "question": "当发现前方车辆准备超车时，如果自己的车速较快，可以同时加速进行超车。",
+    "answer": false,
+    "explanation": "由于危险，前方车辆准备超车时（即双重超车）是绝对禁止超车的情况之一。",
+    "tags": [
+      "traffic_rules",
+      "pages_32_41"
+    ]
+  },
+  {
+    "id": "q_tf_p1_003",
+    "type": "true_false",
+    "question": "驾驶员从后视镜中发现后方车辆准备超过自己所驾驶的车辆时，不得加速并应保持正常行驶或让路。",
+    "answer": true,
+    "explanation": "规则明确指出，当后方车辆准备超过自己所驾驶车辆时，禁止超车，并且在被超越前不得提高车速。",
+    "tags": [
+      "traffic_rules",
+      "pages_32_41"
+    ]
+  },
+  {
+    "id": "q_tf_p1_004",
+    "type": "true_false",
+    "question": "隧道内由于视线不良，因此在任何隧道内都绝对禁止超车。",
+    "answer": false,
+    "explanation": "隧道内一般禁止超车，但是设有行车线时的隧道除外，是可以依法规超车的。",
+    "tags": [
+      "traffic_rules",
+      "pages_32_41"
+    ]
+  },
+  {
+    "id": "q_tf_p1_005",
+    "type": "true_false",
+    "question": "在上坡道的坡顶附近以及坡度较大的下坡道上，严禁为了超越汽车及小型摩托车而变更车线。",
+    "answer": true,
+    "explanation": "根据规定，上坡道坡顶附近及坡度大的下坡属于禁止超车的地点。",
+    "tags": [
+      "traffic_rules",
+      "pages_32_41"
+    ]
+  },
+  {
+    "id": "q_tf_p1_006",
+    "type": "true_false",
+    "question": "在距离路口50米以内的所有道路区域，一律禁止超车。",
+    "answer": false,
+    "explanation": "禁止超车的区域是路口及距其30m以内的地方（而非50米），且在优先道路上通行时除外，并非一律禁止。",
+    "tags": [
+      "traffic_rules",
+      "pages_32_41"
+    ]
+  },
+  {
+    "id": "q_tf_p1_007",
+    "type": "true_false",
+    "question": "在有优先通行权的道路（优先道路）上行驶通过路口时，可以在路口及其30米以内的范围内超车。",
+    "answer": true,
+    "explanation": "规则指出，路口及距其30m以内的地方禁止超车，但在优先道路上通行时除外。",
+    "tags": [
+      "traffic_rules",
+      "pages_32_41"
+    ]
+  },
+  {
+    "id": "q_tf_p1_008",
+    "type": "true_false",
+    "question": "铁路道口、人行横道、自行车横道及其前方50米以内的区域属于禁止超车路段。",
+    "answer": false,
+    "explanation": "规定明确为铁路道口、人行横道、自行车横道及距其30m以内（而非50米）的地方禁止超车。",
+    "tags": [
+      "traffic_rules",
+      "pages_32_41"
+    ]
+  },
+  {
+    "id": "q_tf_p1_009",
+    "type": "true_false",
+    "question": "在道路上超越其他车辆时，原则上必须从被超车辆的右侧车道行驶通过。",
+    "answer": true,
+    "explanation": "超车的方法规定，超过其他车辆时，通常必须在其右侧行驶。",
+    "tags": [
+      "traffic_rules",
+      "pages_32_41"
+    ]
+  },
+  {
+    "id": "q_tf_p1_010",
+    "type": "true_false",
+    "question": "准备超越前方的有轨电车时，为了保证安全，原则上应该从其右侧通过。",
+    "answer": false,
+    "explanation": "规则规定，准备超过有轨电车时，必须在其左侧行驶通过。",
+    "tags": [
+      "traffic_rules",
+      "pages_32_41"
+    ]
+  },
+  {
+    "id": "q_tf_p1_011",
+    "type": "true_false",
+    "question": "如果前方车辆为了向右转弯而已经靠向道路中间行驶，后车准备超车时必须从其左侧通过。",
+    "answer": true,
+    "explanation": "规则例外指出，前方车辆为了向右转弯而靠向道路中间行驶时，后车必须在其左侧行驶超车。",
+    "tags": [
+      "traffic_rules",
+      "pages_32_41"
+    ]
+  },
+  {
+    "id": "q_tf_p1_012",
+    "type": "true_false",
+    "question": "在标有行车线的道路上，通过最右侧的车道超车后，只要不超过最高限速，可以继续在最右侧车道上长距离行驶。",
+    "answer": false,
+    "explanation": "应在超越前方车辆后立即回到其他车道上。继续在最右侧车道上行驶，可能会因为超速或者车距缩短而增加危险。",
+    "tags": [
+      "traffic_rules",
+      "pages_32_41"
+    ]
+  },
+  {
+    "id": "q_tf_p1_013",
+    "type": "true_false",
+    "question": "当其他车辆正在超越自己的车辆时，驾驶员在被超过前不得故意提高车速。",
+    "answer": true,
+    "explanation": "规则明确要求，其他车辆超车时，在被超过前不要提高车速，以确保超车安全完成。",
+    "tags": [
+      "traffic_rules",
+      "pages_32_41"
+    ]
+  },
+  {
+    "id": "q_tf_p1_014",
+    "type": "true_false",
+    "question": "决定超车并打开右转向灯后，应立刻急打方向盘向右变更车道，以减少在对面车道停留的时间。",
+    "answer": false,
+    "explanation": "正确的步骤是打开右转向灯约3秒后，在最高限速范围内一边加速一边大弧度向右变更车线，不能立刻急打方向。",
+    "tags": [
+      "traffic_rules",
+      "pages_32_41"
+    ]
+  },
+  {
+    "id": "q_tf_p1_015",
+    "type": "true_false",
+    "question": "超车完成后，必须继续前进，直至可从车内后视镜中看到被超车辆，然后再大弧度向左变更车线驶回原车道。",
+    "answer": true,
+    "explanation": "规则中超车时的驾驶步骤明确要求：继续前进，直至可从车内后视镜中看到被超车辆，然后再大弧度向左变更车线。",
+    "tags": [
+      "traffic_rules",
+      "pages_32_41"
+    ]
+  },
+  {
+    "id": "q_tf_p1_016",
+    "type": "true_false",
+    "question": "在单向通行的道路上准备向右转弯时，应当尽量靠向道路左侧，并绕过路口中心的大外侧转弯。",
+    "answer": false,
+    "explanation": "从单向通行的道路向右转弯时，必须靠向道路右侧，从路口中心的内侧缓速通过。",
+    "tags": [
+      "traffic_rules",
+      "pages_32_41"
+    ]
+  },
+  {
+    "id": "q_tf_p1_017",
+    "type": "true_false",
+    "question": "准备向左转弯进入路口时，必须预先尽量靠向道路左侧，沿着路口侧端减速缓行。",
+    "answer": true,
+    "explanation": "通过路口的方法第一条明确规定，左转弯必须预先尽量靠向道路左侧，沿侧端减速缓行。",
+    "tags": [
+      "traffic_rules",
+      "pages_32_41"
+    ]
+  },
+  {
+    "id": "q_tf_p1_018",
+    "type": "true_false",
+    "question": "汽车转弯时产生的内轮差，是指转弯时前轮通过的内径小于后轮而形成的前后轮轨迹差。",
+    "answer": false,
+    "explanation": "内轮差是指转弯时后轮通过的内径小于前轮而形成的前后轮的轨迹差。",
+    "tags": [
+      "traffic_rules",
+      "pages_32_41"
+    ]
+  },
+  {
+    "id": "q_tf_p1_019",
+    "type": "true_false",
+    "question": "大型车辆在转弯时产生的内轮差较大，因此在路口转弯时特别需要注意避让内侧的行人和自行车。",
+    "answer": true,
+    "explanation": "规则特别强调，特别是大型车辆，其内轮差较大，转弯时必须注意行人。",
+    "tags": [
+      "traffic_rules",
+      "pages_32_41"
+    ]
+  },
+  {
+    "id": "q_tf_p1_020",
+    "type": "true_false",
+    "question": "准备进入环形交叉路口时，进入路口的车辆拥有绝对优先权，路口内行驶的车辆应减速避让。",
+    "answer": false,
+    "explanation": "准备进入环形交叉路口时，应注意正在环形交叉路口内行驶的车辆，这意味着路口内正常行驶的车辆具有优先通行权。",
+    "tags": [
+      "traffic_rules",
+      "pages_32_41"
+    ]
+  },
+  {
+    "id": "q_tf_p1_021",
+    "type": "true_false",
+    "question": "与相对方向的车辆会车时，如果自己所在车道前方有障碍物，应该预先临时停车或减速，给对方车辆让路。",
+    "answer": true,
+    "explanation": "会车规则明确规定，车线前方有障碍物时，要预先临时停车或减速，给对方车辆让路。",
+    "tags": [
+      "traffic_rules",
+      "pages_32_41"
+    ]
+  },
+  {
+    "id": "q_tf_p1_022",
+    "type": "true_false",
+    "question": "如果超车时道路比较狭窄，被超车辆为了不妨碍交通，应当尽量向右侧让出车道。",
+    "answer": false,
+    "explanation": "规则指出，如果超车的道路比较狭窄，被超车辆应尽量向左让出车道。",
+    "tags": [
+      "traffic_rules",
+      "pages_32_41"
+    ]
+  },
+  {
+    "id": "q_tf_p1_023",
+    "type": "true_false",
+    "question": "设有“禁止超车”标志的地方，驾驶员不仅不能超越其他汽车，也不得超越小型摩托车而变更车线。",
+    "answer": true,
+    "explanation": "规则说明，不得为超越汽车及小型摩托车而变更车线或从其旁边通过，其中包括设有禁止超车标志的地方。",
+    "tags": [
+      "traffic_rules",
+      "pages_32_41"
+    ]
+  },
+  {
+    "id": "q_tf_p1_024",
+    "type": "true_false",
+    "question": "只要确认对面没有来车，就可以在道路拐角附近变更车道超越前方的汽车。",
+    "answer": false,
+    "explanation": "道路拐角附近是法定的绝对禁止超车地点，无论对面是否有来车都不得超车。",
+    "tags": [
+      "traffic_rules",
+      "pages_32_41"
+    ]
+  },
+  {
+    "id": "q_tf_p1_025",
+    "type": "true_false",
+    "question": "前方车辆在铁路道口前方停车等候通过时，后方的车辆不得在其前面强行插入或横穿。",
+    "answer": true,
+    "explanation": "强行插入规则指出，前方车辆在路口及铁路道口等处停车或慢行时，不得在其前面强行插入或横穿。",
+    "tags": [
+      "traffic_rules",
+      "pages_32_41"
+    ]
+  },
+  {
+    "id": "q_tf_p1_026",
+    "type": "true_false",
+    "question": "即使有禁止横穿及掉头的标志，只要是在夜间且道路上没有其他车辆，也可以快速进行U型转弯。",
+    "answer": false,
+    "explanation": "规则明确列出“有禁止横穿及掉头标志的地方”为禁止横穿、掉头、后退的情况，没有任何例外条件。",
+    "tags": [
+      "traffic_rules",
+      "pages_32_41"
+    ]
+  },
+  {
+    "id": "q_tf_p1_027",
+    "type": "true_false",
+    "question": "在超越其他车辆的过程中，驾驶员必须与被超车辆之间保持足够的安全横向车距。",
+    "answer": true,
+    "explanation": "超车方法规定，超车过程中，必须与被超车辆保持安全车距。",
+    "tags": [
+      "traffic_rules",
+      "pages_32_41"
+    ]
+  },
+  {
+    "id": "q_tf_p1_028",
+    "type": "true_false",
+    "question": "超车是指车辆在同一车道内，从行驶中的前方车辆旁边加速通过的行为。",
+    "answer": false,
+    "explanation": "规则对超车的定义是：超车是指车辆变更车线而开到行驶中的前方车辆的前面，必须包含变更车线的动作。",
+    "tags": [
+      "traffic_rules",
+      "pages_32_41"
+    ]
+  },
+  {
+    "id": "q_tf_p1_029",
+    "type": "true_false",
+    "question": "当准备变更到道路右侧进行超车时，如果判断有可能会妨碍相对方向正常行驶的车辆，则严禁超车。",
+    "answer": true,
+    "explanation": "由于危险，进入道路右侧准备超车之际，有可能妨碍相对方向车辆行驶时不得超车。",
+    "tags": [
+      "traffic_rules",
+      "pages_32_41"
+    ]
+  },
+  {
+    "id": "q_tf_p1_030",
+    "type": "true_false",
+    "question": "在所有设有最高限速标志的下坡道路上，一律禁止超越其他汽车或小型摩托车。",
+    "answer": false,
+    "explanation": "规则指出禁止超车的是“坡顶附近及坡度大的下坡”，并非所有下坡道路一律禁止。",
+    "tags": [
+      "traffic_rules",
+      "pages_32_41"
+    ]
+  },
+  {
+    "id": "q_tf_p1_031",
+    "type": "true_false",
+    "question": "前方车辆为了向右转弯而准备变更车线时，后方车辆如果此时超车会非常危险，因此是明令禁止的。",
+    "answer": true,
+    "explanation": "规则将“前方车辆为了向右转弯而准备变更车线时”列为禁止超车的危险情况之一。",
+    "tags": [
+      "traffic_rules",
+      "pages_32_41"
+    ]
+  },
+  {
+    "id": "q_tf_p1_032",
+    "type": "true_false",
+    "question": "只要道路中间标有虚线，即使在道路拐角处也可以临时越线超车。",
+    "answer": false,
+    "explanation": "道路拐角附近是法定的禁止超车地点，与中心线是否为虚线无关，都不得为超越汽车而变更车线。",
+    "tags": [
+      "traffic_rules",
+      "pages_32_41"
+    ]
+  },
+  {
+    "id": "q_tf_p1_033",
+    "type": "true_false",
+    "question": "准备超车的驾驶步骤中，打开右转向灯后还需要等待约3秒钟，然后再一边加速一边大弧度向右变更车线。",
+    "answer": true,
+    "explanation": "超车步骤明确要求：打开右转向灯，约3秒后，再一边加速一边大弧度向右变更车线。",
+    "tags": [
+      "traffic_rules",
+      "pages_32_41"
+    ]
+  },
+  {
+    "id": "q_tf_p1_034",
+    "type": "true_false",
+    "question": "完成超车并大弧度向左变更回原车道后，为了警示后方，应让左转向灯继续闪烁至少5秒。",
+    "answer": false,
+    "explanation": "驾驶步骤最后一步明确规定，变回原车道后应“停止发出提示信号”，无需继续闪烁。",
+    "tags": [
+      "traffic_rules",
+      "pages_32_41"
+    ]
+  },
+  {
+    "id": "q_tf_p1_035",
+    "type": "true_false",
+    "question": "前方车辆在路口内减速慢行时，后方驶来的车辆不得试图强行插入其前方。",
+    "answer": true,
+    "explanation": "强行插入等规则禁止在前方车辆于路口停车或慢行时在其前面强行插入。",
+    "tags": [
+      "traffic_rules",
+      "pages_32_41"
+    ]
+  },
+  {
+    "id": "q_tf_p1_036",
+    "type": "true_false",
+    "question": "在交通拥堵时，为了提高道路利用率，可以非常靠近并排行驶的其他车辆以节省空间。",
+    "answer": false,
+    "explanation": "规则明确禁止“过于靠近并排行驶的车辆”。",
+    "tags": [
+      "traffic_rules",
+      "pages_32_41"
+    ]
+  },
+  {
+    "id": "q_tf_p1_037",
+    "type": "true_false",
+    "question": "路口及其附近是交通事故的高发地带，因此在进入和通过路口时，必须特别注意行人及右转弯的车辆。",
+    "answer": true,
+    "explanation": "通过路口的注意事项指出，路口及其附近是事故多发地带，必须注意右转弯车辆和行人。",
+    "tags": [
+      "traffic_rules",
+      "pages_32_41"
+    ]
+  },
+  {
+    "id": "q_tf_p1_038",
+    "type": "true_false",
+    "question": "准备向右转弯时，只要确认安全，可以直接从路口中心的左侧快速斜穿通过路口。",
+    "answer": false,
+    "explanation": "准备向右转弯时，必须预先尽量靠向道路中间从路口中心的内侧缓速通过，严禁快速斜穿。",
+    "tags": [
+      "traffic_rules",
+      "pages_32_41"
+    ]
+  },
+  {
+    "id": "q_tf_p1_039",
+    "type": "true_false",
+    "question": "小型摩托车如果在特定路口准备采用两步右转法向右转弯时，其转弯方法和普通汽车靠道路中间右转的做法是不同的。",
+    "answer": true,
+    "explanation": "规则中明确说明“小型摩托车准备采用两步右转法向右转弯时，则另当别论”，说明其转弯轨迹不同于普通车辆。",
+    "tags": [
+      "traffic_rules",
+      "pages_32_41"
+    ]
+  },
+  {
+    "id": "q_tf_p1_040",
+    "type": "true_false",
+    "question": "当设有标志禁止越线时，只要确认对面没有来车，就可以越过道路中心线到右侧超车。",
+    "answer": false,
+    "explanation": "规则明确指出“设有标志时，不得越线到道路右侧通行”，不得有任何例外。",
+    "tags": [
+      "traffic_rules",
+      "pages_32_41"
+    ]
+  },
+  {
+    "id": "q_tf_p1_041",
+    "type": "true_false",
+    "question": "准备超车的第一步是首先确认自己所在的地点是否属于禁止超车的路段。",
+    "answer": true,
+    "explanation": "超车时的驾驶步骤第一条就是“确认所在地点不禁止超车”。",
+    "tags": [
+      "traffic_rules",
+      "pages_32_41"
+    ]
+  },
+  {
+    "id": "q_tf_p1_042",
+    "type": "true_false",
+    "question": "超车时为了快速完成动作，应该在打开右转向灯的同时立即急加速向右变道。",
+    "answer": false,
+    "explanation": "正确步骤是打开右转向灯约3秒后，确认安全并在限速内一边加速一边大弧度变道，不能同时进行。",
+    "tags": [
+      "traffic_rules",
+      "pages_32_41"
+    ]
+  },
+  {
+    "id": "q_tf_p1_043",
+    "type": "true_false",
+    "question": "准备进入环形交叉路口时，应该根据路口内的实际交通状况，尽量使用安全的速度和方法前行。",
+    "answer": true,
+    "explanation": "注意事项规定，应根据环形交叉路口的状况尽量使用安全的速度和方法前行。",
+    "tags": [
+      "traffic_rules",
+      "pages_32_41"
+    ]
+  },
+  {
+    "id": "q_tf_p1_044",
+    "type": "true_false",
+    "question": "由于单向通行的道路上没有对向来车，因此在单向通行道路上向右转弯时可以不减速直接快速通过。",
+    "answer": false,
+    "explanation": "规则规定从单向通行道路向右转弯时，必须从路口中心的内侧“缓速通过”。",
+    "tags": [
+      "traffic_rules",
+      "pages_32_41"
+    ]
+  },
+  {
+    "id": "q_tf_p1_045",
+    "type": "true_false",
+    "question": "会车时，驾驶员必须时刻注意与相对方向驶来的车辆保持足够的安全车距。",
+    "answer": true,
+    "explanation": "会车规则第一条即要求与相对方向车辆会车时，要保持安全车距。",
+    "tags": [
+      "traffic_rules",
+      "pages_32_41"
+    ]
+  },
+  {
+    "id": "q_tf_p1_046",
+    "type": "true_false",
+    "question": "超车时，为了看清左侧情况，必须通过车窗将头伸出车外确认后再向左变更车线驶回。",
+    "answer": false,
+    "explanation": "规则要求继续前进，直至可从“车内后视镜”中看到被超车辆，然后再向左变更车线，并没有要求将头伸出车外。",
+    "tags": [
+      "traffic_rules",
+      "pages_32_41"
+    ]
+  },
+  {
+    "id": "q_tf_p1_047",
+    "type": "true_false",
+    "question": "在超越其他车辆时，如果在变道前没有通过后视镜确认右侧及右侧斜后方的安全，将会非常危险并且违反操作步骤。",
+    "answer": true,
+    "explanation": "超车的驾驶步骤中明确要求，确认前方安全的同时，必须通过后视镜确认右侧及右侧斜后方的安全。",
+    "tags": [
+      "traffic_rules",
+      "pages_32_41"
+    ]
+  },
+  {
+    "id": "q_tf_p1_048",
+    "type": "true_false",
+    "question": "当后方车辆打转向灯准备超车时，如果自己即将到达目的地，可以故意挡在其前方阻止其超车。",
+    "answer": false,
+    "explanation": "规则规定当后方车辆准备超车时，自己不得超车，且在被超过前不要提高车速，更不得故意阻挡妨碍。",
+    "tags": [
+      "traffic_rules",
+      "pages_32_41"
+    ]
+  },
+  {
+    "id": "q_tf_p1_049",
+    "type": "true_false",
+    "question": "即使前方车辆为了向右转弯已经开始减速，后方车辆此时也必须注意判断其动向，不得妨碍其变更车线。",
+    "answer": true,
+    "explanation": "前方车辆发出向左或向右变道信号（或减速准备变道）时，后车不得妨碍其变更车线，超越转弯车需特别谨慎。",
+    "tags": [
+      "traffic_rules",
+      "pages_32_41"
+    ]
+  },
+  {
+    "id": "q_tf_p1_050",
+    "type": "true_false",
+    "question": "在单向通行的道路上向右转弯时，应该事先靠向道路左侧，以获得更大的转弯半径。",
+    "answer": false,
+    "explanation": "规则明确要求从单向通行的道路向右转弯时，必须靠向道路右侧。",
+    "tags": [
+      "traffic_rules",
+      "pages_32_41"
+    ]
+  }
+]

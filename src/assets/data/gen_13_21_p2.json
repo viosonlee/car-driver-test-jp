@@ -1,0 +1,402 @@
+[
+  {
+    "id": "q_13_21_051",
+    "type": "true_false",
+    "question": "在没有交通信号灯且没有优先道路标志的路口，如果相交的两条道路宽度相同，驾驶员必须让从自己左方驶来的车辆优先通行。",
+    "answer": true,
+    "explanation": "在路宽相同的无信号灯路口，实行“左方优先”原则，不得妨碍左方来车。",
+    "tags": ["traffic_rules", "chapter_7_to_8"]
+  },
+  {
+    "id": "q_13_21_052",
+    "type": "true_false",
+    "question": "当准备进入环形交叉路口时，因为进入者有优先权，所以可以直接加速驶入，无需在意环岛内行驶的车辆。",
+    "answer": false,
+    "explanation": "准备进入环形交叉路口时，应减速缓行并注意不要妨碍正在环形交叉路口内通行的车辆。",
+    "tags": ["traffic_rules", "chapter_7_to_8"]
+  },
+  {
+    "id": "q_13_21_053",
+    "type": "true_false",
+    "question": "在环形交叉路口内行驶时，应沿着环岛的侧边（左侧）减速缓行。",
+    "answer": true,
+    "explanation": "在环形交叉路口内，必须沿着顺时针方向（靠左侧）缓慢通行。",
+    "tags": ["traffic_rules", "chapter_7_to_8"]
+  },
+  {
+    "id": "q_13_21_054",
+    "type": "true_false",
+    "question": "交通规则中的“长时停车”（駐車）仅指停车时间超过5分钟以上的行为，与驾驶员是否在车内无关。",
+    "answer": false,
+    "explanation": "长时停车是指车辆持续停止状态，或者驾驶员离开车辆导致无法随时移动的状态。如果驾驶员离开车辆无法随时移动，即使不到5分钟也算长时停车。",
+    "tags": ["traffic_rules", "chapter_7_to_8"]
+  },
+  {
+    "id": "q_13_21_055",
+    "type": "true_false",
+    "question": "驾驶员下车去街边的便利店买饮料，预计只需要2分钟。因为时间很短，所以这属于“临时停车”（停車）。",
+    "answer": false,
+    "explanation": "驾驶员离开车辆导致车辆无法立刻移动，这就构成了“长时停车”，无论时间多短。",
+    "tags": ["traffic_rules", "chapter_7_to_8"]
+  },
+  {
+    "id": "q_13_21_056",
+    "type": "true_false",
+    "question": "为了上下客而在路边停车3分钟，且驾驶员没有离开车辆，这属于“临时停车”。",
+    "answer": true,
+    "explanation": "5分钟以内的上下客或装卸货物，且驾驶员可随时移动车辆的，属于临时停车。",
+    "tags": ["traffic_rules", "chapter_7_to_8"]
+  },
+  {
+    "id": "q_13_21_057",
+    "type": "true_false",
+    "question": "隧道内原则上既禁止长时停车，也禁止临时停车。",
+    "answer": true,
+    "explanation": "隧道内视线不佳且空间狭窄，停车极易引发严重的追尾事故，属于双重禁停场所。",
+    "tags": ["traffic_rules", "chapter_7_to_8"]
+  },
+  {
+    "id": "q_13_21_058",
+    "type": "true_false",
+    "question": "在交叉路口内及其边缘5米以内的区域，为了不阻碍其他车辆转弯及通行，严禁长时及临时停车。",
+    "answer": true,
+    "explanation": "路口及其周边5米内是法定禁停区域，必须严格遵守。",
+    "tags": ["traffic_rules", "chapter_7_to_8"]
+  },
+  {
+    "id": "q_13_21_059",
+    "type": "true_false",
+    "question": "人行横道和自行车横道上虽然不能长时停车，但如果只是为了让朋友下车，可以短暂地停在斑马线上。",
+    "answer": false,
+    "explanation": "人行横道、自行车横道及其前后5米以内，严禁任何形式的停车（包括临时停车），以免阻挡横穿者的视线引发危险。",
+    "tags": ["traffic_rules", "chapter_7_to_8"]
+  },
+  {
+    "id": "q_13_21_060",
+    "type": "true_false",
+    "question": "在距离消防栓、消防水池5米以内的地方，为了不妨碍消防车的救援工作，禁止长时停车，但是允许临时停车。",
+    "answer": true,
+    "explanation": "消防设施周边5米内是“禁止长时停车”区域，但并不禁止驾驶员在车内的“临时停车”。",
+    "tags": ["traffic_rules", "chapter_7_to_8"]
+  },
+  {
+    "id": "q_13_21_061",
+    "type": "true_false",
+    "question": "在道路上长时停车时，如果车辆右侧的道路空余宽度不足3.5米，则该地点禁止长时停车（无余宽停车违章）。",
+    "answer": true,
+    "explanation": "必须保证右侧留有3.5米以上的宽度供其他车辆通行，否则构成无余宽违章停车。",
+    "tags": ["traffic_rules", "chapter_7_to_8"]
+  },
+  {
+    "id": "q_13_21_062",
+    "type": "true_false",
+    "question": "在设有路侧带的道路上停车时，只要不超出白线，就可以将车完全停入路侧带中。",
+    "answer": false,
+    "explanation": "如果路侧带较宽允许停入，也必须在车辆左侧留出至少0.75米的空间供行人和自行车通行。",
+    "tags": ["traffic_rules", "chapter_7_to_8"]
+  },
+  {
+    "id": "q_13_21_063",
+    "type": "true_false",
+    "question": "路侧带的边界线如果是白色实线加上白色虚线（或者双实线），则说明该路侧带专供行人通行，车辆绝对不能驶入或在此停车。",
+    "answer": true,
+    "explanation": "双白线或实线加虚线的路侧带为行人专用，车辆严禁越线驶入。",
+    "tags": ["traffic_rules", "chapter_7_to_8"]
+  },
+  {
+    "id": "q_13_21_064",
+    "type": "true_false",
+    "question": "路边已经有一辆车停放时，为了方便，可以临时将自己的车停在它的右侧（并排停车）。",
+    "answer": false,
+    "explanation": "无论长时停车还是临时停车，都严禁与道路平行的车辆并排停车。",
+    "tags": ["traffic_rules", "chapter_7_to_8"]
+  },
+  {
+    "id": "q_13_21_065",
+    "type": "true_false",
+    "question": "在限时停车区域的停车位内停车时，只要不超过规定的时间，就可以停放车辆而不受处罚。",
+    "answer": true,
+    "explanation": "限时停车位是在规定时间内允许停车的，前提是正确使用停车计费设备或领取停车券并遵守时长。",
+    "tags": ["traffic_rules", "chapter_7_to_8"]
+  },
+  {
+    "id": "q_13_21_066",
+    "type": "true_false",
+    "question": "带有“高龄驾驶者等专用”标志的停车位，普通车辆只要驾驶员在车内，就可以在此停车休息。",
+    "answer": false,
+    "explanation": "高龄驾驶者专用停车位，普通车辆严禁在此停放，除非是持有并展示相应标签的符合条件者。",
+    "tags": ["traffic_rules", "chapter_7_to_8"]
+  },
+  {
+    "id": "q_13_21_067",
+    "type": "true_false",
+    "question": "对于在道路上违法停放的车辆，警官或交通巡查员有权下令驾驶员移动车辆，如果找不到驾驶员，警方可以直接叫拖车将其拖走。",
+    "answer": true,
+    "explanation": "警方有权为了消除交通危险和拥堵，采取强制拖车等措施，费用由车主或驾驶员承担。",
+    "tags": ["traffic_rules", "chapter_7_to_8"]
+  },
+  {
+    "id": "q_13_21_068",
+    "type": "true_false",
+    "question": "汽车的乘车人员上下车时，为了安全起见，应该尽量从车辆的左侧车门（靠近道路边缘的一侧）上下车。",
+    "answer": true,
+    "explanation": "左侧车门靠近人行道或路肩，避开了道路中央的车流，上下车更安全。",
+    "tags": ["traffic_rules", "chapter_4_to_6"]
+  },
+  {
+    "id": "q_13_21_069",
+    "type": "true_false",
+    "question": "驾驶员在打开车门下车前，只需要通过后视镜看一眼即可，不需要回头确认盲区。",
+    "answer": false,
+    "explanation": "后视镜有盲区，打开车门前必须直接转头确认后方的安全，防止自行车或摩托车突然窜出撞上车门。",
+    "tags": ["traffic_rules", "chapter_4_to_6"]
+  },
+  {
+    "id": "q_13_21_070",
+    "type": "true_false",
+    "question": "在行驶中，如果需要操作智能手机上的导航或查看地图，只要动作快，单手操作是可以的。",
+    "answer": false,
+    "explanation": "行驶中严禁注视或操作智能手机等移动通讯设备，这属于分心驾驶，极其危险且违法。",
+    "tags": ["traffic_rules", "chapter_4_to_6"]
+  },
+  {
+    "id": "q_13_21_071",
+    "type": "true_false",
+    "question": "正确的驾驶姿势要求驾驶员将座椅靠背调整到合适的角度，双手握方向盘时手臂应略微弯曲，不应伸得笔直。",
+    "answer": true,
+    "explanation": "保持手臂略微弯曲能够在紧急情况下更好地打方向盘，避免手臂受伤或操作不灵。",
+    "tags": ["traffic_rules", "chapter_4_to_6"]
+  },
+  {
+    "id": "q_13_21_072",
+    "type": "true_false",
+    "question": "安全带具有在发生事故时大幅减轻受伤程度的作用，因此汽车驾驶员必须系好安全带，但后排乘客如果不愿意可以不系。",
+    "answer": false,
+    "explanation": "无论是驾驶员还是副驾驶、后排座位的同乘人，所有乘车人员都必须系好安全带。",
+    "tags": ["traffic_rules", "chapter_4_to_6"]
+  },
+  {
+    "id": "q_13_21_073",
+    "type": "true_false",
+    "question": "处于妊娠期（怀孕期间）的妇女，由于安全带可能会压迫腹部，因此在任何情况下都不应该系安全带。",
+    "answer": false,
+    "explanation": "即便在妊娠期，正确使用安全带也能对母体和胎儿起到保护作用（应避开腹部隆起处）。只有在医生明确指示不能系的情况下才例外。",
+    "tags": ["traffic_rules", "chapter_4_to_6"]
+  },
+  {
+    "id": "q_13_21_074",
+    "type": "true_false",
+    "question": "对于不满6岁的幼儿，乘车时必须使用符合其体格发育程度的儿童安全座椅。",
+    "answer": true,
+    "explanation": "这是为了防止幼儿在紧急刹车或事故中被抛出，法律强制要求使用儿童安全座椅。",
+    "tags": ["traffic_rules", "chapter_4_to_6"]
+  },
+  {
+    "id": "q_13_21_075",
+    "type": "true_false",
+    "question": "如果儿童嫌安全座椅坐着不舒服而哭闹，作为替代，由大人抱着儿童坐在副驾驶座上也是合法的。",
+    "answer": false,
+    "explanation": "大人抱着儿童无法抵抗事故发生时的巨大冲击力，极度危险且违法。必须使用儿童安全座椅。",
+    "tags": ["traffic_rules", "chapter_4_to_6"]
+  },
+  {
+    "id": "q_13_21_076",
+    "type": "true_false",
+    "question": "当交通信号灯显示为红色，但附加的绿色箭头灯指向左方时，汽车可以向左转弯，但不能直行或右转。",
+    "answer": true,
+    "explanation": "绿色箭头灯表示仅允许车辆向箭头指示的方向通行。",
+    "tags": ["traffic_rules", "chapter_4_to_6"]
+  },
+  {
+    "id": "q_13_21_077",
+    "type": "true_false",
+    "question": "看到黄色信号灯时，所有车辆在任何情况下都必须立即踩死刹车停在停止线前，绝对不能通过路口。",
+    "answer": false,
+    "explanation": "黄灯表示应在停止线前停车，但如果距离停止线太近导致急刹车存在危险时，可以直接通过。",
+    "tags": ["traffic_rules", "chapter_4_to_6"]
+  },
+  {
+    "id": "q_13_21_078",
+    "type": "true_false",
+    "question": "当面对红色闪烁的信号灯时，车辆必须在停止位置暂时停车，确认左右安全后方可通行。",
+    "answer": true,
+    "explanation": "红色闪烁信号的含义等同于“暂时停车”标志，必须停车确认安全。",
+    "tags": ["traffic_rules", "chapter_4_to_6"]
+  },
+  {
+    "id": "q_13_21_079",
+    "type": "true_false",
+    "question": "当面对黄色闪烁的信号灯时，车辆可以不停车，但在注意其他交通情况的前提下减速通过。",
+    "answer": true,
+    "explanation": "黄色闪烁代表“注意前方并通行”，无需强制暂时停车，但须谨慎行驶。",
+    "tags": ["traffic_rules", "chapter_4_to_6"]
+  },
+  {
+    "id": "q_13_21_080",
+    "type": "true_false",
+    "question": "夜间行驶时，由于视线不好，如果道路上没有其他车辆和行人，可以不遵守限速规定稍微开快一点。",
+    "answer": false,
+    "explanation": "限速规定在任何时间（包括夜间和道路空旷时）都必须严格遵守。",
+    "tags": ["traffic_rules", "chapter_4_to_6"]
+  },
+  {
+    "id": "q_13_21_081",
+    "type": "true_false",
+    "question": "在积雪或结冰的道路上行驶，为了防止车轮打滑，起步时应尽量猛踩油门快速起步。",
+    "answer": false,
+    "explanation": "在冰雪路面猛踩油门会导致车轮原地打滑或车辆失控，应极其轻柔地踩油门起步。",
+    "tags": ["traffic_rules", "chapter_4_to_6"]
+  },
+  {
+    "id": "q_13_21_082",
+    "type": "true_false",
+    "question": "雾天行驶时视线极差，不仅需要开启前照灯（近光）或雾灯，必要时还应按喇叭以提醒其他车辆和行人。",
+    "answer": true,
+    "explanation": "大雾天气能见度极低，合理利用灯光和喇叭可以有效标明自身位置，防止事故。",
+    "tags": ["traffic_rules", "chapter_4_to_6"]
+  },
+  {
+    "id": "q_13_21_083",
+    "type": "true_false",
+    "question": "在驾驶途中遇到大地震的紧急警报发出时，为了迅速逃生，应该立即采取急刹车停在道路中央。",
+    "answer": false,
+    "explanation": "急刹车极易引发严重的追尾事故。应打开双闪警示灯，缓慢减速，将车安全地停在道路左侧路肩处。",
+    "tags": ["traffic_rules", "chapter_7_to_8"]
+  },
+  {
+    "id": "q_13_21_084",
+    "type": "true_false",
+    "question": "弃车去避难时，为了防止车辆被盗，必须锁好车门并将车钥匙带走。",
+    "answer": false,
+    "explanation": "发生大地震弃车避难时，为了方便救援人员或消防车在需要时移动车辆，不应锁门，且车钥匙必须留在车内插孔或显眼处。",
+    "tags": ["traffic_rules", "chapter_7_to_8"]
+  },
+  {
+    "id": "q_13_21_085",
+    "type": "true_false",
+    "question": "高速行驶中如果轮胎突然爆胎，驾驶员应紧握方向盘尽全力保持车辆直行，不要急踩刹车，而是用点刹或发动机制动让车缓慢停下。",
+    "answer": true,
+    "explanation": "爆胎时急刹车会导致车辆剧烈打转翻车，必须稳住方向盘缓慢减速。",
+    "tags": ["traffic_rules", "chapter_7_to_8"]
+  },
+  {
+    "id": "q_13_21_086",
+    "type": "true_false",
+    "question": "在行驶中感觉前方车辆可能要减速，为了不跟丢对方，应该迅速拉近与前车的距离紧贴行驶。",
+    "answer": false,
+    "explanation": "必须始终保持足够的安全车距，防止前车突然刹车时发生追尾。",
+    "tags": ["traffic_rules", "chapter_4_to_6"]
+  },
+  {
+    "id": "q_13_21_087",
+    "type": "true_false",
+    "question": "在有轨电车的车站，如果没有安全地带，当有乘客上下车时，后方驶来的汽车必须停车等待，直到乘客离开且车门关闭后方可通行。",
+    "answer": true,
+    "explanation": "这是为了保护正在上下有轨电车的行人的绝对安全。",
+    "tags": ["traffic_rules", "chapter_4_to_6"]
+  },
+  {
+    "id": "q_13_21_088",
+    "type": "true_false",
+    "question": "在有轨电车的车站，虽然没有安全地带，但如果没有人上下车，且汽车与电车之间有1.5米以上的安全间隔，汽车可以减速缓行通过。",
+    "answer": true,
+    "explanation": "这是允许通过的例外情况，但前提是必须保持1.5米以上的间隔并减速。",
+    "tags": ["traffic_rules", "chapter_4_to_6"]
+  },
+  {
+    "id": "q_13_21_089",
+    "type": "true_false",
+    "question": "如果路口设有“禁止掉头（U型转弯）”的标志，这也意味着该路口同样禁止向右转弯。",
+    "answer": false,
+    "explanation": "禁止掉头标志仅限制U型转弯，不代表禁止常规的右转弯。",
+    "tags": ["traffic_rules", "chapter_7_to_8"]
+  },
+  {
+    "id": "q_13_21_090",
+    "type": "true_false",
+    "question": "自动挡汽车（AT车）在等待红灯停车时，为了防止车辆发生蠕行（溜车）现象引发追尾，必须一直用力踩住刹车踏板。",
+    "answer": true,
+    "explanation": "AT车在D档时不踩油门也会有向前的动力（蠕动现象），因此必须踩实刹车。",
+    "tags": ["traffic_rules", "chapter_4_to_6"]
+  },
+  {
+    "id": "q_13_21_091",
+    "type": "true_false",
+    "question": "驾驶自动挡汽车下长坡时，只要一直踩着脚刹车减速就足够了，不需要使用发动机制动。",
+    "answer": false,
+    "explanation": "频繁长时间使用脚刹会导致刹车片过热失灵（热衰退现象），下长坡必须切换到低速档利用发动机制动。",
+    "tags": ["traffic_rules", "chapter_4_to_6"]
+  },
+  {
+    "id": "q_13_21_092",
+    "type": "true_false",
+    "question": "如果车辆在铁路道口内发生故障熄火且无法启动，应首先设法通知列车（如使用发焰筒或按下紧急按钮），然后尽快将车移出道口。",
+    "answer": true,
+    "explanation": "防止与列车相撞是第一要务，必须先发信号通知列车。",
+    "tags": ["traffic_rules", "chapter_7_to_8"]
+  },
+  {
+    "id": "q_13_21_093",
+    "type": "true_false",
+    "question": "在通过铁路道口时，如果前面的车辆正在通过，因为没有空间，自己的车辆也可以紧跟其后进入道口内等待。",
+    "answer": false,
+    "explanation": "如果道口对面拥堵，导致自己可能会停在铁路道口内，则绝对不得进入道口。",
+    "tags": ["traffic_rules", "chapter_7_to_8"]
+  },
+  {
+    "id": "q_13_21_094",
+    "type": "true_false",
+    "question": "为了防止在铁路道口内熄火，手动挡汽车在通过铁路道口时，应保持起步时的低速挡位一口气通过，中途不要换挡。",
+    "answer": true,
+    "explanation": "中途换挡容易导致操作失误熄火，停在铁轨上极其危险。",
+    "tags": ["traffic_rules", "chapter_7_to_8"]
+  },
+  {
+    "id": "q_13_21_095",
+    "type": "true_false",
+    "question": "在狭窄的山路或弯道上会车时，上坡的车辆应该主动停下来让下坡的车辆先行。",
+    "answer": false,
+    "explanation": "一般情况下，下坡车辆的刹车距离更长且较难控制，因此下坡车应让上坡车先行。",
+    "tags": ["traffic_rules", "chapter_4_to_6"]
+  },
+  {
+    "id": "q_13_21_096",
+    "type": "true_false",
+    "question": "在没有中央隔离带的道路上行驶，为了躲避左侧的障碍物，可以短暂地将车完全开到右侧对向车道上，只要对向没有车即可。",
+    "answer": true,
+    "explanation": "在确认对向安全的前提下，可以部分或全部借用右侧车道避开障碍物。",
+    "tags": ["traffic_rules", "chapter_4_to_6"]
+  },
+  {
+    "id": "q_13_21_097",
+    "type": "true_false",
+    "question": "摩托车因为车身较小且机动性好，在交通拥堵时可以随意在汽车的缝隙中穿插、蛇形驾驶或强行超车。",
+    "answer": false,
+    "explanation": "这些行为极其危险，不仅妨碍其他车辆，也容易将自身置于其他车辆的盲区中引发事故。",
+    "tags": ["traffic_rules", "chapter_4_to_6"]
+  },
+  {
+    "id": "q_13_21_098",
+    "type": "true_false",
+    "question": "驾驶两轮摩托车转弯时，不应该大幅度转动车把，而应当通过倾斜身体和车身自然地完成转弯。",
+    "answer": true,
+    "explanation": "摩托车转弯依靠的是车身倾斜（侧倾），强行扭动车把会导致失去平衡摔倒。",
+    "tags": ["traffic_rules", "chapter_4_to_6"]
+  },
+  {
+    "id": "q_13_21_099",
+    "type": "true_false",
+    "question": "在有三条以上行车线的路口，所有的小型摩托车（排量50cc以下的原付）在需要右转弯时，都必须采用“两步右转法”（二段階右折）。",
+    "answer": true,
+    "explanation": "在没有特定标示豁免的情况下，三车道及以上的路口，原付摩托车必须两步右转。",
+    "tags": ["traffic_rules", "chapter_4_to_6"]
+  },
+  {
+    "id": "q_13_21_100",
+    "type": "true_false",
+    "question": "驾驶员在疲劳、生病或有心事的状态下，由于注意力会分散、判断力会降低，容易引发交通事故，因此应避免驾驶。",
+    "answer": true,
+    "explanation": "良好的身体和精神状态是安全驾驶的基础，状态不佳时应停止驾驶。",
+    "tags": ["traffic_rules", "chapter_4_to_6"]
+  }
+]

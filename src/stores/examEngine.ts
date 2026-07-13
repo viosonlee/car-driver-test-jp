@@ -1,6 +1,6 @@
 import { ref, reactive } from 'vue';
 import { type Question } from '../db';
-import batch1 from '../assets/data/questions_batch_1.json';
+import allQuestions from '../assets/data/all_questions.json';
 
 // Simple store using Vue Reactivity
 export const examState = reactive({
@@ -18,10 +18,19 @@ export const useExamEngine = () => {
   const timeRemaining = ref(0);
   let timerInterval: number;
 
+  const generateExamPaper = () => {
+    const allQs = allQuestions as Question[];
+    const tfQuestions = allQs.filter(q => q.type === 'true_false');
+    const hpQuestions = allQs.filter(q => q.type === 'hazard_prediction');
+
+    const shuffledTf = [...tfQuestions].sort(() => 0.5 - Math.random()).slice(0, 90);
+    const shuffledHp = [...hpQuestions].sort(() => 0.5 - Math.random()).slice(0, 5);
+
+    return [...shuffledTf, ...shuffledHp].sort(() => 0.5 - Math.random());
+  };
+
   const initExam = async () => {
-    // In a real app, randomly select 90 T/F and 5 Hazard from db.
-    // For now, load the batch directly.
-    examState.questions = batch1 as Question[];
+    examState.questions = generateExamPaper();
     examState.currentIndex = 0;
     examState.answers = {};
     examState.score = 0;

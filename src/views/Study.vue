@@ -1,11 +1,12 @@
 <script setup lang="ts">
 import { ref, computed } from 'vue';
 import { useRouter } from 'vue-router';
-import batch1 from '../assets/data/questions_batch_1.json';
+import allQuestions from '../assets/data/all_questions.json';
 import { type Question } from '../db';
 
 const router = useRouter();
-const questions = batch1 as Question[];
+// Shuffle all questions for study mode so it's fresh
+const questions = [...allQuestions].sort(() => 0.5 - Math.random()) as Question[];
 const currentIndex = ref(0);
 const currentQ = computed(() => questions[currentIndex.value]);
 

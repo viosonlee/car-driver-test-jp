@@ -53,7 +53,7 @@ const handleHazardAnswer = (index: number, val: boolean) => {
 <template>
   <div class="exam-container" v-if="currentQ && !examState.isFinished">
     <header class="exam-header">
-      <div class="progress">题目: {{ examState.currentIndex + 1 }} / {{ examState.questions.length }}</div>
+      <div class="progress">外免切替: {{ examState.currentIndex + 1 }} / {{ examState.questions.length }}</div>
       <div class="timer" :class="{ 'timer-danger': timeRemaining < 300000 }">
         ⏱ {{ formatTime(timeRemaining) }}
       </div>
@@ -75,7 +75,7 @@ const handleHazardAnswer = (index: number, val: boolean) => {
       </div>
 
       <!-- True/False Options -->
-      <div class="options-container" v-if="currentQ.type === 'true_false'">
+      <div class="options-container" v-if="currentQ.type === 'true_false' || !currentQ.sub_questions?.length">
         <button 
           class="option-btn" 
           :class="{ selected: examState.answers[currentQ.id] === true }"
@@ -123,10 +123,10 @@ const handleHazardAnswer = (index: number, val: boolean) => {
     <h2>考试结束</h2>
     <div class="score-display">
       <span class="score">{{ examState.score }}</span>
-      <span class="max-score">/ 100</span>
+      <span class="max-score">/ 50</span>
     </div>
-    <p class="result-msg" v-if="examState.score >= 90">🎉 恭喜！您已达到及格线（90分以上）。</p>
-    <p class="result-msg danger" v-else>😢 很遗憾，未达到 90 分及格线，请继续努力！</p>
+    <p class="result-msg" v-if="examState.score >= 45">🎉 恭喜！您已达到外免切替知识确认及格线（45题以上）。</p>
+    <p class="result-msg danger" v-else>😢 很遗憾，未达到 45 题及格线，请继续努力！</p>
     <button class="primary-btn" @click="goHome">返回主页</button>
   </div>
 </template>

@@ -1432,9 +1432,9 @@
   {
     "id": "q_0130",
     "type": "true_false",
-    "question": "由于高龄驾驶者反应较慢，当看到他们驾驶的车辆打灯准备变道时，后方车辆可以鸣喇叭警告其不要变道并加速通过。",
-    "answer": false,
-    "explanation": "遇到高龄驾驶者应给予体谅和保护，严禁通过鸣喇叭和加速来威逼其放弃变道。",
+    "question": "除非为了避免危险，其他车辆不得从侧面靠近或强行插入张贴高龄驾驶者标志的汽车。",
+    "answer": true,
+    "explanation": "对张贴高龄驾驶者标志的汽车，应给予保护，不得从侧面靠近或强行插入。",
     "tags": [
       "traffic_rules",
       "chapter_4_to_6"
@@ -1611,17 +1611,6 @@
     "question": "汽车在转弯时产生的离心力，与车辆的重量无关，只与速度和弯道的半径有关。",
     "answer": false,
     "explanation": "离心力的大小与车辆的重量成正比，与速度的平方成正比，与弯道半径成反比。车辆越重离心力越大。",
-    "tags": [
-      "traffic_rules",
-      "chapter_4_to_6"
-    ]
-  },
-  {
-    "id": "q_0147",
-    "type": "true_false",
-    "question": "驾驶员在疲劳状态下驾驶，如果发生了交通事故，保险公司会全额理赔，警方也不会追究驾驶员的刑事责任。",
-    "answer": false,
-    "explanation": "疲劳驾驶（过劳驾驶）是严重的违法行为，引发事故将被追究相应的刑事和行政责任，保险公司也可能拒绝赔付部分款项。",
     "tags": [
       "traffic_rules",
       "chapter_4_to_6"
@@ -1861,9 +1850,9 @@
   {
     "id": "q_0169",
     "type": "true_false",
-    "question": "遇到有救护车鸣笛驶来，但自己正行驶在没有路肩的桥梁上无法靠边，此时可以加速行驶，直到下了桥再靠边让行。",
-    "answer": false,
-    "explanation": "在无法靠边让行的地方，也不能盲目加速。应尽量靠左侧减速或停车，让救护车想办法通过，如果确实阻碍，应根据实际情况听从指挥，但“加速逃离”并不一定是安全或合法的避让方式。",
+    "question": "在路口以外遇到执行紧急任务的救护车驶近时，应靠道路左侧让行。",
+    "answer": true,
+    "explanation": "在路口以外，应靠道路左侧给紧急车辆让路；在单行道上靠左反而妨碍通行时，可以靠右让行。",
     "tags": [
       "traffic_rules",
       "chapter_4_to_6"
@@ -1971,9 +1960,9 @@
   {
     "id": "q_0179",
     "type": "true_false",
-    "question": "发现前方车辆刹车灯亮起时，说明前车正在减速，后车驾驶员也应该立刻将脚放在刹车踏板上准备减速，而不是盲目变道超车。",
+    "question": "跟随前车行驶时，应保持即使前车突然刹车也能够避免碰撞的安全车距。",
     "answer": true,
-    "explanation": "这是一种防御性驾驶技巧，随时准备应对前方的突发状况。",
+    "explanation": "安全车距应结合速度、路面和轮胎状况确定，确保前车突然刹车时也能避免碰撞。",
     "tags": [
       "traffic_rules",
       "chapter_4_to_6"
@@ -2059,9 +2048,9 @@
   {
     "id": "q_0187",
     "type": "true_false",
-    "question": "如果跟在大型货车后面行驶，因为大车挡住了视线，为了能看清前方的红绿灯，应该紧紧贴在大车后面行驶。",
-    "answer": false,
-    "explanation": "紧贴大车行驶不仅无法看清前方路况，而且一旦大车急刹极易发生致命追尾。应拉大安全距离。",
+    "question": "前车遮挡视线时，也不应缩短车距，而应保持能够安全停车的距离。",
+    "answer": true,
+    "explanation": "紧跟前车会扩大视线盲区，并在前车突然刹车时增加追尾风险，因此必须保持安全车距。",
     "tags": [
       "traffic_rules",
       "chapter_4_to_6"
@@ -5562,9 +5551,9 @@
   {
     "id": "q_0516",
     "type": "true_false",
-    "question": "饮酒后，只要感觉自己很清醒，走直线没问题，就可以驾驶车辆。",
-    "answer": false,
-    "explanation": "饮酒后绝对请勿驾驶，酒精会严重影响判断和反应能力。",
+    "question": "即使饮酒量很少、本人感觉清醒，饮酒后也不得驾驶车辆。",
+    "answer": true,
+    "explanation": "饮酒会影响判断和操作能力。饮酒后不得驾驶，也不得让饮酒者驾驶车辆。",
     "tags": [
       "alcohol_drugs"
     ]
@@ -5817,16 +5806,6 @@
     "explanation": "良好的驾驶计划需要包含这些要素。",
     "tags": [
       "driving_plan"
-    ]
-  },
-  {
-    "id": "q_0542",
-    "type": "true_false",
-    "question": "初学者标志是一个黄绿相间的类似叶子形状的标志，代表新手上路。",
-    "answer": true,
-    "explanation": "初学者标志（若葉マーク）是黄绿相间的形状。",
-    "tags": [
-      "pre_drive"
     ]
   },
   {
@@ -6230,16 +6209,6 @@
     ]
   },
   {
-    "id": "q_0583",
-    "type": "true_false",
-    "question": "驾驶证一旦取得，只要不发生重大事故，就可以终身免检免换。",
-    "answer": false,
-    "explanation": "驾驶证有有效期限，到期必须办理更新手续。",
-    "tags": [
-      "license"
-    ]
-  },
-  {
     "id": "q_0584",
     "type": "true_false",
     "question": "如果不小心把水洒在了冬季结冰的道路上，这不会受到交通法规的制裁。",
@@ -6324,7 +6293,7 @@
     "type": "true_false",
     "question": "如果视力有所下降，戴上近视眼镜后可以看清，但在驾照上没有注明“限戴眼镜”的条件，驾驶时仍然可以选择不戴眼镜。",
     "answer": false,
-    "explanation": "如果视力未达标，即使驾照上暂未注明条件，为了安全也必须佩戴能看清道路的眼镜，并在更新驾照时申报。",
+    "explanation": "驾驶前应确认自己的身体状态。视力不足时不应勉强驾驶，应佩戴能够保证看清道路的眼镜。",
     "tags": [
       "pre_drive"
     ]
@@ -6446,17 +6415,6 @@
     "question": "前方信号灯变为黄灯时，所有车辆在任何情况下都必须在停止位置前停车。",
     "answer": false,
     "explanation": "变为黄灯时已经接近停止位置且无法安全停止时，可以直接前行。",
-    "tags": [
-      "traffic_rules",
-      "chapter_1_to_3"
-    ]
-  },
-  {
-    "id": "q_0603",
-    "type": "true_false",
-    "question": "面对红色闪烁信号，车辆必须在停止位置暂时停车，确认安全后方可通行。",
-    "answer": true,
-    "explanation": "红灯闪烁时，车辆及有轨电车必须在停止位置暂时停车。",
     "tags": [
       "traffic_rules",
       "chapter_1_to_3"
@@ -6922,6 +6880,294 @@
     "tags": [
       "traffic_rules",
       "chapter_1_to_3"
+    ]
+  },
+  {
+    "id": "q_ref_04",
+    "type": "true_false",
+    "question": "私家普通载客汽车也需要根据行驶距离和驾驶状态，在适当时间进行日常检查。",
+    "answer": true,
+    "explanation": "日常检查由汽车使用人或驾驶者负责，应根据行驶距离和车辆状态选择适当时间实施。",
+    "tags": [
+      "vehicle_check",
+      "pre_drive",
+      "source_page_9"
+    ]
+  },
+  {
+    "id": "q_ref_05",
+    "type": "true_false",
+    "question": "检查轮胎气压时，只看仪表盘没有报警即可，不需要观察轮胎接地部分的塌陷状态。",
+    "answer": false,
+    "explanation": "教材要求根据轮胎接触地面部分的塌陷状态检查气压是否不足。",
+    "tags": [
+      "vehicle_check",
+      "tires",
+      "source_page_9"
+    ]
+  },
+  {
+    "id": "q_ref_06",
+    "type": "true_false",
+    "question": "驾驶前应检查前照灯、刹车灯和转向灯是否能够正常点亮或闪烁。",
+    "answer": true,
+    "explanation": "车灯装置的工作状态属于日常检查项目。",
+    "tags": [
+      "vehicle_check",
+      "lights",
+      "source_page_9"
+    ]
+  },
+  {
+    "id": "q_ref_07",
+    "type": "true_false",
+    "question": "刹车踏板踩下后感觉软弱无力，可能与制动液泄漏或制动系统混入空气有关。",
+    "answer": true,
+    "explanation": "踏板行程异常或踏感软弱可能表示制动液泄漏或制动系统混入空气。",
+    "tags": [
+      "vehicle_check",
+      "brakes",
+      "source_page_9"
+    ]
+  },
+  {
+    "id": "q_ref_08",
+    "type": "true_false",
+    "question": "只要车辆平时没有发生故障，就不必检查刮雨器和挡风玻璃清洗液。",
+    "answer": false,
+    "explanation": "清洗液液量、喷射状态以及刮雨器的动作和刮净效果都属于检查项目。",
+    "tags": [
+      "vehicle_check",
+      "visibility",
+      "source_page_9"
+    ]
+  },
+  {
+    "id": "q_ref_09",
+    "type": "true_false",
+    "question": "在高速公路上行驶时，除发焰筒等紧急信号用品外，还应配备故障停车警示器材。",
+    "answer": true,
+    "explanation": "教材要求车辆配备紧急信号用品，并在高速公路行驶时配备停车警示器材。",
+    "tags": [
+      "vehicle_check",
+      "expressway",
+      "source_page_10"
+    ]
+  },
+  {
+    "id": "q_ref_10",
+    "type": "true_false",
+    "question": "普通汽车装载物的长度和宽度都可以达到车身相应尺寸的1.2倍以内。",
+    "answer": true,
+    "explanation": "教材规定装载物长度小于车长的1.2倍、宽度小于车宽的1.2倍，并限制前后左右伸出量。",
+    "tags": [
+      "loading",
+      "vehicle_rules",
+      "source_page_10"
+    ]
+  },
+  {
+    "id": "q_ref_11",
+    "type": "true_false",
+    "question": "装载货物时，只要没有超过重量限制，即使遮住牌照、转向灯或刹车灯也没有问题。",
+    "answer": false,
+    "explanation": "装载物不得妨碍驾驶、影响车辆稳定，也不得遮挡牌照和各种车灯。",
+    "tags": [
+      "loading",
+      "vehicle_rules",
+      "source_page_10"
+    ]
+  },
+  {
+    "id": "q_ref_12",
+    "type": "true_false",
+    "question": "驾驶者必须关紧车门并牢固固定货物，防止人员或货物滚落、飞散。",
+    "answer": true,
+    "explanation": "防止人员和货物滚落、飞散是驾驶者的责任。",
+    "tags": [
+      "loading",
+      "vehicle_rules",
+      "source_page_10"
+    ]
+  },
+  {
+    "id": "q_ref_13",
+    "type": "true_false",
+    "question": "施工用安全帽可以代替符合标准的摩托车安全头盔。",
+    "answer": false,
+    "explanation": "摩托车安全头盔应有PSC或JIS标志，施工用安全帽不能代替。",
+    "tags": [
+      "motorcycle",
+      "protective_gear",
+      "source_page_28"
+    ]
+  },
+  {
+    "id": "q_ref_14",
+    "type": "true_false",
+    "question": "取得普通两轮摩托车驾照未满1年时，不得驾驶普通两轮摩托车载人。",
+    "answer": true,
+    "explanation": "教材将取得普通两轮驾照未满1年列为禁止载人的情况。",
+    "tags": [
+      "motorcycle",
+      "passenger",
+      "source_page_28"
+    ]
+  },
+  {
+    "id": "q_ref_15",
+    "type": "true_false",
+    "question": "摩托车驾驶者在夜间应尽量穿容易被发现或带反光材料的服装。",
+    "answer": true,
+    "explanation": "提高可见性有助于其他道路使用者及时发现摩托车驾驶者。",
+    "tags": [
+      "motorcycle",
+      "protective_gear",
+      "source_page_28"
+    ]
+  },
+  {
+    "id": "q_ref_16",
+    "type": "true_false",
+    "question": "摩托车车身较小、机动性强，所以堵车时可以在车辆之间蛇形穿行。",
+    "answer": false,
+    "explanation": "车辆间穿行、蛇形驾驶、强行超车和强行插入都十分危险。",
+    "tags": [
+      "motorcycle",
+      "safe_driving",
+      "source_page_29"
+    ]
+  },
+  {
+    "id": "q_ref_17",
+    "type": "true_false",
+    "question": "摩托车进入弯道前应先在直线路段充分减速，并通过适当倾斜车体自然转弯。",
+    "answer": true,
+    "explanation": "教材要求入弯前减速，转弯时通过倾斜车体自然转弯。",
+    "tags": [
+      "motorcycle",
+      "cornering",
+      "source_page_29"
+    ]
+  },
+  {
+    "id": "q_ref_18",
+    "type": "true_false",
+    "question": "摩托车刹车时应尽量保持车体垂直，并配合前后轮刹车和发动机制动。",
+    "answer": true,
+    "explanation": "保持车体垂直并合理使用前后轮制动及发动机制动，可以降低侧滑风险。",
+    "tags": [
+      "motorcycle",
+      "brakes",
+      "source_page_30"
+    ]
+  },
+  {
+    "id": "q_ref_19",
+    "type": "true_false",
+    "question": "推着已经关闭发动机、未牵引其他车辆且不带挎斗的两轮摩托车行走时，通常被视为步行者。",
+    "answer": true,
+    "explanation": "符合教材所列条件时，推车行走者按步行者处理。",
+    "tags": [
+      "motorcycle",
+      "pedestrian_rules",
+      "source_page_30"
+    ]
+  },
+  {
+    "id": "q_ref_20",
+    "type": "true_false",
+    "question": "客运汽车驾驶者为了准点，可以通过急起步和急刹车缩短运行时间。",
+    "answer": false,
+    "explanation": "客运汽车驾驶者应保护乘客，避免急起步、急刹车和不必要的颠簸。",
+    "tags": [
+      "commercial_vehicle",
+      "passenger_safety",
+      "source_page_31"
+    ]
+  },
+  {
+    "id": "q_ref_21",
+    "type": "true_false",
+    "question": "车辆必须办理登记或申请，取得并安装车牌号后才能依法使用。",
+    "answer": true,
+    "explanation": "教材规定车辆必须登记；轻型汽车办理申请，并领取、安装车牌号。",
+    "tags": [
+      "vehicle_management",
+      "registration",
+      "source_page_34"
+    ]
+  },
+  {
+    "id": "q_ref_22",
+    "type": "true_false",
+    "question": "小型摩托车不需要加入汽车损害赔偿责任保险或责任共济。",
+    "answer": false,
+    "explanation": "教材明确指出小型摩托车也必须加入自赔责保险或责任共济。",
+    "tags": [
+      "vehicle_management",
+      "insurance",
+      "source_page_34"
+    ]
+  },
+  {
+    "id": "q_ref_23",
+    "type": "true_false",
+    "question": "车辆所有人不得把汽车借给无驾照者或饮酒者，并应妥善保管车钥匙。",
+    "answer": true,
+    "explanation": "这是教材列出的车辆管理责任。",
+    "tags": [
+      "vehicle_management",
+      "alcohol_drugs",
+      "source_page_34"
+    ]
+  },
+  {
+    "id": "q_ref_24",
+    "type": "true_false",
+    "question": "“禁止长时及临时停车”标志表示停车和临时停车都被禁止。",
+    "answer": true,
+    "explanation": "该管制标志同时禁止长时停车和临时停车。",
+    "tags": [
+      "traffic_signs",
+      "parking",
+      "source_page_36"
+    ]
+  },
+  {
+    "id": "q_ref_25",
+    "type": "true_false",
+    "question": "警告标志主要用于表示前方道路形状、学校、信号灯、施工或其他危险，提醒驾驶者注意。",
+    "answer": true,
+    "explanation": "附表中的警告标志用于预告弯道、道口、学校、施工及其他危险。",
+    "tags": [
+      "traffic_signs",
+      "warning_signs",
+      "source_page_37"
+    ]
+  },
+  {
+    "id": "q_ref_26",
+    "type": "true_false",
+    "question": "道路上的导流带是为了安全、顺畅地引导交通而设置的车辆不能驶入区域。",
+    "answer": true,
+    "explanation": "指示标示中的导流带属于车辆无法通过的区域。",
+    "tags": [
+      "road_markings",
+      "traffic_rules",
+      "source_page_39"
+    ]
+  },
+  {
+    "id": "q_ref_27",
+    "type": "true_false",
+    "question": "普通汽车是指不属于大型、中型、大型特殊、两轮摩托车或小型特殊汽车等类别的汽车。",
+    "answer": true,
+    "explanation": "附表按照道路交通法列出了普通汽车与其他车辆种类的区分。",
+    "tags": [
+      "vehicle_types",
+      "license",
+      "source_page_40"
     ]
   }
 ]

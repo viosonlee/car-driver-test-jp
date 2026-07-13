@@ -1,5 +1,5 @@
 import { ref, reactive } from 'vue';
-import { type Question } from '../db';
+import { db, type ExamHistory, type Question } from '../db';
 import allQuestions from '../assets/data/all_questions.json';
 
 // Simple store using Vue Reactivity
@@ -14,19 +14,16 @@ export const examState = reactive({
   isFinished: false
 });
 
+let timerInterval: number | undefined;
+
 export const useExamEngine = () => {
   const timeRemaining = ref(0);
-  let timerInterval: number;
 
   const generateExamPaper = () => {
     const allQs = allQuestions as Question[];
     const tfQuestions = allQs.filter(q => q.type === 'true_false');
-    const hpQuestions = allQs.filter(q => q.type === 'hazard_prediction');
-
-    const shuffledTf = [...tfQuestions].sort(() => 0.5 - Math.random()).slice(0, 90);
-    const shuffledHp = [...hpQuestions].sort(() => 0.5 - Math.random()).slice(0, 5);
-
-    return [...shuffledTf, ...shuffledHp].sort(() => 0.5 - Math.random());
+    // 外国驾照切换（外免切替）知识确认：50 道判断题。
+    return [...tfQuestions].sort(() => 0.5 - Math.random()).slice(0, 50);
   };
 
   const initExam = async () => {
@@ -37,9 +34,9 @@ export const useExamEngine = () => {
     examState.isFinished = false;
     examState.isActive = true;
     
-    // 50 minutes countdown
+    // 外免切替知识确认考试时间为 30 分钟
     examState.startTime = Date.now();
-    examState.endTime = examState.startTime + 50 * 60 * 1000;
+    examState.endTime = examState.startTime + 30 * 60 * 1000;
     
     startTimer();
   };
@@ -64,12 +61,39 @@ export const useExamEngine = () => {
     }
   };
 
-  const finishExam = () => {
+  const finishExam = async () => {
+    if (examState.isFinished) return;
+
     examState.isActive = false;
     examState.isFinished = true;
     if (timerInterval) clearInterval(timerInterval);
     
     calculateScore();
+
+    const history: ExamHistory = {
+      date: Date.now(),
+      score: examState.score,
+      totalTimeMs: Math.max(0, Date.now() - examState.startTime),
+      details: examState.questions.map(question => ({
+        questionId: question.id,
+        correct: isAnswerCorrect(question, examState.answers[question.id])
+      }))
+    };
+
+    try {
+      await db.examHistory.add(history);
+    } catch (error) {
+      console.error('Failed to save exam history', error);
+    }
+  };
+
+  const isAnswerCorrect = (question: Question, answer: any) => {
+    if (question.type === 'true_false' || !question.sub_questions?.length) {
+      return typeof question.answer === 'boolean' && answer === question.answer;
+    }
+
+    return Array.isArray(answer)
+      && question.sub_questions.every((subQuestion, index) => subQuestion.answer === answer[index]);
   };
 
   const calculateScore = () => {
@@ -77,18 +101,8 @@ export const useExamEngine = () => {
     
     examState.questions.forEach(q => {
       const ans = examState.answers[q.id];
-      if (q.type === 'true_false') {
-        if (ans === q.answer) {
-          currentScore += 1;
-        }
-      } else if (q.type === 'hazard_prediction' && q.sub_questions) {
-        // Must get all 3 sub-questions right
-        if (Array.isArray(ans) && ans.length === 3) {
-          const allCorrect = q.sub_questions.every((sq, idx) => sq.answer === ans[idx]);
-          if (allCorrect) {
-            currentScore += 2;
-          }
-        }
+      if (isAnswerCorrect(q, ans)) {
+        currentScore += q.type === 'hazard_prediction' ? 2 : 1;
       }
     });
     

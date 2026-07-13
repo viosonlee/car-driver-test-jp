@@ -1,9 +1,30 @@
 <script setup lang="ts">
+import { onMounted, ref } from 'vue';
 import { useRouter } from 'vue-router';
+import { db } from '../db';
+import { useExamEngine } from '../stores/examEngine';
 
 const router = useRouter();
+const { initExam } = useExamEngine();
+const practicedCount = ref(0);
+const errorCount = ref(0);
+const lastExamScore = ref<number | null>(null);
 
-const startExam = () => {
+onMounted(async () => {
+  try {
+    const progress = JSON.parse(localStorage.getItem('study-progress-v1') || 'null');
+    practicedCount.value = progress?.answers ? Object.keys(progress.answers).length : 0;
+  } catch {
+    practicedCount.value = 0;
+  }
+
+  errorCount.value = await db.errorBook.count();
+  const latestExam = await db.examHistory.orderBy('date').last();
+  lastExamScore.value = latestExam?.score ?? null;
+});
+
+const startExam = async () => {
+  await initExam();
   router.push('/exam');
 };
 
@@ -18,15 +39,15 @@ const goToReview = () => {
       <h2>学习进度</h2>
       <div class="stats-grid">
         <div class="stat-item">
-          <span class="value">0</span>
+          <span class="value">{{ practicedCount }}</span>
           <span class="label">已练习题目</span>
         </div>
         <div class="stat-item">
-          <span class="value">0</span>
+          <span class="value">{{ errorCount }}</span>
           <span class="label">错题本</span>
         </div>
         <div class="stat-item">
-          <span class="value">--</span>
+          <span class="value">{{ lastExamScore === null ? '--' : `${lastExamScore}分` }}</span>
           <span class="label">上次模拟考</span>
         </div>
       </div>
@@ -44,8 +65,8 @@ const goToReview = () => {
       <button class="primary-btn" @click="startExam">
         <span class="icon">⏱️</span>
         <div class="btn-text">
-          <span class="title">全真模拟考</span>
-          <span class="subtitle">50分钟 · 95题</span>
+          <span class="title">外免切替知识确认模拟</span>
+          <span class="subtitle">30分钟 · 50道判断题 · 45题合格</span>
         </div>
       </button>
 

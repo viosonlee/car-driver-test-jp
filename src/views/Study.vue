@@ -1,18 +1,48 @@
 <script setup lang="ts">
-import { ref, computed } from 'vue';
+import { ref, computed, watch } from 'vue';
 import { useRouter } from 'vue-router';
 import allQuestions from '../assets/data/all_questions.json';
 import { type Question } from '../db';
 
 const router = useRouter();
-// Shuffle all questions for study mode so it's fresh
-const questions = [...allQuestions].sort(() => 0.5 - Math.random()) as Question[];
-const currentIndex = ref(0);
+const STORAGE_KEY = 'study-progress-v1';
+const questionMap = new Map((allQuestions as Question[]).map(question => [question.id, question]));
+const savedProgress = (() => {
+  try {
+    return JSON.parse(localStorage.getItem(STORAGE_KEY) || 'null');
+  } catch {
+    return null;
+  }
+})();
+const savedQuestions = Array.isArray(savedProgress?.questionIds)
+  ? savedProgress.questionIds.map((id: string) => questionMap.get(id)).filter(Boolean) as Question[]
+  : [];
+const questions = savedQuestions.length === allQuestions.length
+  ? savedQuestions
+  : [...allQuestions].sort(() => 0.5 - Math.random()) as Question[];
+const currentIndex = ref(Math.min(Math.max(savedProgress?.currentIndex || 0, 0), questions.length - 1));
 const currentQ = computed(() => questions[currentIndex.value]);
 
 // User's answer state for current question
-const currentAns = ref<any>(null);
-const hasAnswered = ref(false);
+const answers = ref<Record<string, any>>(savedProgress?.answers || {});
+const currentAns = computed({
+  get: () => answers.value[currentQ.value.id] ?? null,
+  set: value => { answers.value[currentQ.value.id] = value; }
+});
+const hasAnswered = computed(() => {
+  const answer = currentAns.value;
+  return currentQ.value.sub_questions?.length
+    ? Array.isArray(answer) && answer.every(value => value !== null)
+    : typeof answer === 'boolean';
+});
+
+watch([currentIndex, answers], () => {
+  localStorage.setItem(STORAGE_KEY, JSON.stringify({
+    questionIds: questions.map(question => question.id),
+    currentIndex: currentIndex.value,
+    answers: answers.value
+  }));
+}, { deep: true, immediate: true });
 
 const goHome = () => {
   router.push('/');
@@ -21,8 +51,6 @@ const goHome = () => {
 const nextQuestion = () => {
   if (currentIndex.value < questions.length - 1) {
     currentIndex.value++;
-    currentAns.value = null;
-    hasAnswered.value = false;
   } else {
     alert('已经是最后一题了！');
   }
@@ -31,27 +59,21 @@ const nextQuestion = () => {
 const prevQuestion = () => {
   if (currentIndex.value > 0) {
     currentIndex.value--;
-    currentAns.value = null;
-    hasAnswered.value = false;
   }
 };
 
 const handleAnswer = (val: boolean) => {
   if (hasAnswered.value) return; // Prevent changing answer in study mode
   currentAns.value = val;
-  hasAnswered.value = true;
 };
 
 const handleHazardAnswer = (index: number, val: boolean) => {
-  if (hasAnswered.value) return; // For hazard questions, wait until all are answered or just check immediately?
+  if (hasAnswered.value) return;
   if (!Array.isArray(currentAns.value)) {
-    currentAns.value = [null, null, null];
+    currentAns.value = Array(currentQ.value.sub_questions?.length || 0).fill(null);
   }
   currentAns.value[index] = val;
   
-  if (currentAns.value.every((v: any) => v !== null)) {
-    hasAnswered.value = true;
-  }
 };
 </script>
 
@@ -77,7 +99,7 @@ const handleHazardAnswer = (index: number, val: boolean) => {
       </div>
 
       <!-- True/False Options -->
-      <div class="options-container" v-if="currentQ.type === 'true_false'">
+      <div class="options-container" v-if="currentQ.type === 'true_false' || !currentQ.sub_questions?.length">
         <button 
           class="option-btn" 
           :class="{ 

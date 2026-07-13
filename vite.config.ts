@@ -8,12 +8,17 @@ export default defineConfig({
     vue(),
     VitePWA({
       registerType: 'prompt',
-      includeAssets: ['favicon.ico', 'apple-touch-icon.png', 'masked-icon.svg'],
+      includeAssets: ['favicon.svg', 'favicon-48x48.png', 'apple-touch-icon.png'],
       manifest: {
         name: '日本驾照笔试真题 (Offline)',
         short_name: 'JPDriverTest',
         description: '日本驾照笔试真题离线训练系统',
-        theme_color: '#ffffff',
+        lang: 'zh-CN',
+        theme_color: '#182848',
+        background_color: '#f5f7fa',
+        display: 'standalone',
+        start_url: './',
+        scope: './',
         icons: [
           {
             src: 'pwa-192x192.png',
@@ -24,6 +29,12 @@ export default defineConfig({
             src: 'pwa-512x512.png',
             sizes: '512x512',
             type: 'image/png'
+          },
+          {
+            src: 'pwa-maskable-512x512.png',
+            sizes: '512x512',
+            type: 'image/png',
+            purpose: 'maskable'
           }
         ]
       },

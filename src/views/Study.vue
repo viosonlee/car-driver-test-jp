@@ -3,6 +3,7 @@ import { ref, computed, watch } from 'vue';
 import { useRouter } from 'vue-router';
 import allQuestions from '../assets/data/all_questions.json';
 import { type Question } from '../db';
+import { recordQuestionResult } from '../stores/errorBook';
 
 const router = useRouter();
 const STORAGE_KEY = 'study-progress-v1';
@@ -62,18 +63,22 @@ const prevQuestion = () => {
   }
 };
 
-const handleAnswer = (val: boolean) => {
+const handleAnswer = async (val: boolean) => {
   if (hasAnswered.value) return; // Prevent changing answer in study mode
   currentAns.value = val;
+  await recordQuestionResult(currentQ.value.id, val === currentQ.value.answer);
 };
 
-const handleHazardAnswer = (index: number, val: boolean) => {
+const handleHazardAnswer = async (index: number, val: boolean) => {
   if (hasAnswered.value) return;
   if (!Array.isArray(currentAns.value)) {
     currentAns.value = Array(currentQ.value.sub_questions?.length || 0).fill(null);
   }
   currentAns.value[index] = val;
-  
+  if (currentAns.value.every((answer: boolean | null) => answer !== null)) {
+    const correct = currentQ.value.sub_questions?.every((subQuestion, subIndex) => subQuestion.answer === currentAns.value[subIndex]) ?? false;
+    await recordQuestionResult(currentQ.value.id, correct);
+  }
 };
 </script>
 

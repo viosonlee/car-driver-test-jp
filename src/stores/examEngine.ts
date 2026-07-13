@@ -1,6 +1,7 @@
 import { ref, reactive } from 'vue';
 import { db, type ExamHistory, type Question } from '../db';
 import allQuestions from '../assets/data/all_questions.json';
+import { recordQuestionResult } from './errorBook';
 
 // Simple store using Vue Reactivity
 export const examState = reactive({
@@ -81,9 +82,14 @@ export const useExamEngine = () => {
     };
 
     try {
-      await db.examHistory.add(history);
+      await db.transaction('rw', db.examHistory, db.errorBook, async () => {
+        await db.examHistory.add(history);
+        for (const detail of history.details) {
+          await recordQuestionResult(detail.questionId, detail.correct);
+        }
+      });
     } catch (error) {
-      console.error('Failed to save exam history', error);
+      console.error('Failed to save exam result', error);
     }
   };
 

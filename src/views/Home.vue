@@ -33,6 +33,14 @@ const goToReview = () => {
     </div>
 
     <div class="action-buttons">
+      <button class="study-btn" @click="router.push('/study')">
+        <span class="icon">📖</span>
+        <div class="btn-text">
+          <span class="title">自由练习 (学习模式)</span>
+          <span class="subtitle">无倒计时，答题后即时查看权威解析</span>
+        </div>
+      </button>
+
       <button class="primary-btn" @click="startExam">
         <span class="icon">⏱️</span>
         <div class="btn-text">
@@ -143,6 +151,12 @@ button:active {
   background: linear-gradient(135deg, #FF6B6B 0%, #EE5D5D 100%);
   color: white;
   box-shadow: 0 4px 15px rgba(255, 107, 107, 0.3);
+}
+
+.study-btn {
+  background: linear-gradient(135deg, #42b883 0%, #35495e 100%);
+  color: white;
+  box-shadow: 0 4px 15px rgba(66, 184, 131, 0.3);
 }
 
 .secondary-btn {

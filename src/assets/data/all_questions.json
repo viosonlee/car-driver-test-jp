@@ -1,5 +1,213 @@
 [
   {
+    "id": "q_sign_img_1784251082935",
+    "type": "true_false",
+    "question": "这个标志表示车辆必须在停止线前（没有停止线则在路口前）暂时停车。",
+    "question_jp": "この標識は、車両が停止線の直前（停止線がない場合は交差点の直前）で一時停止しなければならないことを示している。",
+    "answer": true,
+    "explanation": "红色的倒三角且写着「止まれ」是“一时停止”标志。车辆必须完全停止，确认安全后方可通行。",
+    "image_url": "/signs/stop.svg",
+    "tags": [
+      "traffic_signs",
+      "image_recognition"
+    ]
+  },
+  {
+    "id": "q_sign_img_1784251082936",
+    "type": "true_false",
+    "question": "这个标志表示前方有危险，车辆需要减速慢行，但不需要完全停车。",
+    "question_jp": "この標識は、前方に危険があるため徐行しなければならないが、完全に停止する必要はないことを示している。",
+    "answer": false,
+    "explanation": "红色的倒三角且写着「止まれ」是“一时停止”标志。车辆必须完全停止，确认安全后方可通行。",
+    "image_url": "/signs/stop.svg",
+    "tags": [
+      "traffic_signs",
+      "image_recognition"
+    ]
+  },
+  {
+    "id": "q_sign_img_1784251082937",
+    "type": "true_false",
+    "question": "这个标志表示车辆（包含自行车）禁止从该方向驶入。",
+    "question_jp": "この標識は、車両（自転車を含む）がこの方向から進入してはならないことを示している。",
+    "answer": true,
+    "explanation": "红底白横杠是“进入禁止”标志，通常设置在单行道的出口处，所有车辆（除非有辅助标志特许）均不得驶入。",
+    "image_url": "/signs/no_entry.svg",
+    "tags": [
+      "traffic_signs",
+      "image_recognition"
+    ]
+  },
+  {
+    "id": "q_sign_img_1784251082938",
+    "type": "true_false",
+    "question": "这个标志表示仅禁止汽车驶入，自行车可以正常驶入。",
+    "question_jp": "この標識は、自動車の進入のみを禁止しており、自転車は通常通り進入できることを示している。",
+    "answer": false,
+    "explanation": "红底白横杠是“进入禁止”标志，通常设置在单行道的出口处，所有车辆（除非有辅助标志特许）均不得驶入。",
+    "image_url": "/signs/no_entry.svg",
+    "tags": [
+      "traffic_signs",
+      "image_recognition"
+    ]
+  },
+  {
+    "id": "q_sign_img_1784251082939",
+    "type": "true_false",
+    "question": "这个标志表示该道路为单行道，车辆只能按照箭头指示的方向行驶。",
+    "question_jp": "この標識は、この道路が一方通行であり、車両は矢印の方向にしか進行できないことを示している。",
+    "answer": true,
+    "explanation": "蓝底白箭头是“一方通行”（单行道）标志。注意不要与“指定方向外进行禁止”（仅允许直行）的圆形蓝底箭头标志混淆。",
+    "image_url": "/signs/one_way.svg",
+    "tags": [
+      "traffic_signs",
+      "image_recognition"
+    ]
+  },
+  {
+    "id": "q_sign_img_1784251082940",
+    "type": "true_false",
+    "question": "这个标志表示前方只能直行，禁止左转或右转。",
+    "question_jp": "この標識は、前方は直進のみ可能であり、左折や右折が禁止されていることを示している。",
+    "answer": false,
+    "explanation": "蓝底白箭头是“一方通行”（单行道）标志。注意不要与“指定方向外进行禁止”（仅允许直行）的圆形蓝底箭头标志混淆。",
+    "image_url": "/signs/one_way.svg",
+    "tags": [
+      "traffic_signs",
+      "image_recognition"
+    ]
+  },
+  {
+    "id": "q_sign_img_1784251082941",
+    "type": "true_false",
+    "question": "这个标志表示该路段的最高速度限制为 50km/h。",
+    "question_jp": "この標識は、この区間の最高速度が 50km/h であることを示している。",
+    "answer": true,
+    "explanation": "红圈内带数字表示“最高速度”限制。如果是最低速度限制，数字下方会有一条横线。",
+    "image_url": "/signs/speed_limit_50.svg",
+    "tags": [
+      "traffic_signs",
+      "image_recognition"
+    ]
+  },
+  {
+    "id": "q_sign_img_1784251082942",
+    "type": "true_false",
+    "question": "这个标志表示该路段的最低速度限制为 50km/h。",
+    "question_jp": "この標識は、この区間の最低速度が 50km/h であることを示している。",
+    "answer": false,
+    "explanation": "红圈内带数字表示“最高速度”限制。如果是最低速度限制，数字下方会有一条横线。",
+    "image_url": "/signs/speed_limit_50.svg",
+    "tags": [
+      "traffic_signs",
+      "image_recognition"
+    ]
+  },
+  {
+    "id": "q_sign_img_1784251082943",
+    "type": "true_false",
+    "question": "这个标志表示禁止停车，但允许上下客或装卸货物等短时间的驻车。",
+    "question_jp": "この標識は、駐車を禁止しているが、人の乗降や荷物の積み下ろしなどの短時間の停車は認められている。",
+    "answer": true,
+    "explanation": "蓝底红圈加一条斜杠是“禁止停车”（駐車禁止），允许短时间驻车（停車）。如果是红圈加红叉（两条斜杠），才是“驻停车禁止”。",
+    "image_url": "/signs/no_parking.svg",
+    "tags": [
+      "traffic_signs",
+      "image_recognition"
+    ]
+  },
+  {
+    "id": "q_sign_img_1784251082944",
+    "type": "true_false",
+    "question": "这个标志表示绝对禁止任何形式的停车和驻车。",
+    "question_jp": "この標識は、いかなる形の駐車および停車も絶対に禁止している。",
+    "answer": false,
+    "explanation": "蓝底红圈加一条斜杠是“禁止停车”（駐車禁止），允许短时间驻车（停車）。如果是红圈加红叉（两条斜杠），才是“驻停车禁止”。",
+    "image_url": "/signs/no_parking.svg",
+    "tags": [
+      "traffic_signs",
+      "image_recognition"
+    ]
+  },
+  {
+    "id": "q_sign_img_1784251082945",
+    "type": "true_false",
+    "question": "这个标志表示该地点禁止停车和驻车（驻停车禁止）。",
+    "question_jp": "この標識は、この場所での駐車および停車を禁止している（駐停車禁止）。",
+    "answer": true,
+    "explanation": "蓝底红圈加红叉表示“驻停车禁止”（いかなる停車・駐車も禁止）。",
+    "image_url": "/signs/no_stopping.svg",
+    "tags": [
+      "traffic_signs",
+      "image_recognition"
+    ]
+  },
+  {
+    "id": "q_sign_img_1784251082946",
+    "type": "true_false",
+    "question": "这个标志表示禁止车辆通行。",
+    "question_jp": "この標識は、車両の通行を禁止している。",
+    "answer": false,
+    "explanation": "蓝底红圈加红叉表示“驻停车禁止”（いかなる停車・駐車も禁止）。",
+    "image_url": "/signs/no_stopping.svg",
+    "tags": [
+      "traffic_signs",
+      "image_recognition"
+    ]
+  },
+  {
+    "id": "q_sign_img_1784251082947",
+    "type": "true_false",
+    "question": "这个标志表示前方有人行横道，驾驶员应减速注意行人。",
+    "question_jp": "この標識は、前方に横断歩道があることを示しており、運転者は減速して歩行者に注意しなければならない。",
+    "answer": true,
+    "explanation": "蓝底白三角形内有行人，是“人行横道”的指示标志。",
+    "image_url": "/signs/pedestrian_crossing.svg",
+    "tags": [
+      "traffic_signs",
+      "image_recognition"
+    ]
+  },
+  {
+    "id": "q_sign_img_1784251082948",
+    "type": "true_false",
+    "question": "这个标志表示仅允许行人通行，禁止车辆驶入。",
+    "question_jp": "この標識は、歩行者の通行のみを許可し、車両の進入を禁止している。",
+    "answer": false,
+    "explanation": "蓝底白三角形内有行人，是“人行横道”的指示标志。",
+    "image_url": "/signs/pedestrian_crossing.svg",
+    "tags": [
+      "traffic_signs",
+      "image_recognition"
+    ]
+  },
+  {
+    "id": "q_sign_img_1784251082949",
+    "type": "true_false",
+    "question": "这个标志表示前方有自行车横道。",
+    "question_jp": "この標識は、前方に自転車横断帯があることを示している。",
+    "answer": true,
+    "explanation": "蓝底白三角形内有自行车，是“自行车横道”的指示标志。",
+    "image_url": "/signs/bicycle_crossing.svg",
+    "tags": [
+      "traffic_signs",
+      "image_recognition"
+    ]
+  },
+  {
+    "id": "q_sign_img_1784251082950",
+    "type": "true_false",
+    "question": "这个标志表示该道路为自行车专用道。",
+    "question_jp": "この標識は、この道路が自転車専用道路であることを示している。",
+    "answer": false,
+    "explanation": "蓝底白三角形内有自行车，是“自行车横道”的指示标志。",
+    "image_url": "/signs/bicycle_crossing.svg",
+    "tags": [
+      "traffic_signs",
+      "image_recognition"
+    ]
+  },
+  {
     "id": "q_0000",
     "type": "true_false",
     "question": "上车前，为了安全起见，不仅要确认汽车前后有没有人，还要特别确认汽车下面有没有小孩。",

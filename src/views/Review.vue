@@ -52,6 +52,10 @@ const next = async () => {
 
     <div v-if="currentItem" class="question-card">
       <div class="progress">{{ currentIndex + 1 }} / {{ reviewItems.length }} · 连续答对2次后移出</div>
+      <!-- Question Image -->
+      <div v-if="currentItem.question.image_url" class="question-image">
+        <img :src="currentItem.question.image_url" alt="Question Image" />
+      </div>
       <p class="question">{{ currentItem.question.question }}</p>
       <div class="options">
         <button :class="{ selected: selectedAnswer === true, correct: answered && currentItem.question.answer === true, wrong: answered && selectedAnswer === true && !answerCorrect }" :disabled="answered" @click="answer(true)">⭕ 正确</button>
@@ -78,6 +82,8 @@ const next = async () => {
 .back-btn { border: 0; background: transparent; color: #4b6cb7; cursor: pointer; }
 .count, .progress { color: #777; font-size: .9rem; }
 .question-card { background: white; padding: 1.5rem; border-radius: 12px; box-shadow: 0 4px 6px rgba(0,0,0,.05); }
+.question-image { margin: 1rem 0; }
+.question-image img { width: 100%; max-height: 200px; object-fit: cover; border-radius: 8px; }
 .question { margin: 1.5rem 0; font-size: 1.15rem; line-height: 1.6; }
 .options { display: flex; gap: 1rem; }
 .options button { flex: 1; padding: 1rem; border: 2px solid #e5e7eb; border-radius: 8px; background: white; font-size: 1rem; }

@@ -63,10 +63,10 @@ const handleHazardAnswer = (index: number, val: boolean) => {
     <div class="question-card">
       <div class="q-type-badge">{{ currentQ.type === 'hazard_prediction' ? '危险预测题 (2分)' : '单选题 (1分)' }}</div>
       
-      <!-- Hazard Prediction Image -->
-      <div v-if="currentQ.type === 'hazard_prediction' && currentQ.image_url" class="hazard-image">
-        <img :src="currentQ.image_url" alt="Hazard Scenario" />
-        <p class="scenario-text">{{ currentQ.scenario }}</p>
+      <!-- Question Image -->
+      <div v-if="currentQ.image_url" class="question-image">
+        <img :src="currentQ.image_url" alt="Question Image" />
+        <p v-if="currentQ.scenario" class="scenario-text">{{ currentQ.scenario }}</p>
       </div>
 
       <div class="q-text">
@@ -207,11 +207,11 @@ const handleHazardAnswer = (index: number, val: boolean) => {
   margin-bottom: 1.5rem;
 }
 
-.hazard-image {
+.question-image {
   margin-bottom: 1rem;
 }
 
-.hazard-image img {
+.question-image img {
   width: 100%;
   border-radius: 8px;
   max-height: 200px;

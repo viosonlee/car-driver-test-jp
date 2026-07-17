@@ -92,10 +92,10 @@ const handleHazardAnswer = async (index: number, val: boolean) => {
     <div class="question-card">
       <div class="q-type-badge">{{ currentQ.type === 'hazard_prediction' ? '危险预测题' : '单选题' }}</div>
       
-      <!-- Hazard Prediction Image -->
-      <div v-if="currentQ.type === 'hazard_prediction' && currentQ.image_url" class="hazard-image">
-        <img :src="currentQ.image_url" alt="Hazard Scenario" />
-        <p class="scenario-text">{{ currentQ.scenario }}</p>
+      <!-- Question Image -->
+      <div v-if="currentQ.image_url" class="question-image">
+        <img :src="currentQ.image_url" alt="Question Image" />
+        <p v-if="currentQ.scenario" class="scenario-text">{{ currentQ.scenario }}</p>
       </div>
 
       <div class="q-text">
@@ -325,7 +325,7 @@ const handleHazardAnswer = async (index: number, val: boolean) => {
   to { opacity: 1; transform: translateY(0); }
 }
 
-.hazard-image img {
+.question-image img {
   width: 100%;
   border-radius: 8px;
   max-height: 200px;

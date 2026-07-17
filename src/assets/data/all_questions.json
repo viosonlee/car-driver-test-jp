@@ -1,209 +1,1249 @@
 [
   {
-    "id": "q_sign_img_1784251082935",
+    "id": "q_sign_img_auto_stop_t",
     "type": "true_false",
     "question": "这个标志表示车辆必须在停止线前（没有停止线则在路口前）暂时停车。",
     "question_jp": "この標識は、車両が停止線の直前（停止線がない場合は交差点の直前）で一時停止しなければならないことを示している。",
     "answer": true,
     "explanation": "红色的倒三角且写着「止まれ」是“一时停止”标志。车辆必须完全停止，确认安全后方可通行。",
-    "image_url": "/signs/stop.svg",
+    "image_url": "/signs/stop.png",
     "tags": [
-      "traffic_signs",
+      "regulatory_signs",
       "image_recognition"
     ]
   },
   {
-    "id": "q_sign_img_1784251082936",
+    "id": "q_sign_img_auto_stop_f",
     "type": "true_false",
     "question": "这个标志表示前方有危险，车辆需要减速慢行，但不需要完全停车。",
     "question_jp": "この標識は、前方に危険があるため徐行しなければならないが、完全に停止する必要はないことを示している。",
     "answer": false,
     "explanation": "红色的倒三角且写着「止まれ」是“一时停止”标志。车辆必须完全停止，确认安全后方可通行。",
-    "image_url": "/signs/stop.svg",
+    "image_url": "/signs/stop.png",
     "tags": [
-      "traffic_signs",
+      "regulatory_signs",
       "image_recognition"
     ]
   },
   {
-    "id": "q_sign_img_1784251082937",
+    "id": "q_sign_img_auto_no_entry_t",
     "type": "true_false",
     "question": "这个标志表示车辆（包含自行车）禁止从该方向驶入。",
-    "question_jp": "この標識は、車両（自転車を含む）がこの方向から進入してはならないことを示している。",
+    "question_jp": "この標識は、車両（自転車を含む）がこの方向から进入してはならないことを示している。",
     "answer": true,
     "explanation": "红底白横杠是“进入禁止”标志，通常设置在单行道的出口处，所有车辆（除非有辅助标志特许）均不得驶入。",
-    "image_url": "/signs/no_entry.svg",
+    "image_url": "/signs/no_entry.png",
     "tags": [
-      "traffic_signs",
+      "regulatory_signs",
       "image_recognition"
     ]
   },
   {
-    "id": "q_sign_img_1784251082938",
+    "id": "q_sign_img_auto_no_entry_f",
     "type": "true_false",
     "question": "这个标志表示仅禁止汽车驶入，自行车可以正常驶入。",
     "question_jp": "この標識は、自動車の進入のみを禁止しており、自転車は通常通り進入できることを示している。",
     "answer": false,
     "explanation": "红底白横杠是“进入禁止”标志，通常设置在单行道的出口处，所有车辆（除非有辅助标志特许）均不得驶入。",
-    "image_url": "/signs/no_entry.svg",
+    "image_url": "/signs/no_entry.png",
     "tags": [
-      "traffic_signs",
+      "regulatory_signs",
       "image_recognition"
     ]
   },
   {
-    "id": "q_sign_img_1784251082939",
+    "id": "q_sign_img_auto_one_way_t",
     "type": "true_false",
     "question": "这个标志表示该道路为单行道，车辆只能按照箭头指示的方向行驶。",
     "question_jp": "この標識は、この道路が一方通行であり、車両は矢印の方向にしか進行できないことを示している。",
     "answer": true,
-    "explanation": "蓝底白箭头是“一方通行”（单行道）标志。注意不要与“指定方向外进行禁止”（仅允许直行）的圆形蓝底箭头标志混淆。",
-    "image_url": "/signs/one_way.svg",
+    "explanation": "蓝底白箭头是“一方通行”（单行道）标志。注意不要与“指定方向外进行禁止”（圆形蓝底箭头）混淆。",
+    "image_url": "/signs/one_way.png",
     "tags": [
-      "traffic_signs",
+      "regulatory_signs",
       "image_recognition"
     ]
   },
   {
-    "id": "q_sign_img_1784251082940",
+    "id": "q_sign_img_auto_one_way_f",
     "type": "true_false",
     "question": "这个标志表示前方只能直行，禁止左转或右转。",
     "question_jp": "この標識は、前方は直進のみ可能であり、左折や右折が禁止されていることを示している。",
     "answer": false,
-    "explanation": "蓝底白箭头是“一方通行”（单行道）标志。注意不要与“指定方向外进行禁止”（仅允许直行）的圆形蓝底箭头标志混淆。",
-    "image_url": "/signs/one_way.svg",
+    "explanation": "蓝底白箭头是“一方通行”（单行道）标志。注意不要与“指定方向外进行禁止”（圆形蓝底箭头）混淆。",
+    "image_url": "/signs/one_way.png",
     "tags": [
-      "traffic_signs",
+      "regulatory_signs",
       "image_recognition"
     ]
   },
   {
-    "id": "q_sign_img_1784251082941",
+    "id": "q_sign_img_auto_one_way_up_t",
     "type": "true_false",
-    "question": "这个标志表示该路段的最高速度限制为 50km/h。",
-    "question_jp": "この標識は、この区間の最高速度が 50km/h であることを示している。",
+    "question": "这个标志表示该道路为单行道，车辆只能按照箭头指示的方向（向前）行驶。",
+    "question_jp": "この標識は、この道路が一方通行であり、車両は矢印の方向（前方向）にしか進行できないことを示している。",
+    "answer": true,
+    "explanation": "蓝底向上白箭头表示“一方通行”（单行道，前方向）。",
+    "image_url": "/signs/one_way_up.png",
+    "tags": [
+      "regulatory_signs",
+      "image_recognition"
+    ]
+  },
+  {
+    "id": "q_sign_img_auto_one_way_up_f",
+    "type": "true_false",
+    "question": "这个标志表示在此路段必须直行，不能进入侧道。",
+    "question_jp": "この標識は、この区間では直進しなければならず、侧道に入ってはならないことを示している。",
+    "answer": false,
+    "explanation": "蓝底向上白箭头表示“一方通行”（单行道，前方向）。",
+    "image_url": "/signs/one_way_up.png",
+    "tags": [
+      "regulatory_signs",
+      "image_recognition"
+    ]
+  },
+  {
+    "id": "q_sign_img_auto_speed_limit_30_t",
+    "type": "true_false",
+    "question": "这个标志表示在该路段行驶时的最高速度限制为 30km/h。",
+    "question_jp": "この標識は、この区間を走行する際の最高速度が 30km/h であることを示している。",
     "answer": true,
     "explanation": "红圈内带数字表示“最高速度”限制。如果是最低速度限制，数字下方会有一条横线。",
-    "image_url": "/signs/speed_limit_50.svg",
+    "image_url": "/signs/speed_limit_30.png",
     "tags": [
-      "traffic_signs",
+      "regulatory_signs",
       "image_recognition"
     ]
   },
   {
-    "id": "q_sign_img_1784251082942",
+    "id": "q_sign_img_auto_speed_limit_30_f",
     "type": "true_false",
-    "question": "这个标志表示该路段的最低速度限制为 50km/h。",
-    "question_jp": "この標識は、この区間の最低速度が 50km/h であることを示している。",
+    "question": "这个标志表示在该路段行驶时的最低速度限制为 30km/h。",
+    "question_jp": "この標識は、この区間を走行する際の最低速度が 30km/h であることを示している。",
     "answer": false,
     "explanation": "红圈内带数字表示“最高速度”限制。如果是最低速度限制，数字下方会有一条横线。",
-    "image_url": "/signs/speed_limit_50.svg",
+    "image_url": "/signs/speed_limit_30.png",
     "tags": [
-      "traffic_signs",
+      "regulatory_signs",
       "image_recognition"
     ]
   },
   {
-    "id": "q_sign_img_1784251082943",
+    "id": "q_sign_img_auto_speed_limit_40_t",
     "type": "true_false",
-    "question": "这个标志表示禁止停车，但允许上下客或装卸货物等短时间的驻车。",
-    "question_jp": "この標識は、駐車を禁止しているが、人の乗降や荷物の積み下ろしなどの短時間の停車は認められている。",
+    "question": "这个标志表示在该路段行驶时的最高速度限制为 40km/h。",
+    "question_jp": "この標識は、この区間を走行する際の最高速度が 40km/h であることを示している。",
     "answer": true,
-    "explanation": "蓝底红圈加一条斜杠是“禁止停车”（駐車禁止），允许短时间驻车（停車）。如果是红圈加红叉（两条斜杠），才是“驻停车禁止”。",
-    "image_url": "/signs/no_parking.svg",
+    "explanation": "红圈内带数字表示最高限制速度，属于法律强制规定，非建议速度。",
+    "image_url": "/signs/speed_limit_40.png",
     "tags": [
-      "traffic_signs",
+      "regulatory_signs",
       "image_recognition"
     ]
   },
   {
-    "id": "q_sign_img_1784251082944",
+    "id": "q_sign_img_auto_speed_limit_40_f",
+    "type": "true_false",
+    "question": "这个标志表示该路段的建议行驶速度为 40km/h。",
+    "question_jp": "この標識は、この区間の推奨走行速度が 40km/h であることを示している。",
+    "answer": false,
+    "explanation": "红圈内带数字表示最高限制速度，属于法律强制规定，非建议速度。",
+    "image_url": "/signs/speed_limit_40.png",
+    "tags": [
+      "regulatory_signs",
+      "image_recognition"
+    ]
+  },
+  {
+    "id": "q_sign_img_auto_speed_limit_50_t",
+    "type": "true_false",
+    "question": "这个标志表示在该路段行驶时的最高速度限制为 50km/h。",
+    "question_jp": "この標識は、この区間を走行する際の最高速度が 50km/h であることを示している。",
+    "answer": true,
+    "explanation": "红圈内带数字表示最高限制速度为 50km/h。",
+    "image_url": "/signs/speed_limit_50.png",
+    "tags": [
+      "regulatory_signs",
+      "image_recognition"
+    ]
+  },
+  {
+    "id": "q_sign_img_auto_speed_limit_50_f",
+    "type": "true_false",
+    "question": "这个标志表示该路段的最低限速为 50km/h。",
+    "question_jp": "この標識は、この区間の最低限速が 50km/h であることを示している。",
+    "answer": false,
+    "explanation": "红圈内带数字表示最高限制速度为 50km/h。",
+    "image_url": "/signs/speed_limit_50.png",
+    "tags": [
+      "regulatory_signs",
+      "image_recognition"
+    ]
+  },
+  {
+    "id": "q_sign_img_auto_speed_limit_60_t",
+    "type": "true_false",
+    "question": "这个标志表示在该路段行驶时的最高速度限制为 60km/h。",
+    "question_jp": "この標識は、この区間を走行する際の最高速度が 60km/h であることを示している。",
+    "answer": true,
+    "explanation": "红圈内带数字 60 表示最高速度限制为 60km/h。",
+    "image_url": "/signs/speed_limit_60.png",
+    "tags": [
+      "regulatory_signs",
+      "image_recognition"
+    ]
+  },
+  {
+    "id": "q_sign_img_auto_speed_limit_60_f",
+    "type": "true_false",
+    "question": "这个标志表示该路段只允许速度为 60km/h 的车辆通行。",
+    "question_jp": "この標識は、速度が 60km/h の車両のみ通行可能であることを示している。",
+    "answer": false,
+    "explanation": "红圈内带数字 60 表示最高速度限制为 60km/h。",
+    "image_url": "/signs/speed_limit_60.png",
+    "tags": [
+      "regulatory_signs",
+      "image_recognition"
+    ]
+  },
+  {
+    "id": "q_sign_img_auto_no_parking_t",
+    "type": "true_false",
+    "question": "这个标志表示禁止停车，但允许上下客或装卸货物等短时间的驻车（停车）。",
+    "question_jp": "この標識は、駐車を禁止しているが、人の乗降や荷物の積み下ろしなどの短時間の停車は認められていることを示している。",
+    "answer": true,
+    "explanation": "蓝底红圈加一条斜杠是“禁止停车”（駐車禁止），只禁止长时间停车（驻车），允许短时间的临时停车（如乘降、5分钟内装卸）。",
+    "image_url": "/signs/no_parking.png",
+    "tags": [
+      "regulatory_signs",
+      "image_recognition"
+    ]
+  },
+  {
+    "id": "q_sign_img_auto_no_parking_f",
     "type": "true_false",
     "question": "这个标志表示绝对禁止任何形式的停车和驻车。",
     "question_jp": "この標識は、いかなる形の駐車および停車も絶対に禁止している。",
     "answer": false,
-    "explanation": "蓝底红圈加一条斜杠是“禁止停车”（駐車禁止），允许短时间驻车（停車）。如果是红圈加红叉（两条斜杠），才是“驻停车禁止”。",
-    "image_url": "/signs/no_parking.svg",
+    "explanation": "蓝底红圈加一条斜杠是“禁止停车”（駐車禁止），只禁止长时间停车（驻车），允许短时间的临时停车（如乘降、5分钟内装卸）。",
+    "image_url": "/signs/no_parking.png",
     "tags": [
-      "traffic_signs",
+      "regulatory_signs",
       "image_recognition"
     ]
   },
   {
-    "id": "q_sign_img_1784251082945",
+    "id": "q_sign_img_auto_no_stopping_t",
     "type": "true_false",
-    "question": "这个标志表示该地点禁止停车和驻车（驻停车禁止）。",
+    "question": "这个标志表示该地点禁止任何形式的临时停车 and 驻车（驻停车禁止）。",
     "question_jp": "この標識は、この場所での駐車および停車を禁止している（駐停車禁止）。",
     "answer": true,
-    "explanation": "蓝底红圈加红叉表示“驻停车禁止”（いかなる停車・駐車も禁止）。",
-    "image_url": "/signs/no_stopping.svg",
+    "explanation": "蓝底红圈红叉表示“驻停车禁止”。在该标志区域内，任何形式的停车和临时停车都是不允许的。",
+    "image_url": "/signs/no_stopping.png",
     "tags": [
-      "traffic_signs",
+      "regulatory_signs",
       "image_recognition"
     ]
   },
   {
-    "id": "q_sign_img_1784251082946",
+    "id": "q_sign_img_auto_no_stopping_f",
     "type": "true_false",
-    "question": "这个标志表示禁止车辆通行。",
-    "question_jp": "この標識は、車両の通行を禁止している。",
+    "question": "这个标志表示禁止大型车辆在此处停车，小型车可以。",
+    "question_jp": "この標識は、大型車両の停車を禁止しており、小型車両は駐車可能であることを示している。",
     "answer": false,
-    "explanation": "蓝底红圈加红叉表示“驻停车禁止”（いかなる停車・駐車も禁止）。",
-    "image_url": "/signs/no_stopping.svg",
+    "explanation": "蓝底红圈红叉表示“驻停车禁止”。在该标志区域内，任何形式的停车和临时停车都是不允许的。",
+    "image_url": "/signs/no_stopping.png",
     "tags": [
-      "traffic_signs",
+      "regulatory_signs",
       "image_recognition"
     ]
   },
   {
-    "id": "q_sign_img_1784251082947",
+    "id": "q_sign_img_auto_road_closed_t",
     "type": "true_false",
-    "question": "这个标志表示前方有人行横道，驾驶员应减速注意行人。",
-    "question_jp": "この標識は、前方に横断歩道があることを示しており、運転者は減速して歩行者に注意しなければならない。",
+    "question": "这个标志表示所有车辆、行人和电车均禁止通行。",
+    "question_jp": "この標識は、すべての車両、歩行者、路面電車の通行が禁止されていることを示している。",
     "answer": true,
-    "explanation": "蓝底白三角形内有行人，是“人行横道”的指示标志。",
-    "image_url": "/signs/pedestrian_crossing.svg",
+    "explanation": "红底白叉是“通行禁止”标志，是对所有交通参与者（包含行人、车辆、电车）的完全禁止通行。",
+    "image_url": "/signs/road_closed.png",
     "tags": [
-      "traffic_signs",
+      "regulatory_signs",
       "image_recognition"
     ]
   },
   {
-    "id": "q_sign_img_1784251082948",
+    "id": "q_sign_img_auto_road_closed_f",
     "type": "true_false",
-    "question": "这个标志表示仅允许行人通行，禁止车辆驶入。",
-    "question_jp": "この標識は、歩行者の通行のみを許可し、車両の進入を禁止している。",
+    "question": "这个标志表示仅禁止机动车通行，自行车和行人可以通行。",
+    "question_jp": "この標識は、自動車の通行のみを禁止しており、自転車や歩行者は通行できることを示している。",
     "answer": false,
-    "explanation": "蓝底白三角形内有行人，是“人行横道”的指示标志。",
-    "image_url": "/signs/pedestrian_crossing.svg",
+    "explanation": "红底白叉是“通行禁止”标志，是对所有交通参与者（包含行人、车辆、电车）的完全禁止通行。",
+    "image_url": "/signs/road_closed.png",
     "tags": [
-      "traffic_signs",
+      "regulatory_signs",
       "image_recognition"
     ]
   },
   {
-    "id": "q_sign_img_1784251082949",
+    "id": "q_sign_img_auto_no_u_turn_t",
     "type": "true_false",
-    "question": "这个标志表示前方有自行车横道。",
-    "question_jp": "この標識は、前方に自転車横断帯があることを示している。",
+    "question": "这个标志表示禁止在此路段掉头（转弯）。",
+    "question_jp": "この標識は、この区間で転回（Uターン）することが禁止されていることを示している。",
     "answer": true,
-    "explanation": "蓝底白三角形内有自行车，是“自行车横道”的指示标志。",
-    "image_url": "/signs/bicycle_crossing.svg",
+    "explanation": "红圈内带左转弯打叉的箭头是“掉头禁止”标志，禁止转弯调头。",
+    "image_url": "/signs/no_u_turn.png",
     "tags": [
-      "traffic_signs",
+      "regulatory_signs",
       "image_recognition"
     ]
   },
   {
-    "id": "q_sign_img_1784251082950",
+    "id": "q_sign_img_auto_no_u_turn_f",
+    "type": "true_false",
+    "question": "这个标志表示禁止在此路段倒车。",
+    "question_jp": "この標識は、この区間で後退（バック）することが禁止されていることを示している。",
+    "answer": false,
+    "explanation": "红圈内带左转弯打叉的箭头是“掉头禁止”标志，禁止转弯调头。",
+    "image_url": "/signs/no_u_turn.png",
+    "tags": [
+      "regulatory_signs",
+      "image_recognition"
+    ]
+  },
+  {
+    "id": "q_sign_img_auto_no_overtaking_right_t",
+    "type": "true_false",
+    "question": "这个标志表示禁止越过道路右侧部分进行超车。如果无需越线至右侧，是可以超车的。",
+    "question_jp": "この標識は、道路の右側部分にはみ出して追い越しをすることを禁止している。はみ出さなければ追い越しは可能である。",
+    "answer": true,
+    "explanation": "此标志表示“禁止从右侧越线超车”。若有“追越し禁止”辅助标志，才表示绝对禁止一切超车。",
+    "image_url": "/signs/no_overtaking_right.png",
+    "tags": [
+      "regulatory_signs",
+      "image_recognition"
+    ]
+  },
+  {
+    "id": "q_sign_img_auto_no_overtaking_right_f",
+    "type": "true_false",
+    "question": "这个标志表示无论何种情况，该路段绝对禁止任何超车行为。",
+    "question_jp": "この標識は、いかなる場合でも、この区間での追い越し行為を絶対に禁止している。",
+    "answer": false,
+    "explanation": "此标志表示“禁止从右侧越线超车”。若有“追越し禁止”辅助标志，才表示绝对禁止一切超车。",
+    "image_url": "/signs/no_overtaking_right.png",
+    "tags": [
+      "regulatory_signs",
+      "image_recognition"
+    ]
+  },
+  {
+    "id": "q_sign_img_auto_closed_to_vehicles_t",
+    "type": "true_false",
+    "question": "这个标志表示禁止所有车辆通行（行人可以通行）。",
+    "question_jp": "この標識は、すべての車両の通行が禁止されていることを示している（歩行者は通行可能）。",
+    "answer": true,
+    "explanation": "红圈内白底白斜杠是“车辆通行止”标志，禁止所有车辆（机动车、非机动车、轻型车辆等）通行，但行人不受限。",
+    "image_url": "/signs/closed_to_vehicles.png",
+    "tags": [
+      "regulatory_signs",
+      "image_recognition"
+    ]
+  },
+  {
+    "id": "q_sign_img_auto_closed_to_vehicles_f",
+    "type": "true_false",
+    "question": "这个标志表示禁止行人通行，车辆可以通行。",
+    "question_jp": "この標識は、歩行者の通行を禁止し、車両は通行できることを示している。",
+    "answer": false,
+    "explanation": "红圈内白底白斜杠是“车辆通行止”标志，禁止所有车辆（机动车、非机动车、轻型车辆等）通行，但行人不受限。",
+    "image_url": "/signs/closed_to_vehicles.png",
+    "tags": [
+      "regulatory_signs",
+      "image_recognition"
+    ]
+  },
+  {
+    "id": "q_sign_img_auto_closed_to_motorcycles_t",
+    "type": "true_false",
+    "question": "这个标志表示禁止二轮摩托车（包含轻便摩托车）通行。",
+    "question_jp": "この標識は、二輪の自動車および原動機付自転車の通行が禁止されていることを示している。",
+    "answer": true,
+    "explanation": "红圈内画有摩托车表示“二轮机动车及原付摩托通行禁止”。",
+    "image_url": "/signs/closed_to_motorcycles.png",
+    "tags": [
+      "regulatory_signs",
+      "image_recognition"
+    ]
+  },
+  {
+    "id": "q_sign_img_auto_closed_to_motorcycles_f",
+    "type": "true_false",
+    "question": "这个标志表示自行车禁止通行。",
+    "question_jp": "この標識は、自転車の通行が禁止されていることを示している。",
+    "answer": false,
+    "explanation": "红圈内画有摩托车表示“二轮机动车及原付摩托通行禁止”。",
+    "image_url": "/signs/closed_to_motorcycles.png",
+    "tags": [
+      "regulatory_signs",
+      "image_recognition"
+    ]
+  },
+  {
+    "id": "q_sign_img_auto_closed_to_large_trucks_t",
+    "type": "true_false",
+    "question": "这个标志表示禁止大型货车、特定中型货车及大型特殊车辆通行。",
+    "question_jp": "この標識は、大型貨物自動車、特定中型貨物自動車、大型特殊自動車の通行が禁止されていることを示している。",
+    "answer": true,
+    "explanation": "红圈内画有卡车正面图代表“大型货车等通行禁止”。",
+    "image_url": "/signs/closed_to_large_trucks.png",
+    "tags": [
+      "regulatory_signs",
+      "image_recognition"
+    ]
+  },
+  {
+    "id": "q_sign_img_auto_closed_to_large_trucks_f",
+    "type": "true_false",
+    "question": "这个标志表示禁止所有载货车辆通行。",
+    "question_jp": "この標識は、すべての貨物車の通行が禁止されていることを示している。",
+    "answer": false,
+    "explanation": "红圈内画有卡车正面图代表“大型货车等通行禁止”。",
+    "image_url": "/signs/closed_to_large_trucks.png",
+    "tags": [
+      "regulatory_signs",
+      "image_recognition"
+    ]
+  },
+  {
+    "id": "q_sign_img_auto_closed_to_bicycles_t",
+    "type": "true_false",
+    "question": "这个标志表示自行车（普通自行车）禁止通行。",
+    "question_jp": "この標識は、自転車（普通自転車）の通行が禁止されていることを示している。",
+    "answer": true,
+    "explanation": "红圈内画有自行车代表“自行车通行禁止”。普通自行车不得骑行进入。",
+    "image_url": "/signs/closed_to_bicycles.png",
+    "tags": [
+      "regulatory_signs",
+      "image_recognition"
+    ]
+  },
+  {
+    "id": "q_sign_img_auto_closed_to_bicycles_f",
     "type": "true_false",
     "question": "这个标志表示该道路为自行车专用道。",
     "question_jp": "この標識は、この道路が自転車専用道路であることを示している。",
     "answer": false,
-    "explanation": "蓝底白三角形内有自行车，是“自行车横道”的指示标志。",
-    "image_url": "/signs/bicycle_crossing.svg",
+    "explanation": "红圈内画有自行车代表“自行车通行禁止”。普通自行车不得骑行进入。",
+    "image_url": "/signs/closed_to_bicycles.png",
     "tags": [
-      "traffic_signs",
+      "regulatory_signs",
+      "image_recognition"
+    ]
+  },
+  {
+    "id": "q_sign_img_auto_closed_to_pedestrians_t",
+    "type": "true_false",
+    "question": "这个标志表示行人禁止通行。",
+    "question_jp": "この標識は、歩行者の通行が禁止されていることを示している。",
+    "answer": true,
+    "explanation": "红圈内有行走的人并打斜杠表示“歩行者通行禁止”，多设置在高速公路入口或危险桥梁。",
+    "image_url": "/signs/closed_to_pedestrians.png",
+    "tags": [
+      "regulatory_signs",
+      "image_recognition"
+    ]
+  },
+  {
+    "id": "q_sign_img_auto_closed_to_pedestrians_f",
+    "type": "true_false",
+    "question": "这个标志表示仅禁止儿童通行。",
+    "question_jp": "この標識は、子供の通行のみを禁止していることを示している。",
+    "answer": false,
+    "explanation": "红圈内有行走的人并打斜杠表示“歩行者通行禁止”，多设置在高速公路入口或危险桥梁。",
+    "image_url": "/signs/closed_to_pedestrians.png",
+    "tags": [
+      "regulatory_signs",
+      "image_recognition"
+    ]
+  },
+  {
+    "id": "q_sign_img_auto_slow_down_t",
+    "type": "true_false",
+    "question": "这个标志表示车辆必须徐行（以随时能够停止的速度行驶）。",
+    "question_jp": "この標識は、車両が徐行（直ちに停止できるような速度で進行）しなければならないことを示している。",
+    "answer": true,
+    "explanation": "写有「徐行」的红色倒三角形是“徐行”标志。驾驶员必须将车速控制在可以在1米左右距离内立即停下的低速。",
+    "image_url": "/signs/slow_down.png",
+    "tags": [
+      "regulatory_signs",
+      "image_recognition"
+    ]
+  },
+  {
+    "id": "q_sign_img_auto_slow_down_f",
+    "type": "true_false",
+    "question": "这个标志表示前方是下坡路，车辆应注意减速。",
+    "question_jp": "この標識は、前方が下り坂であり、減速に注意しなければならないことを示している。",
+    "answer": false,
+    "explanation": "写有「徐行」的红色倒三角形是“徐行”标志。驾驶员必须将车速控制在可以在1米左右距离内立即停下的低速。",
+    "image_url": "/signs/slow_down.png",
+    "tags": [
+      "regulatory_signs",
+      "image_recognition"
+    ]
+  },
+  {
+    "id": "q_sign_img_auto_height_limit_3_3_t",
+    "type": "true_false",
+    "question": "这个标志表示高度（包括装载物）超过 3.3m 的车辆禁止通行。",
+    "question_jp": "この標識は、高さ（積載物を含む）が 3.3m を超える車両の通行が禁止されていることを示している。",
+    "answer": true,
+    "explanation": "数字上下有三角箭头表示“高度限制”。装载后的总高度超出此限值者禁止通过（通常在桥洞或隧道前）。",
+    "image_url": "/signs/height_limit_3_3.png",
+    "tags": [
+      "regulatory_signs",
+      "image_recognition"
+    ]
+  },
+  {
+    "id": "q_sign_img_auto_height_limit_3_3_f",
+    "type": "true_false",
+    "question": "这个标志表示车辆底盘离地间隙必须在 3.3m 以上。",
+    "question_jp": "この標識は、車両の最低地上高が 3.3m 以上でなければならないことを示している。",
+    "answer": false,
+    "explanation": "数字上下有三角箭头表示“高度限制”。装载后的总高度超出此限值者禁止通过（通常在桥洞或隧道前）。",
+    "image_url": "/signs/height_limit_3_3.png",
+    "tags": [
+      "regulatory_signs",
+      "image_recognition"
+    ]
+  },
+  {
+    "id": "q_sign_img_auto_weight_limit_5_5_t",
+    "type": "true_false",
+    "question": "这个标志表示总重量（车重+载重+乘员）超过 5.5 吨的车辆禁止通行。",
+    "question_jp": "この標識は、総重量（車両重量、積載量、乗車人員の合計重量）が 5.5 トンを超える車両の通行が禁止されていることを示している。",
+    "answer": true,
+    "explanation": "红圈内写有吨数表示“总重量限制”。这里的限制指包含车重、最大载重以及当前人员在内的“总重量”，而不仅是货物重量。",
+    "image_url": "/signs/weight_limit_5_5.png",
+    "tags": [
+      "regulatory_signs",
+      "image_recognition"
+    ]
+  },
+  {
+    "id": "q_sign_img_auto_weight_limit_5_5_f",
+    "type": "true_false",
+    "question": "这个标志表示仅货物的净重超过 5.5 吨的货车禁止通行。",
+    "question_jp": "この標識は、貨物の積載重量のみが 5.5 トンを超えるトラックの通行が禁止されていることを示している。",
+    "answer": false,
+    "explanation": "红圈内写有吨数表示“总重量限制”。这里的限制指包含车重、最大载重以及当前人员在内的“总重量”，而不仅是货物重量。",
+    "image_url": "/signs/weight_limit_5_5.png",
+    "tags": [
+      "regulatory_signs",
+      "image_recognition"
+    ]
+  },
+  {
+    "id": "q_sign_img_auto_width_limit_2_2_t",
+    "type": "true_false",
+    "question": "这个标志表示最大宽度（包括装载物）超过 2.2m 的车辆禁止通行。",
+    "question_jp": "この標識は、最大幅（積載物を含む）が 2.2m を超える車両の通行が禁止されていることを示している。",
+    "answer": true,
+    "explanation": "数字左右带箭头表示“最大宽度限制”。车辆本身的宽度加上向两侧溢出的货物宽度若超标即禁止通行。",
+    "image_url": "/signs/width_limit_2_2.svg",
+    "tags": [
+      "regulatory_signs",
+      "image_recognition"
+    ]
+  },
+  {
+    "id": "q_sign_img_auto_width_limit_2_2_f",
+    "type": "true_false",
+    "question": "这个标志表示前方的车道宽度为 2.2m。",
+    "question_jp": "この標識は、前方の車線幅が 2.2m であることを示している。",
+    "answer": false,
+    "explanation": "数字左右带箭头表示“最大宽度限制”。车辆本身的宽度加上向两侧溢出的货物宽度若超标即禁止通行。",
+    "image_url": "/signs/width_limit_2_2.svg",
+    "tags": [
+      "regulatory_signs",
+      "image_recognition"
+    ]
+  },
+  {
+    "id": "q_sign_img_auto_exclusive_bus_lane_t",
+    "type": "true_false",
+    "question": "这个标志表示该车道为公交车等专用车道，除特定情况外其他车辆不得驶入。",
+    "question_jp": "この標識は、この車線がバスなどの専用車線であり、特定の例外を除き他の車両は走行してはならないことを示している。",
+    "answer": true,
+    "explanation": "蓝底画有公交车且带有“専用”字样是“专用车道”标志。普通车辆除了左转准备、避让紧急车辆或道路施工外，不得驶入。",
+    "image_url": "/signs/exclusive_bus_lane.png",
+    "tags": [
+      "regulatory_signs",
+      "image_recognition"
+    ]
+  },
+  {
+    "id": "q_sign_img_auto_exclusive_bus_lane_f",
+    "type": "true_false",
+    "question": "这个标志表示公交车拥有优先通行权，但其他车辆在任何时候都可以正常驶入行驶。",
+    "question_jp": "この標識は、バスが優先権を持っているが、他の車両もいつでも通常通り進入して走行できることを示している。",
+    "answer": false,
+    "explanation": "蓝底画有公交车且带有“専用”字样是“专用车道”标志。普通车辆除了左转准备、避让紧急车辆或道路施工外，不得驶入。",
+    "image_url": "/signs/exclusive_bus_lane.png",
+    "tags": [
+      "regulatory_signs",
+      "image_recognition"
+    ]
+  },
+  {
+    "id": "q_sign_img_auto_roundabout_t",
+    "type": "true_false",
+    "question": "这个标志表示前方是环形交叉路口，车辆应顺时针（右转）绕行。",
+    "question_jp": "この標識は、前方に環状交差点があり、車両は時計回り（右回り）に通行しなければならないことを示している。",
+    "answer": true,
+    "explanation": "蓝底三个白色箭头组成圆形代表“环形交叉路口”（环岛），车辆必须按照顺时针方向单向环绕行驶。",
+    "image_url": "/signs/roundabout.png",
+    "tags": [
+      "regulatory_signs",
+      "image_recognition"
+    ]
+  },
+  {
+    "id": "q_sign_img_auto_roundabout_f",
+    "type": "true_false",
+    "question": "这个标志表示前方可以掉头。",
+    "question_jp": "この標識は、前方でUターンが可能であることを示している。",
+    "answer": false,
+    "explanation": "蓝底三个白色箭头组成圆形代表“环形交叉路口”（环岛），车辆必须按照顺时针方向单向环绕行驶。",
+    "image_url": "/signs/roundabout.png",
+    "tags": [
+      "regulatory_signs",
+      "image_recognition"
+    ]
+  },
+  {
+    "id": "q_sign_img_auto_pedestrian_crossing_t",
+    "type": "true_false",
+    "question": "这个标志表示此处有人行横道。",
+    "question_jp": "この標識は、ここに横断歩道があることを示している。",
+    "answer": true,
+    "explanation": "蓝底白三角形内有行人图样是“人行横道”的指示标志，提醒司机注意准备让行步行的行人。",
+    "image_url": "/signs/pedestrian_crossing.png",
+    "tags": [
+      "indication_signs",
+      "image_recognition"
+    ]
+  },
+  {
+    "id": "q_sign_img_auto_pedestrian_crossing_f",
+    "type": "true_false",
+    "question": "这个标志表示此处是人行道，禁止车辆通行。",
+    "question_jp": "この標識は、ここが歩道であり、車両の通行が禁止されていることを示している。",
+    "answer": false,
+    "explanation": "蓝底白三角形内有行人图样是“人行横道”的指示标志，提醒司机注意准备让行步行的行人。",
+    "image_url": "/signs/pedestrian_crossing.png",
+    "tags": [
+      "indication_signs",
+      "image_recognition"
+    ]
+  },
+  {
+    "id": "q_sign_img_auto_bicycle_crossing_t",
+    "type": "true_false",
+    "question": "这个标志表示此处有自行车横道带。",
+    "question_jp": "この標識は、ここに自転車横断帯があることを示している。",
+    "answer": true,
+    "explanation": "蓝底白三角形内有自行车图样是“自行车横道带”的指示标志。",
+    "image_url": "/signs/bicycle_crossing.png",
+    "tags": [
+      "indication_signs",
+      "image_recognition"
+    ]
+  },
+  {
+    "id": "q_sign_img_auto_bicycle_crossing_f",
+    "type": "true_false",
+    "question": "这个标志表示该道路为自行车专用道。",
+    "question_jp": "この標識は、この道路が自転車専用道路であることを示している。",
+    "answer": false,
+    "explanation": "蓝底白三角形内有自行车图样是“自行车横道带”的指示标志。",
+    "image_url": "/signs/bicycle_crossing.png",
+    "tags": [
+      "indication_signs",
+      "image_recognition"
+    ]
+  },
+  {
+    "id": "q_sign_img_auto_safe_zone_t",
+    "type": "true_false",
+    "question": "这个标志表示此处设有安全岛（安全地带），任何车辆不得驶入。",
+    "question_jp": "この標識は、ここに安全地帯が設けられていることを示し、車両は進入してはならない。",
+    "answer": true,
+    "explanation": "蓝底白圈内有倒V字形表示“安全地带”标志。机动车绝对禁止压线或驶入该区域，以保障行人安全。",
+    "image_url": "/signs/safe_zone.png",
+    "tags": [
+      "indication_signs",
+      "image_recognition"
+    ]
+  },
+  {
+    "id": "q_sign_img_auto_safe_zone_f",
+    "type": "true_false",
+    "question": "这个标志表示车辆可以在此区域内临时停车避险。",
+    "question_jp": "この標識是、车辆がこの区域内で一時停止して危険を回避できることを示している。",
+    "answer": false,
+    "explanation": "蓝底白圈内有倒V字形表示“安全地带”标志。机动车绝对禁止压线或驶入该区域，以保障行人安全。",
+    "image_url": "/signs/safe_zone.png",
+    "tags": [
+      "indication_signs",
+      "image_recognition"
+    ]
+  },
+  {
+    "id": "q_sign_img_auto_parking_permitted_t",
+    "type": "true_false",
+    "question": "这个标志表示车辆在此处允许停车（驻车）。",
+    "question_jp": "この標識は、車両がここで駐車（駐車）できることを示している。",
+    "answer": true,
+    "explanation": "蓝底白色字母“P”是“驻车可”标志，指示该路段允许停车驻车。",
+    "image_url": "/signs/parking_permitted.png",
+    "tags": [
+      "indication_signs",
+      "image_recognition"
+    ]
+  },
+  {
+    "id": "q_sign_img_auto_parking_permitted_f",
+    "type": "true_false",
+    "question": "这个标志表示仅允许公交车在此停车。",
+    "question_jp": "この標識は、バスのみがここで駐車できることを示している。",
+    "answer": false,
+    "explanation": "蓝底白色字母“P”是“驻车可”标志，指示该路段允许停车驻车。",
+    "image_url": "/signs/parking_permitted.png",
+    "tags": [
+      "indication_signs",
+      "image_recognition"
+    ]
+  },
+  {
+    "id": "q_sign_img_auto_stopping_permitted_t",
+    "type": "true_false",
+    "question": "这个标志表示车辆在此处允许临时停车（停车）。",
+    "question_jp": "この標識は、車両がここで停車できることを示している。",
+    "answer": true,
+    "explanation": "蓝底白色圆圈内带蓝色斜杠（或类似勾形）代表“停车可”（停車可）。允许车辆临时停靠（如上下客），但不能长时间驻车。",
+    "image_url": "/signs/stopping_permitted.png",
+    "tags": [
+      "indication_signs",
+      "image_recognition"
+    ]
+  },
+  {
+    "id": "q_sign_img_auto_stopping_permitted_f",
+    "type": "true_false",
+    "question": "这个标志表示这里是车辆掉头的指示标志。",
+    "question_jp": "この標識は、ここが車両の転回を示す標識であることを示している。",
+    "answer": false,
+    "explanation": "蓝底白色圆圈内带蓝色斜杠（或类似勾形）代表“停车可”（停車可）。允许车辆临时停靠（如上下客），但不能长时间驻车。",
+    "image_url": "/signs/stopping_permitted.png",
+    "tags": [
+      "indication_signs",
+      "image_recognition"
+    ]
+  },
+  {
+    "id": "q_sign_img_auto_warning_crossroads_t",
+    "type": "true_false",
+    "question": "这个标志提示前方有十字交叉路口。",
+    "question_jp": "この標識は、前方に十字交差点があることを示している。",
+    "answer": true,
+    "explanation": "黄色菱形黑十字是“十字路口”警告标志，提示驾驶员注意路口侧向来车。",
+    "image_url": "/signs/warning_crossroads.png",
+    "tags": [
+      "warning_signs",
+      "image_recognition"
+    ]
+  },
+  {
+    "id": "q_sign_img_auto_warning_crossroads_f",
+    "type": "true_false",
+    "question": "这个标志提示前方有急转弯。",
+    "question_jp": "この標識は、前方に急カーブがあることを示している。",
+    "answer": false,
+    "explanation": "黄色菱形黑十字是“十字路口”警告标志，提示驾驶员注意路口侧向来车。",
+    "image_url": "/signs/warning_crossroads.png",
+    "tags": [
+      "warning_signs",
+      "image_recognition"
+    ]
+  },
+  {
+    "id": "q_sign_img_auto_warning_t_junction_t",
+    "type": "true_false",
+    "question": "这个标志提示前方有丁字（T字或十-丁）交叉路口。",
+    "question_jp": "この標識は、前方にT字交差点があることを示している。",
+    "answer": true,
+    "explanation": "黄色菱形丁字是“T型交叉路口”警告标志。",
+    "image_url": "/signs/warning_t_junction.png",
+    "tags": [
+      "warning_signs",
+      "image_recognition"
+    ]
+  },
+  {
+    "id": "q_sign_img_auto_warning_t_junction_f",
+    "type": "true_false",
+    "question": "这个标志表示前方是死胡同，无法通行。",
+    "question_jp": "この標識は、前方が行き止まりであり、通行できないことを示している。",
+    "answer": false,
+    "explanation": "黄色菱形丁字是“T型交叉路口”警告标志。",
+    "image_url": "/signs/warning_t_junction.png",
+    "tags": [
+      "warning_signs",
+      "image_recognition"
+    ]
+  },
+  {
+    "id": "q_sign_img_auto_warning_right_curve_t",
+    "type": "true_false",
+    "question": "这个标志提示前方是向右急转弯路段。",
+    "question_jp": "この標識は、前方に右急カーブがあることを示している。",
+    "answer": true,
+    "explanation": "向右折线的黄色菱形是“右急弯”警告标志，应减速慢行。",
+    "image_url": "/signs/warning_right_curve.png",
+    "tags": [
+      "warning_signs",
+      "image_recognition"
+    ]
+  },
+  {
+    "id": "q_sign_img_auto_warning_right_curve_f",
+    "type": "true_false",
+    "question": "这个标志表示前方车道向右分流。",
+    "question_jp": "この標識は、前方の車線が右に分流していることを示している。",
+    "answer": false,
+    "explanation": "向右折线的黄色菱形是“右急弯”警告标志，应减速慢行。",
+    "image_url": "/signs/warning_right_curve.png",
+    "tags": [
+      "warning_signs",
+      "image_recognition"
+    ]
+  },
+  {
+    "id": "q_sign_img_auto_warning_left_curve_t",
+    "type": "true_false",
+    "question": "这个标志提示前方是向左急转弯路段。",
+    "question_jp": "この標識は、前方に左急カーブがあることを示している。",
+    "answer": true,
+    "explanation": "向左折线的黄色菱形是“左急弯”警告标志，应降速通过。",
+    "image_url": "/signs/warning_left_curve.png",
+    "tags": [
+      "warning_signs",
+      "image_recognition"
+    ]
+  },
+  {
+    "id": "q_sign_img_auto_warning_left_curve_f",
+    "type": "true_false",
+    "question": "这个标志表示该道路为单行道。",
+    "question_jp": "この標識は、この道路が一方通行であることを示している。",
+    "answer": false,
+    "explanation": "向左折线的黄色菱形是“左急弯”警告标志，应降速通过。",
+    "image_url": "/signs/warning_left_curve.png",
+    "tags": [
+      "warning_signs",
+      "image_recognition"
+    ]
+  },
+  {
+    "id": "q_sign_img_auto_warning_winding_road_t",
+    "type": "true_false",
+    "question": "这个标志提示前方有连续弯路（向右开始弯曲的第一弯）。",
+    "question_jp": "この標識は、前方に連続するカーブがあることを示している（右に曲がる最初のカーブ）。",
+    "answer": true,
+    "explanation": "S形折线黄色菱形是“连续弯路”警告标志。指示前方有多处急弯。",
+    "image_url": "/signs/warning_winding_road.svg",
+    "tags": [
+      "warning_signs",
+      "image_recognition"
+    ]
+  },
+  {
+    "id": "q_sign_img_auto_warning_winding_road_f",
+    "type": "true_false",
+    "question": "这个标志提示前方道路有结冰打滑的风险。",
+    "question_jp": "この標識は、前方の道路が凍結しスリップする危険性があることを示している。",
+    "answer": false,
+    "explanation": "S形折线黄色菱形是“连续弯路”警告标志。指示前方有多处急弯。",
+    "image_url": "/signs/warning_winding_road.svg",
+    "tags": [
+      "warning_signs",
+      "image_recognition"
+    ]
+  },
+  {
+    "id": "q_sign_img_auto_warning_railway_crossing_t",
+    "type": "true_false",
+    "question": "这个标志提示前方有铁路道口。",
+    "question_jp": "この標識は、前方に踏切があることを示している。",
+    "answer": true,
+    "explanation": "画有小火车的黄色菱形是“铁路道口”警告标志，提醒司机接近道口前须减速做好停车准备。",
+    "image_url": "/signs/warning_railway_crossing.png",
+    "tags": [
+      "warning_signs",
+      "image_recognition"
+    ]
+  },
+  {
+    "id": "q_sign_img_auto_warning_railway_crossing_f",
+    "type": "true_false",
+    "question": "这个标志提示前方有高架电线，限高通行。",
+    "question_jp": "この標識是、前方に架線があり、高さ制限があることを示している。",
+    "answer": false,
+    "explanation": "画有小火车的黄色菱形是“铁路道口”警告标志，提醒司机接近道口前须减速做好停车准备。",
+    "image_url": "/signs/warning_railway_crossing.png",
+    "tags": [
+      "warning_signs",
+      "image_recognition"
+    ]
+  },
+  {
+    "id": "q_sign_img_auto_warning_traffic_light_t",
+    "type": "true_false",
+    "question": "这个标志提示前方设有红绿灯信号。",
+    "question_jp": "この標識は、前方に信号機があることを示している。",
+    "answer": true,
+    "explanation": "画有三色红绿灯的黄色菱形是“前方有信号灯”警告标志，常设在视线不良的路口前。",
+    "image_url": "/signs/warning_traffic_light.svg",
+    "tags": [
+      "warning_signs",
+      "image_recognition"
+    ]
+  },
+  {
+    "id": "q_sign_img_auto_warning_traffic_light_f",
+    "type": "true_false",
+    "question": "这个标志表示此路段为全天绿灯通行。",
+    "question_jp": "この標識は、この区間が终日青信号であることを示している。",
+    "answer": false,
+    "explanation": "画有三色红绿灯的黄色菱形是“前方有信号灯”警告标志，常设在视线不良的路口前。",
+    "image_url": "/signs/warning_traffic_light.svg",
+    "tags": [
+      "warning_signs",
+      "image_recognition"
+    ]
+  },
+  {
+    "id": "q_sign_img_auto_warning_pedestrian_crossing_t",
+    "type": "true_false",
+    "question": "这个标志提示前方有人行横道。",
+    "question_jp": "この標識は、前方に横断歩道があることを示している。",
+    "answer": true,
+    "explanation": "画有行人的黄色菱形是“前方有人行横道”警告标志。",
+    "image_url": "/signs/warning_pedestrian_crossing.svg",
+    "tags": [
+      "warning_signs",
+      "image_recognition"
+    ]
+  },
+  {
+    "id": "q_sign_img_auto_warning_pedestrian_crossing_f",
+    "type": "true_false",
+    "question": "这个标志提示前方是住宅区，常有行人。",
+    "question_jp": "この標識は、前方に住宅地があり、歩行者が多いことを示している。",
+    "answer": false,
+    "explanation": "画有行人的黄色菱形是“前方有人行横道”警告标志。",
+    "image_url": "/signs/warning_pedestrian_crossing.svg",
+    "tags": [
+      "warning_signs",
+      "image_recognition"
+    ]
+  },
+  {
+    "id": "q_sign_img_auto_warning_school_t",
+    "type": "true_false",
+    "question": "这个标志提示前方有学校、幼儿园、保育所等，注意儿童横穿。",
+    "question_jp": "この標識は、前方に学校、幼稚園、保育所などがあり、子供の横断に注意することを示している。",
+    "answer": true,
+    "explanation": "画有两个背书包小孩的黄色菱形是“学校、幼儿园等”警告标志，司机应当减速慢行。",
+    "image_url": "/signs/warning_school.png",
+    "tags": [
+      "warning_signs",
+      "image_recognition"
+    ]
+  },
+  {
+    "id": "q_sign_img_auto_warning_school_f",
+    "type": "true_false",
+    "question": "这个标志表示此道路禁止儿童及监护人以外的人员进入。",
+    "question_jp": "この標識は、この道路への子供やその保護者以外の立ち入りを禁止している。",
+    "answer": false,
+    "explanation": "画有两个背书包小孩的黄色菱形是“学校、幼儿园等”警告标志，司机应当减速慢行。",
+    "image_url": "/signs/warning_school.png",
+    "tags": [
+      "warning_signs",
+      "image_recognition"
+    ]
+  },
+  {
+    "id": "q_sign_img_auto_warning_road_narrows_t",
+    "type": "true_false",
+    "question": "这个标志提示前方道路变窄。",
+    "question_jp": "この標識は、前方の道路が狭くなっていることを示している。",
+    "answer": true,
+    "explanation": "两侧黑线向中缩窄是“道路变窄”警告标志，要注意对向来车以及变道。",
+    "image_url": "/signs/warning_road_narrows.png",
+    "tags": [
+      "warning_signs",
+      "image_recognition"
+    ]
+  },
+  {
+    "id": "q_sign_img_auto_warning_road_narrows_f",
+    "type": "true_false",
+    "question": "这个标志表示前方是单车道交替通行路段。",
+    "question_jp": "この標識は、前方が1車線ずつの交互通行区間であることを示している。",
+    "answer": false,
+    "explanation": "两侧黑线向中缩窄是“道路变窄”警告标志，要注意对向来车以及变道。",
+    "image_url": "/signs/warning_road_narrows.png",
+    "tags": [
+      "warning_signs",
+      "image_recognition"
+    ]
+  },
+  {
+    "id": "q_sign_img_auto_warning_lane_ends_t",
+    "type": "true_false",
+    "question": "这个标志提示前方的车道数减少。",
+    "question_jp": "この標識は、前方の車線数が減少していることを示している。",
+    "answer": true,
+    "explanation": "一侧黑线往中央靠拢代表“车线数减少”警告标志，右侧或左侧车道即将并线消失。",
+    "image_url": "/signs/warning_lane_ends.png",
+    "tags": [
+      "warning_signs",
+      "image_recognition"
+    ]
+  },
+  {
+    "id": "q_sign_img_auto_warning_lane_ends_f",
+    "type": "true_false",
+    "question": "这个标志提示前方道路有单向阻碍物。",
+    "question_jp": "この標識は、前方の道路に片側障害物があることを示している。",
+    "answer": false,
+    "explanation": "一侧黑线往中央靠拢代表“车线数减少”警告标志，右侧或左侧车道即将并线消失。",
+    "image_url": "/signs/warning_lane_ends.png",
+    "tags": [
+      "warning_signs",
+      "image_recognition"
+    ]
+  },
+  {
+    "id": "q_sign_img_auto_warning_road_work_t",
+    "type": "true_false",
+    "question": "这个标志提示前方路段正在进行施工作业。",
+    "question_jp": "この標識は、前方で道路工事が行われていることを示している。",
+    "answer": true,
+    "explanation": "画有拿铁锹劳动者的黄色菱形是“道路施工中”警告标志，注意减速及施工指挥人员。",
+    "image_url": "/signs/warning_road_work.png",
+    "tags": [
+      "warning_signs",
+      "image_recognition"
+    ]
+  },
+  {
+    "id": "q_sign_img_auto_warning_road_work_f",
+    "type": "true_false",
+    "question": "这个标志提示前方有农用挖掘机通行。",
+    "question_jp": "この標識は、前方に農用ショベルカーが通行していることを示している。",
+    "answer": false,
+    "explanation": "画有拿铁锹劳动者的黄色菱形是“道路施工中”警告标志，注意减速及施工指挥人员。",
+    "image_url": "/signs/warning_road_work.png",
+    "tags": [
+      "warning_signs",
+      "image_recognition"
+    ]
+  },
+  {
+    "id": "q_sign_img_auto_warning_strong_wind_t",
+    "type": "true_false",
+    "question": "这个标志提示前方可能出现强烈的横风，请紧握方向盘防偏。",
+    "question_jp": "この標識は、前方で強い横風が吹く可能性があるため、ハンドルをしっかり握って偏流を防ぐことを示している。",
+    "answer": true,
+    "explanation": "画有风向袋的黄色菱形是“注意横风”警告标志，在桥梁、山谷或隧道出口处尤为常见。",
+    "image_url": "/signs/warning_strong_wind.png",
+    "tags": [
+      "warning_signs",
+      "image_recognition"
+    ]
+  },
+  {
+    "id": "q_sign_img_auto_warning_strong_wind_f",
+    "type": "true_false",
+    "question": "这个标志提示前方是滑翔伞降落区域。",
+    "question_jp": "この標識は、前方がパラグライダーの着陸エリアであることを示している。",
+    "answer": false,
+    "explanation": "画有风向袋的黄色菱形是“注意横风”警告标志，在桥梁、山谷或隧道出口处尤为常见。",
+    "image_url": "/signs/warning_strong_wind.png",
+    "tags": [
+      "warning_signs",
+      "image_recognition"
+    ]
+  },
+  {
+    "id": "q_sign_img_auto_warning_animals_t",
+    "type": "true_false",
+    "question": "这个标志提示前方有动物（如野鹿）出没的危险，请注意观察慢行。",
+    "question_jp": "この標識は、前方に動物（野カモシカなど）が飛び出す危険があるため、注意して走行することを示している。",
+    "answer": true,
+    "explanation": "画有鹿（或其他野生动物）的黄色菱形是“注意动物”警告标志，提醒司机防止碰撞野生动物。",
+    "image_url": "/signs/warning_animals.png",
+    "tags": [
+      "warning_signs",
+      "image_recognition"
+    ]
+  },
+  {
+    "id": "q_sign_img_auto_warning_animals_f",
+    "type": "true_false",
+    "question": "这个标志表示前方是野生动物保护区，禁止鸣笛。",
+    "question_jp": "この標識は、前方が野生動物保護区であり、クラクションが禁止されていることを示している。",
+    "answer": false,
+    "explanation": "画有鹿（或其他野生动物）的黄色菱形是“注意动物”警告标志，提醒司机防止碰撞野生动物。",
+    "image_url": "/signs/warning_animals.png",
+    "tags": [
+      "warning_signs",
+      "image_recognition"
+    ]
+  },
+  {
+    "id": "q_sign_img_auto_warning_other_dangers_t",
+    "type": "true_false",
+    "question": "这个标志提示前方有其他危险（不属于具体图形分类的各种危险情况）。",
+    "question_jp": "この標識は、前方にその他の危険があることを示している（具体的な図記号がない危険）。",
+    "answer": true,
+    "explanation": "画有黑色叹号“！”的黄色菱形是“注意其他危险”警告标志。通常下方会带有辅助标志注明具体内容。",
+    "image_url": "/signs/warning_other_dangers.png",
+    "tags": [
+      "warning_signs",
+      "image_recognition"
+    ]
+  },
+  {
+    "id": "q_sign_img_auto_warning_other_dangers_f",
+    "type": "true_false",
+    "question": "这个标志表示前方是绝对禁止通行的死胡同。",
+    "question_jp": "この標識は、前方が絶対に通行禁止の行き止まりであることを示している。",
+    "answer": false,
+    "explanation": "画有黑色叹号“！”的黄色菱形是“注意其他危险”警告标志。通常下方会带有辅助标志注明具体内容。",
+    "image_url": "/signs/warning_other_dangers.png",
+    "tags": [
+      "warning_signs",
+      "image_recognition"
+    ]
+  },
+  {
+    "id": "q_sign_img_auto_mark_beginner_t",
+    "type": "true_false",
+    "question": "这个标志是“新手驾驶者标志”（若叶标志）。取得普通汽车驾照未满 1 年者必须在车身前后指定位置张贴。",
+    "question_jp": "このマークは「初心運転者標識」（若葉マーク）です。普通自動車免許取得後1年未満の運転者は、車体の前後の定められた位置に表示しなければなりません。",
+    "answer": true,
+    "explanation": "黄绿双色箭形是“初心驾驶者标志”（新手标/若叶标）。未满一年者不贴将被处罚；且其他车辆不得对贴有此标的车辆进行恶意强行插队或挤兑。",
+    "image_url": "/signs/mark_beginner.png",
+    "tags": [
+      "vehicle_markings",
+      "image_recognition"
+    ]
+  },
+  {
+    "id": "q_sign_img_auto_mark_beginner_f",
+    "type": "true_false",
+    "question": "这个标志是高龄驾驶者标志，70岁以上的驾驶者必须张贴。",
+    "question_jp": "このマークは高齢運転者標識であり、70歳以上の運転者は表示しなければなりません。",
+    "answer": false,
+    "explanation": "黄绿双色箭形是“初心驾驶者标志”（新手标/若叶标）。未满一年者不贴将被处罚；且其他车辆不得对贴有此标的车辆进行恶意强行插队或挤兑。",
+    "image_url": "/signs/mark_beginner.png",
+    "tags": [
+      "vehicle_markings",
+      "image_recognition"
+    ]
+  },
+  {
+    "id": "q_sign_img_auto_mark_elderly_t",
+    "type": "true_false",
+    "question": "这个标志是“高龄驾驶者标志”（四叶草标志）。适用于年龄在 70 岁以上的驾驶者，属于建议张贴标志。",
+    "question_jp": "このマークは「高齢運転者標識」（もみじマーク/四つ葉マーク）です。70歳以上の運転者が対象であり、表示するよう努めなければなりません。",
+    "answer": true,
+    "explanation": "四色四叶草（或旧版橙黄水滴形）是“高龄驾驶者标志”。虽然属于努力义务（非强制），但张贴后同样受法律保护，其他车辆不得对其进行强行加塞。",
+    "image_url": "/signs/mark_elderly.png",
+    "tags": [
+      "vehicle_markings",
+      "image_recognition"
+    ]
+  },
+  {
+    "id": "q_sign_img_auto_mark_elderly_f",
+    "type": "true_false",
+    "question": "这个标志是身体障碍者标志，仅限残疾人驾驶者使用。",
+    "question_jp": "このマークは身体障害者標識であり、身体障害のある運転者のみが使用できます。",
+    "answer": false,
+    "explanation": "四色四叶草（或旧版橙黄水滴形）是“高龄驾驶者标志”。虽然属于努力义务（非强制），但张贴后同样受法律保护，其他车辆不得对其进行强行加塞。",
+    "image_url": "/signs/mark_elderly.png",
+    "tags": [
+      "vehicle_markings",
+      "image_recognition"
+    ]
+  },
+  {
+    "id": "q_sign_img_auto_mark_hearing_impaired_t",
+    "type": "true_false",
+    "question": "这个标志是“听觉障碍者标志”（蝴蝶标志）。听力达不到法定标准但符合特定安全条件的驾驶员必须在车辆前后悬挂。",
+    "question_jp": "このマークは「聴覚障害者標識」（蝶々マーク）です。法令の基準に達しないが特定の安全条件を満たす聴覚障害のある運転者は、表示しなければなりません。",
+    "answer": true,
+    "explanation": "绿色圆形内有黄色蝴蝶图案是“听觉障碍者标志”。属于强制标志。其他车辆同样禁止强行超车插队。",
+    "image_url": "/signs/mark_hearing_impaired.png",
+    "tags": [
+      "vehicle_markings",
+      "image_recognition"
+    ]
+  },
+  {
+    "id": "q_sign_img_auto_mark_hearing_impaired_f",
+    "type": "true_false",
+    "question": "这个标志是低碳环保纯电动车专属标志。",
+    "question_jp": "このマークは、低炭素エコロジーの電気自動車専用のマークです。",
+    "answer": false,
+    "explanation": "绿色圆形内有黄色蝴蝶图案是“听觉障碍者标志”。属于强制标志。其他车辆同样禁止强行超车插队。",
+    "image_url": "/signs/mark_hearing_impaired.png",
+    "tags": [
+      "vehicle_markings",
+      "image_recognition"
+    ]
+  },
+  {
+    "id": "q_sign_img_auto_mark_physical_disability_t",
+    "type": "true_false",
+    "question": "这个标志是“身体障碍者标志”（轮椅标志/肢体残疾）。适用于由于肢体残疾影响驾驶普通汽车的驾驶者，属于努力义务张贴。",
+    "question_jp": "このマークは「身体障害者標識」です。肢体不自由が理由で普通自動車の運転に影響がある運転者が対象であり、表示するよう努めなければなりません。",
+    "answer": true,
+    "explanation": "蓝圈内有白色四叶草或轮椅图案是“肢体不便者标志”。建议残障人士在驾驶普通小轿车时张贴。",
+    "image_url": "/signs/mark_physical_disability.png",
+    "tags": [
+      "vehicle_markings",
+      "image_recognition"
+    ]
+  },
+  {
+    "id": "q_sign_img_auto_mark_physical_disability_f",
+    "type": "true_false",
+    "question": "这个标志表示该车辆是医护急救专用车辆。",
+    "question_jp": "このマークは、この車両が医療救急専用車両であることを示している。",
+    "answer": false,
+    "explanation": "蓝圈内有白色四叶草或轮椅图案是“肢体不便者标志”。建议残障人士在驾驶普通小轿车时张贴。",
+    "image_url": "/signs/mark_physical_disability.png",
+    "tags": [
+      "vehicle_markings",
       "image_recognition"
     ]
   },
@@ -6554,34 +7594,6 @@
     "explanation": "这是《交通的教则》开篇强调的基本思想准备。",
     "tags": [
       "basic_rules"
-    ]
-  },
-  {
-    "id": "q_0598",
-    "type": "hazard_prediction",
-    "image_url": "https://images.unsplash.com/photo-1515560295713-38fdeba19003?q=80&w=800",
-    "scenario": "在雨天的道路上行驶，前方视野模糊，且前方路边停着一辆打着双闪灯的小型卡车。",
-    "sub_questions": [
-      {
-        "question": "因为下雨路滑，我应该深踩油门，快速通过这辆卡车所在的区域。",
-        "answer": false,
-        "explanation": "雨天路滑，快速通过极易引发失控，且无法应对卡车后方可能跑出的行人。"
-      },
-      {
-        "question": "我应该减速慢行，并预测卡车的车门可能突然打开或者有人从车前横穿。",
-        "answer": true,
-        "explanation": "经过停放车辆时，必须时刻警惕盲区内的行人和车辆突然开门。"
-      },
-      {
-        "question": "只要鸣喇叭警告卡车里的人，就可以不减速直接驶过。",
-        "answer": false,
-        "explanation": "无故鸣喇叭不仅违反规定，且无法防止突发危险，必须减速。"
-      }
-    ],
-    "tags": [
-      "hazard",
-      "rain",
-      "parked_car"
     ]
   },
   {

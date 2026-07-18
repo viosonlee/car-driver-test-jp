@@ -73,6 +73,10 @@ def duplicate_groups(questions: list[dict]) -> list[list[int]]:
         for position, left in enumerate(candidates):
             for right in candidates[position + 1:]:
                 left_text, right_text = normalized[left], normalized[right]
+                left_image = questions[left].get("image_url")
+                right_image = questions[right].get("image_url")
+                if (left_image or right_image) and left_image != right_image:
+                    continue
                 if questions[left].get("answer") != questions[right].get("answer"):
                     continue
                 if min(len(left_text), len(right_text)) < 12:

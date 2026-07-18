@@ -3,6 +3,8 @@ import { onMounted, ref } from 'vue';
 import { useRouter } from 'vue-router';
 import { db } from '../db';
 import { useExamEngine } from '../stores/examEngine';
+import { migrateLegacyErrorBookRecords } from '../stores/errorBook';
+import { migrateAnswerRecord } from '../utils/questionIds';
 
 const router = useRouter();
 const { initExam } = useExamEngine();
@@ -11,9 +13,10 @@ const errorCount = ref(0);
 const lastExamScore = ref<number | null>(null);
 
 onMounted(async () => {
+  await migrateLegacyErrorBookRecords();
   try {
     const progress = JSON.parse(localStorage.getItem('study-progress-v1') || 'null');
-    practicedCount.value = progress?.answers ? Object.keys(progress.answers).length : 0;
+    practicedCount.value = progress?.answers ? Object.keys(migrateAnswerRecord(progress.answers)).length : 0;
   } catch {
     practicedCount.value = 0;
   }

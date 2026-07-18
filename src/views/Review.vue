@@ -4,6 +4,8 @@ import { useRouter } from 'vue-router';
 import allQuestions from '../assets/data/all_questions.json';
 import { db, type ErrorRecord, type Question } from '../db';
 import { recordQuestionResult } from '../stores/errorBook';
+import { migrateLegacyErrorBookRecords } from '../stores/errorBook';
+import { resolveAssetUrl } from '../utils/assetUrl';
 
 const router = useRouter();
 const questionMap = new Map((allQuestions as Question[]).map(question => [question.id, question]));
@@ -19,6 +21,7 @@ const reviewItems = computed(() => records.value
 const currentItem = computed(() => reviewItems.value[currentIndex.value]);
 
 const loadRecords = async () => {
+  await migrateLegacyErrorBookRecords();
   records.value = await db.errorBook.orderBy('nextReviewDate').toArray();
   currentIndex.value = Math.min(currentIndex.value, Math.max(0, records.value.length - 1));
 };
@@ -54,7 +57,7 @@ const next = async () => {
       <div class="progress">{{ currentIndex + 1 }} / {{ reviewItems.length }} · 连续答对2次后移出</div>
       <!-- Question Image -->
       <div v-if="currentItem.question.image_url" class="question-image">
-        <img :src="currentItem.question.image_url" alt="Question Image" />
+        <img :src="resolveAssetUrl(currentItem.question.image_url)" alt="题目图片" />
       </div>
       <p class="question">{{ currentItem.question.question }}</p>
       <div class="options">
@@ -83,7 +86,7 @@ const next = async () => {
 .count, .progress { color: #777; font-size: .9rem; }
 .question-card { background: white; padding: 1.5rem; border-radius: 12px; box-shadow: 0 4px 6px rgba(0,0,0,.05); }
 .question-image { margin: 1rem 0; }
-.question-image img { width: 100%; max-height: 200px; object-fit: cover; border-radius: 8px; }
+.question-image img { display: block; width: auto; max-width: 100%; height: auto; max-height: 360px; object-fit: contain; border-radius: 8px; margin: 0 auto; }
 .question { margin: 1.5rem 0; font-size: 1.15rem; line-height: 1.6; }
 .options { display: flex; gap: 1rem; }
 .options button { flex: 1; padding: 1rem; border: 2px solid #e5e7eb; border-radius: 8px; background: white; font-size: 1rem; }

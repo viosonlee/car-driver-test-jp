@@ -2,6 +2,7 @@
 import { onMounted, computed } from 'vue';
 import { useRouter } from 'vue-router';
 import { useExamEngine } from '../stores/examEngine';
+import { resolveAssetUrl } from '../utils/assetUrl';
 
 const router = useRouter();
 const { 
@@ -64,8 +65,8 @@ const handleHazardAnswer = (index: number, val: boolean) => {
       <div class="q-type-badge">{{ currentQ.type === 'hazard_prediction' ? '危险预测题 (2分)' : '单选题 (1分)' }}</div>
       
       <!-- Question Image -->
-      <div v-if="currentQ.image_url" class="question-image">
-        <img :src="currentQ.image_url" alt="Question Image" />
+      <div v-if="currentQ.image_url || currentQ.scenario" class="question-image">
+        <img v-if="currentQ.image_url" :src="resolveAssetUrl(currentQ.image_url)" alt="题目图片" />
         <p v-if="currentQ.scenario" class="scenario-text">{{ currentQ.scenario }}</p>
       </div>
 
@@ -212,10 +213,15 @@ const handleHazardAnswer = (index: number, val: boolean) => {
 }
 
 .question-image img {
-  width: 100%;
+  display: block;
+  width: auto;
+  max-width: 100%;
+  height: auto;
   border-radius: 8px;
-  max-height: 200px;
-  object-fit: cover;
+  max-height: 360px;
+  object-fit: contain;
+  margin-left: auto;
+  margin-right: auto;
 }
 
 .scenario-text {

@@ -4,6 +4,8 @@ import { useRouter } from 'vue-router';
 import allQuestions from '../assets/data/all_questions.json';
 import { type Question } from '../db';
 import { recordQuestionResult } from '../stores/errorBook';
+import { resolveAssetUrl } from '../utils/assetUrl';
+import { migrateAnswerRecord, migrateQuestionId } from '../utils/questionIds';
 
 const router = useRouter();
 const STORAGE_KEY = 'study-progress-v1';
@@ -16,7 +18,7 @@ const savedProgress = (() => {
   }
 })();
 const savedQuestions = Array.isArray(savedProgress?.questionIds)
-  ? savedProgress.questionIds.map((id: string) => questionMap.get(id)).filter(Boolean) as Question[]
+  ? savedProgress.questionIds.map((id: string) => questionMap.get(migrateQuestionId(id))).filter(Boolean) as Question[]
   : [];
 const questions = savedQuestions.length === allQuestions.length
   ? savedQuestions
@@ -25,7 +27,7 @@ const currentIndex = ref(Math.min(Math.max(savedProgress?.currentIndex || 0, 0),
 const currentQ = computed(() => questions[currentIndex.value]);
 
 // User's answer state for current question
-const answers = ref<Record<string, any>>(savedProgress?.answers || {});
+const answers = ref<Record<string, any>>(migrateAnswerRecord(savedProgress?.answers || {}));
 const currentAns = computed({
   get: () => answers.value[currentQ.value.id] ?? null,
   set: value => { answers.value[currentQ.value.id] = value; }
@@ -93,8 +95,8 @@ const handleHazardAnswer = async (index: number, val: boolean) => {
       <div class="q-type-badge">{{ currentQ.type === 'hazard_prediction' ? '危险预测题' : '单选题' }}</div>
       
       <!-- Question Image -->
-      <div v-if="currentQ.image_url" class="question-image">
-        <img :src="currentQ.image_url" alt="Question Image" />
+      <div v-if="currentQ.image_url || currentQ.scenario" class="question-image">
+        <img v-if="currentQ.image_url" :src="resolveAssetUrl(currentQ.image_url)" alt="题目图片" />
         <p v-if="currentQ.scenario" class="scenario-text">{{ currentQ.scenario }}</p>
       </div>
 
@@ -326,10 +328,15 @@ const handleHazardAnswer = async (index: number, val: boolean) => {
 }
 
 .question-image img {
-  width: 100%;
+  display: block;
+  width: auto;
+  max-width: 100%;
+  height: auto;
   border-radius: 8px;
-  max-height: 200px;
-  object-fit: cover;
+  max-height: 360px;
+  object-fit: contain;
+  margin-left: auto;
+  margin-right: auto;
   margin-bottom: 0.5rem;
 }
 

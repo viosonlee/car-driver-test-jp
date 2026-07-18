@@ -1,7 +1,23 @@
 import { db, type ErrorRecord } from '../db';
+import { LEGACY_QUESTION_IDS } from '../utils/questionIds';
 
 const DAY_MS = 24 * 60 * 60 * 1000;
 const REQUIRED_CORRECT = 2;
+
+export const migrateLegacyErrorBookRecords = async () => {
+  await db.transaction('rw', db.errorBook, async () => {
+    for (const [legacyId, currentId] of Object.entries(LEGACY_QUESTION_IDS)) {
+      const legacy = await db.errorBook.get(legacyId);
+      if (!legacy) continue;
+
+      const current = await db.errorBook.get(currentId);
+      if (!current || legacy.lastReviewDate > current.lastReviewDate) {
+        await db.errorBook.put({ ...legacy, id: currentId, questionId: currentId });
+      }
+      await db.errorBook.delete(legacyId);
+    }
+  });
+};
 
 export const recordQuestionResult = async (questionId: string, correct: boolean) => {
   const now = Date.now();
@@ -40,4 +56,3 @@ export const recordQuestionResult = async (questionId: string, correct: boolean)
   await db.errorBook.put(record);
   return { removed: false, record };
 };
-

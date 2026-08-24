@@ -1,395 +1,202 @@
 <script setup lang="ts">
-import { ref, computed, watch } from 'vue';
+import { computed, ref } from 'vue';
 import { useRouter } from 'vue-router';
 import allQuestions from '../assets/data/all_questions.json';
-import { type Question } from '../db';
+import type { Question } from '../db';
 import { recordQuestionResult } from '../stores/errorBook';
-import { resolveAssetUrl } from '../utils/assetUrl';
-import { migrateAnswerRecord, migrateQuestionId } from '../utils/questionIds';
+import SwipeCard from '../components/SwipeCard.vue';
 
+/**
+ * 练习模式（滑卡交互）：
+ * - 每轮从全部题库随机洗牌，答过的本轮不再出现
+ * - 答对：卡片右滑/点击飞出屏幕，自动进入下一题
+ * - 答错：卡片左滑后抖动回弹，下方显示解析，手动进入下一题
+ * - 一轮全部练完 → 统计页 → 开始第二轮重新洗牌
+ */
 const router = useRouter();
-const STORAGE_KEY = 'study-progress-v1';
-const questionMap = new Map((allQuestions as Question[]).map(question => [question.id, question]));
-const savedProgress = (() => {
+const STORAGE_KEY = 'study-progress-v2';
+const all = allQuestions as Question[];
+
+interface Progress {
+  round: number;
+  remainingIds: string[];
+  answers: Record<string, boolean>; // 累计作答记录（供进度统计）
+  roundStats?: { total: number; correct: number };
+}
+const shuffle = <T,>(arr: T[]): T[] => {
+  const a = [...arr];
+  for (let i = a.length - 1; i > 0; i--) {
+    const j = Math.floor(Math.random() * (i + 1));
+    [a[i], a[j]] = [a[j], a[i]];
+  }
+  return a;
+};
+
+const loadProgress = (): Progress => {
   try {
-    return JSON.parse(localStorage.getItem(STORAGE_KEY) || 'null');
-  } catch {
-    return null;
-  }
-})();
-const savedQuestions = Array.isArray(savedProgress?.questionIds)
-  ? savedProgress.questionIds.map((id: string) => questionMap.get(migrateQuestionId(id))).filter(Boolean) as Question[]
-  : [];
-const questions = savedQuestions.length === allQuestions.length
-  ? savedQuestions
-  : [...allQuestions].sort(() => 0.5 - Math.random()) as Question[];
-const currentIndex = ref(Math.min(Math.max(savedProgress?.currentIndex || 0, 0), questions.length - 1));
-const currentQ = computed(() => questions[currentIndex.value]);
-
-// User's answer state for current question
-const answers = ref<Record<string, any>>(migrateAnswerRecord(savedProgress?.answers || {}));
-const currentAns = computed({
-  get: () => answers.value[currentQ.value.id] ?? null,
-  set: value => { answers.value[currentQ.value.id] = value; }
-});
-const hasAnswered = computed(() => {
-  const answer = currentAns.value;
-  return currentQ.value.sub_questions?.length
-    ? Array.isArray(answer) && answer.every(value => value !== null)
-    : typeof answer === 'boolean';
-});
-
-watch([currentIndex, answers], () => {
-  localStorage.setItem(STORAGE_KEY, JSON.stringify({
-    questionIds: questions.map(question => question.id),
-    currentIndex: currentIndex.value,
-    answers: answers.value
-  }));
-}, { deep: true, immediate: true });
-
-const goHome = () => {
-  router.push('/');
+    const saved = JSON.parse(localStorage.getItem(STORAGE_KEY) || 'null');
+    if (saved && Array.isArray(saved.remainingIds)) {
+      const valid = saved.remainingIds.filter((id: string) => all.some(q => q.id === id));
+      return {
+        round: saved.round || 1,
+        remainingIds: valid,
+        answers: saved.answers || {},
+        roundStats: saved.roundStats || { total: 0, correct: 0 }
+      };
+    }
+  } catch { /* ignore */ }
+  return { round: 1, remainingIds: shuffle(all.map(q => q.id)), answers: {}, roundStats: { total: 0, correct: 0 } };
 };
 
-const nextQuestion = () => {
-  if (currentIndex.value < questions.length - 1) {
-    currentIndex.value++;
+const progress = ref<Progress>(loadProgress());
+const locked = ref(false);          // 已判定、等待离开当前卡
+const showWrongPanel = ref(false);
+const roundFinished = ref(false);
+const cardRef = ref<InstanceType<typeof SwipeCard> | null>(null);
+
+const remainingQuestions = computed(() =>
+  progress.value.remainingIds
+    .map(id => all.find(q => q.id === id))
+    .filter((q): q is Question => Boolean(q))
+);
+const currentQ = computed(() => remainingQuestions.value[0]);
+const doneTotal = computed(() => Object.keys(progress.value.answers).length);
+const roundStats = computed(() => progress.value.roundStats || { total: 0, correct: 0 });
+
+const persist = () => {
+  localStorage.setItem(STORAGE_KEY, JSON.stringify(progress.value));
+};
+
+const handleAnswer = async (value: boolean) => {
+  if (!currentQ.value || locked.value) return;
+  locked.value = true;
+  const correct = value === currentQ.value.answer;
+  progress.value.answers[currentQ.value.id] = value;
+  const stats = progress.value.roundStats || (progress.value.roundStats = { total: 0, correct: 0 });
+  stats.total++;
+  if (correct) stats.correct++;
+
+  await recordQuestionResult(currentQ.value.id, correct);
+
+  if (correct) {
+    // 卡片飞出屏幕 → 自动下一题
+    cardRef.value?.flyOut(value ? 'right' : 'left');
+    window.setTimeout(() => advance(), 320);
   } else {
-    alert('已经是最后一题了！');
+    // 抖动回弹 → 显示解析，手动下一题
+    cardRef.value?.shakeAndRevert();
+    showWrongPanel.value = true;
   }
+  persist();
 };
 
-const prevQuestion = () => {
-  if (currentIndex.value > 0) {
-    currentIndex.value--;
-  }
+const advance = () => {
+  progress.value.remainingIds.shift();
+  locked.value = false;
+  showWrongPanel.value = false;
+  if (!progress.value.remainingIds.length) roundFinished.value = true;
+  persist();
 };
 
-const handleAnswer = async (val: boolean) => {
-  if (hasAnswered.value) return; // Prevent changing answer in study mode
-  currentAns.value = val;
-  await recordQuestionResult(currentQ.value.id, val === currentQ.value.answer);
-};
-
-const handleHazardAnswer = async (index: number, val: boolean) => {
-  if (hasAnswered.value) return;
-  if (!Array.isArray(currentAns.value)) {
-    currentAns.value = Array(currentQ.value.sub_questions?.length || 0).fill(null);
-  }
-  currentAns.value[index] = val;
-  if (currentAns.value.every((answer: boolean | null) => answer !== null)) {
-    const correct = currentQ.value.sub_questions?.every((subQuestion, subIndex) => subQuestion.answer === currentAns.value[subIndex]) ?? false;
-    await recordQuestionResult(currentQ.value.id, correct);
-  }
+const startNextRound = () => {
+  progress.value.round++;
+  progress.value.remainingIds = shuffle(all.map(q => q.id));
+  progress.value.roundStats = { total: 0, correct: 0 };
+  roundFinished.value = false;
+  persist();
 };
 </script>
 
 <template>
-  <div class="study-container" v-if="currentQ">
+  <div class="study-container">
     <header class="study-header">
-      <button class="back-btn" @click="goHome">← 返回</button>
-      <div class="progress">学习模式: {{ currentIndex + 1 }} / {{ questions.length }}</div>
+      <button class="back-btn" @click="router.push('/')">← 返回</button>
+      <div class="progress">
+        第 {{ progress.round }} 轮 · 剩余 {{ remainingQuestions.length }} 题 · 已练 {{ doneTotal }}
+      </div>
     </header>
 
-    <div class="question-card">
-      <div class="q-type-badge">{{ currentQ.type === 'hazard_prediction' ? '危险预测题' : '单选题' }}</div>
-      
-      <!-- Question Image -->
-      <div v-if="currentQ.image_url || currentQ.scenario" class="question-image">
-        <img v-if="currentQ.image_url" :src="resolveAssetUrl(currentQ.image_url)" alt="题目图片" />
-        <p v-if="currentQ.scenario" class="scenario-text">{{ currentQ.scenario }}</p>
-      </div>
-
-      <div class="q-text">
-        <p class="cn">{{ currentQ.question }}</p>
-        <p class="jp" v-if="currentQ.question_jp">{{ currentQ.question_jp }}</p>
-      </div>
-
-      <!-- True/False Options -->
-      <div class="options-container" v-if="currentQ.type === 'true_false' || !currentQ.sub_questions?.length">
-        <button 
-          class="option-btn" 
-          :class="{ 
-            selected: currentAns === true, 
-            correct: hasAnswered && currentQ.answer === true,
-            wrong: hasAnswered && currentAns === true && currentQ.answer !== true
-          }"
-          @click="handleAnswer(true)"
-          :disabled="hasAnswered"
-        >
-          <span class="icon">⭕️</span> 正确
-        </button>
-        <button 
-          class="option-btn" 
-          :class="{ 
-            selected: currentAns === false,
-            correct: hasAnswered && currentQ.answer === false,
-            wrong: hasAnswered && currentAns === false && currentQ.answer !== false
-          }"
-          @click="handleAnswer(false)"
-          :disabled="hasAnswered"
-        >
-          <span class="icon">❌</span> 错误
-        </button>
-      </div>
-
-      <!-- Hazard Sub-questions -->
-      <div class="hazard-options" v-if="currentQ.type === 'hazard_prediction' && currentQ.sub_questions">
-        <div class="sub-q" v-for="(sq, idx) in currentQ.sub_questions" :key="idx">
-          <p class="sub-text">{{ sq.question }}</p>
-          <div class="options-container mini">
-            <button 
-              class="option-btn" 
-              :class="{ 
-                selected: currentAns?.[idx] === true,
-                correct: hasAnswered && sq.answer === true,
-                wrong: hasAnswered && currentAns?.[idx] === true && sq.answer !== true
-              }"
-              @click="handleHazardAnswer(idx, true)"
-              :disabled="hasAnswered"
-            >⭕️</button>
-            <button 
-              class="option-btn" 
-              :class="{ 
-                selected: currentAns?.[idx] === false,
-                correct: hasAnswered && sq.answer === false,
-                wrong: hasAnswered && currentAns?.[idx] === false && sq.answer !== false
-              }"
-              @click="handleHazardAnswer(idx, false)"
-              :disabled="hasAnswered"
-            >❌</button>
+    <!-- 答题中 -->
+    <template v-if="currentQ && !roundFinished">
+      <SwipeCard
+        ref="cardRef"
+        :key="currentQ.id"
+        :question="currentQ"
+        :disabled="locked"
+        :hint="`○=对 ✕=错`"
+        @answer="handleAnswer"
+      >
+        <template #below>
+          <!-- 错误解析面板 -->
+          <div v-if="showWrongPanel" class="wrong-panel">
+            <strong>⚠️ 回答错误</strong>
+            <p>正确答案：{{ currentQ.answer ? '○ 正确' : '✕ 错误' }}</p>
+            <p class="exp-text">{{ currentQ.explanation }}</p>
+            <button class="primary-btn" @click="advance">下一题 →</button>
           </div>
-          <div v-if="hasAnswered" class="explanation-box small">
-            解析: {{ sq.explanation }}
-          </div>
-        </div>
-      </div>
+          <div v-else-if="locked" class="waiting-tip">正在进入下一题…</div>
+        </template>
+      </SwipeCard>
 
-      <!-- Explanation Box -->
-      <div v-if="hasAnswered && currentQ.type === 'true_false'" class="explanation-box" :class="{ 'is-correct': currentAns === currentQ.answer }">
-        <div class="status-indicator">
-          {{ currentAns === currentQ.answer ? '🎉 回答正确' : '⚠️ 回答错误' }}
-        </div>
-        <p class="exp-text">{{ currentQ.explanation }}</p>
-      </div>
+      <p class="gesture-tip">👉 右滑或点「正确」＝ 判为正确 · 左滑或点「错误」＝ 判为错误</p>
+    </template>
+
+    <!-- 一轮完成 -->
+    <div v-else-if="roundFinished" class="round-done">
+      <h2>🎉 第 {{ progress.round }} 轮练习完成！</h2>
+      <p>本轮 {{ roundStats.total }} 题 · 答对 {{ roundStats.correct }} 题<span v-if="roundStats.total">（{{ Math.round(roundStats.correct / roundStats.total * 100) }}%）</span></p>
+      <p class="sub-tip">第二轮将重新随机打乱全部题目</p>
+      <button class="primary-btn big" @click="startNextRound">开始第 {{ progress.round + 1 }} 轮</button>
+      <button class="ghost-btn" @click="router.push('/')">返回首页</button>
     </div>
 
-    <footer class="study-footer">
-      <button :disabled="currentIndex === 0" @click="prevQuestion">上一题</button>
-      <button :disabled="currentIndex === questions.length - 1" @click="nextQuestion" :class="{ 'highlight-next': hasAnswered }">下一题</button>
-    </footer>
+    <!-- 异常兜底 -->
+    <div v-else class="empty-state">
+      <p>题库加载异常，请返回首页重试。</p>
+      <button class="primary-btn" @click="router.push('/')">返回首页</button>
+    </div>
   </div>
 </template>
 
 <style scoped>
-.study-container {
-  display: flex;
-  flex-direction: column;
-  height: 100%;
-}
-
+.study-container { display: flex; flex-direction: column; height: 100%; }
 .study-header {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  padding-bottom: 1rem;
-  border-bottom: 1px solid #eee;
-  margin-bottom: 1rem;
+  display: flex; justify-content: space-between; align-items: center;
+  padding-bottom: .8rem; border-bottom: 1px solid #eee; margin-bottom: 1rem;
+}
+.back-btn { background: transparent; border: none; color: #4b6cb7; font-size: 1rem; cursor: pointer; }
+.progress { color: #666; font-size: .9rem; }
+
+.wrong-panel {
+  margin-top: 1rem; padding: 1rem;
+  border-left: 4px solid #ff6b6b; background: #fff5f5; border-radius: 0 10px 10px 0;
+  animation: slide-up .25s ease-out;
+}
+.wrong-panel strong { color: #d14d4d; display: block; margin-bottom: .3rem; }
+.wrong-panel p { margin: .25rem 0; line-height: 1.5; }
+.exp-text { color: #444; }
+.waiting-tip { margin-top: 1rem; text-align: center; color: #999; font-size: .9rem; }
+
+.gesture-tip { text-align: center; color: #aaa; font-size: .82rem; margin-top: .8rem; }
+
+.primary-btn {
+  margin-top: .8rem; border: 0; border-radius: 22px; padding: 10px 26px;
+  background: #4b6cb7; color: white; font-weight: 600; cursor: pointer;
+}
+.primary-btn.big { font-size: 1.05rem; padding: 12px 34px; }
+.ghost-btn {
+  margin-top: .6rem; border: 1px solid #ddd; border-radius: 22px; padding: 9px 26px;
+  background: white; color: #666; cursor: pointer;
 }
 
-.back-btn {
-  background: transparent;
-  border: none;
-  color: #4b6cb7;
-  font-size: 1rem;
-  cursor: pointer;
+.round-done, .empty-state {
+  flex: 1; display: flex; flex-direction: column;
+  align-items: center; justify-content: center; gap: .4rem;
+  background: white; border-radius: 16px; padding: 2rem; box-shadow: 0 6px 20px rgba(0,0,0,.06);
 }
+.round-done h2 { margin: 0 0 .4rem; }
+.round-done p, .empty-state p { margin: .15rem 0; color: #555; }
+.sub-tip { color: #999 !important; font-size: .88rem; }
 
-.progress {
-  color: #666;
-  font-size: 0.9rem;
-}
-
-.question-card {
-  flex: 1;
-  background: white;
-  padding: 1.5rem;
-  border-radius: 12px;
-  box-shadow: 0 4px 6px rgba(0,0,0,0.05);
-  overflow-y: auto;
-}
-
-.q-type-badge {
-  display: inline-block;
-  background: #eee;
-  padding: 4px 8px;
-  border-radius: 4px;
-  font-size: 0.8rem;
-  color: #666;
-  margin-bottom: 1rem;
-}
-
-.q-text .cn {
-  font-size: 1.15rem;
-  font-weight: 500;
-  color: #333;
-  line-height: 1.5;
-  margin-bottom: 0.5rem;
-}
-
-.q-text .jp {
-  font-size: 0.95rem;
-  color: #888;
-  line-height: 1.4;
-  margin-bottom: 1.5rem;
-}
-
-.options-container {
-  display: flex;
-  gap: 1rem;
-  margin-top: 2rem;
-}
-
-.option-btn {
-  flex: 1;
-  padding: 1rem;
-  border: 2px solid #eaeaea;
-  border-radius: 8px;
-  background: white;
-  font-size: 1.1rem;
-  cursor: pointer;
-  transition: all 0.2s;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-}
-
-.option-btn:active:not(:disabled) {
-  transform: scale(0.98);
-}
-
-.option-btn:disabled {
-  cursor: default;
-}
-
-.option-btn.selected {
-  border-color: #4b6cb7;
-  background: #f0f4f8;
-}
-
-.option-btn.correct {
-  border-color: #42b883;
-  background: #e6f6ef;
-  color: #2c8a5f;
-}
-
-.option-btn.wrong {
-  border-color: #ff6b6b;
-  background: #ffeded;
-  color: #d14d4d;
-}
-
-.explanation-box {
-  margin-top: 2rem;
-  padding: 1rem;
-  background: #f8f9fa;
-  border-left: 4px solid #4b6cb7;
-  border-radius: 0 8px 8px 0;
-  animation: fadeIn 0.3s ease-out;
-}
-
-.explanation-box.is-correct {
-  border-left-color: #42b883;
-}
-
-.explanation-box.small {
-  margin-top: 0.5rem;
-  font-size: 0.9rem;
-  padding: 0.8rem;
-}
-
-.status-indicator {
-  font-weight: 600;
-  margin-bottom: 0.5rem;
-}
-
-.is-correct .status-indicator {
-  color: #42b883;
-}
-
-.exp-text {
-  color: #444;
-  line-height: 1.5;
-}
-
-@keyframes fadeIn {
-  from { opacity: 0; transform: translateY(5px); }
-  to { opacity: 1; transform: translateY(0); }
-}
-
-.question-image img {
-  display: block;
-  width: auto;
-  max-width: 100%;
-  height: auto;
-  border-radius: 8px;
-  max-height: 360px;
-  object-fit: contain;
-  margin-left: auto;
-  margin-right: auto;
-  margin-bottom: 0.5rem;
-}
-
-.scenario-text {
-  font-style: italic;
-  color: #666;
-  font-size: 0.9rem;
-}
-
-.sub-q {
-  margin-top: 1.5rem;
-  padding-top: 1.5rem;
-  border-top: 1px dashed #eee;
-}
-
-.sub-text {
-  font-size: 1rem;
-  margin-bottom: 0.8rem;
-}
-
-.mini .option-btn {
-  padding: 0.5rem;
-}
-
-.study-footer {
-  display: flex;
-  justify-content: space-between;
-  margin-top: 1rem;
-}
-
-.study-footer button {
-  padding: 12px 24px;
-  border: none;
-  background: #e2e8f0;
-  color: #333;
-  border-radius: 8px;
-  font-weight: 500;
-  transition: all 0.2s;
-}
-
-.study-footer button:disabled {
-  opacity: 0.5;
-}
-
-.study-footer button.highlight-next {
-  background: #4b6cb7;
-  color: white;
-  animation: pulse-soft 2s infinite;
-}
-
-@keyframes pulse-soft {
-  0% { box-shadow: 0 0 0 0 rgba(75, 108, 183, 0.4); }
-  70% { box-shadow: 0 0 0 6px rgba(75, 108, 183, 0); }
-  100% { box-shadow: 0 0 0 0 rgba(75, 108, 183, 0); }
-}
+@keyframes slide-up { from { opacity: 0; transform: translateY(6px); } to { opacity: 1; transform: translateY(0); } }
 </style>

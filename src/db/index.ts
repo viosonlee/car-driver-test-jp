@@ -17,9 +17,10 @@ export interface ErrorRecord {
   id: string;
   questionId: string;
   consecutiveCorrect: number;
+  stage?: number; // 艾宾浩斯阶段索引（0 起）；旧记录可能缺失
   lastReviewDate: number; // Unix timestamp
   nextReviewDate: number; // Unix timestamp
-  easeFactor: number; // SM-2 ease factor
+  easeFactor: number; // SM-2 ease factor（保留兼容，新调度不再使用）
   interval: number; // days
 }
 

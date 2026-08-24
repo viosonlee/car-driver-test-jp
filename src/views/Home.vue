@@ -3,25 +3,29 @@ import { onMounted, ref } from 'vue';
 import { useRouter } from 'vue-router';
 import { db } from '../db';
 import { useExamEngine } from '../stores/examEngine';
-import { migrateLegacyErrorBookRecords } from '../stores/errorBook';
+import { migrateLegacyErrorBookRecords, countDueReviews } from '../stores/errorBook';
 import { migrateAnswerRecord } from '../utils/questionIds';
 
 const router = useRouter();
 const { initExam } = useExamEngine();
 const practicedCount = ref(0);
 const errorCount = ref(0);
+const dueReviewCount = ref(0);
 const lastExamScore = ref<number | null>(null);
 
 onMounted(async () => {
   await migrateLegacyErrorBookRecords();
   try {
-    const progress = JSON.parse(localStorage.getItem('study-progress-v1') || 'null');
+    // 优先读取滑卡版练习进度，兼容旧版
+    const v2 = JSON.parse(localStorage.getItem('study-progress-v2') || 'null');
+    const progress = v2?.answers ? v2 : JSON.parse(localStorage.getItem('study-progress-v1') || 'null');
     practicedCount.value = progress?.answers ? Object.keys(migrateAnswerRecord(progress.answers)).length : 0;
   } catch {
     practicedCount.value = 0;
   }
 
   errorCount.value = await db.errorBook.count();
+  dueReviewCount.value = await countDueReviews();
   const latestExam = await db.examHistory.orderBy('date').last();
   lastExamScore.value = latestExam?.score ?? null;
 });
@@ -46,8 +50,8 @@ const goToReview = () => {
           <span class="label">已练习题目</span>
         </div>
         <div class="stat-item">
-          <span class="value">{{ errorCount }}</span>
-          <span class="label">错题本</span>
+          <span class="value">{{ dueReviewCount }}<span v-if="errorCount - dueReviewCount > 0" class="pending">/{{ errorCount }}</span></span>
+          <span class="label">今日待复习</span>
         </div>
         <div class="stat-item">
           <span class="value">{{ lastExamScore === null ? '--' : `${lastExamScore}分` }}</span>
@@ -60,8 +64,8 @@ const goToReview = () => {
       <button class="study-btn" @click="router.push('/study')">
         <span class="icon">📖</span>
         <div class="btn-text">
-          <span class="title">自由练习 (学习模式)</span>
-          <span class="subtitle">无倒计时，答题后即时查看权威解析</span>
+          <span class="title">自由练习 (滑卡模式)</span>
+          <span class="subtitle">随机出题不重复 · 答对自动跳转 · 答错看解析</span>
         </div>
       </button>
 
@@ -76,8 +80,8 @@ const goToReview = () => {
       <button class="secondary-btn" @click="goToReview">
         <span class="icon">🧠</span>
         <div class="btn-text">
-          <span class="title">弱点复习 (SRS)</span>
-          <span class="subtitle">基于记忆曲线的智能复习</span>
+          <span class="title">弱点复习 (艾宾浩斯曲线)<span v-if="dueReviewCount" class="due-badge">{{ dueReviewCount }}</span></span>
+          <span class="subtitle">按记忆间隔到期复习 · 滑卡作答</span>
         </div>
       </button>
     </div>
@@ -192,4 +196,17 @@ button:active {
 .secondary-btn .subtitle {
   color: #777;
 }
+
+.due-badge {
+  display: inline-block;
+  margin-left: 8px;
+  background: #ff6b6b;
+  color: white;
+  font-size: 0.75rem;
+  padding: 1px 8px;
+  border-radius: 999px;
+  vertical-align: middle;
+}
+
+.pending { font-size: 0.9rem; color: #aaa; }
 </style>

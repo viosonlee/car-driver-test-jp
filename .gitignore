@@ -30,3 +30,6 @@ dist-ssr
 # WorkBuddy workspace data
 .workbuddy/
 all_questions.backup_*.json
+
+# temp verification files
+.tmp_*

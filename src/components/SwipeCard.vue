@@ -126,7 +126,10 @@ defineExpose({ flyOut, shakeAndRevert });
       <!-- 滑动方向浮层 -->
       <div v-if="overlay && !flying" class="swipe-overlay" :class="overlay.cls">{{ overlay.text }}</div>
 
-      <span v-if="hint && !overlay" class="hint-badge">{{ hint }}</span>
+      <!-- 标签行：正常文档流，不与题干/图片重叠 -->
+      <div v-if="hint && !overlay" class="hint-row">
+        <span class="hint-badge">{{ hint }}</span>
+      </div>
 
       <!-- 题目图片 -->
       <div v-if="question.image_url" class="question-image">
@@ -180,8 +183,12 @@ defineExpose({ flyOut, shakeAndRevert });
 }
 .swipe-overlay.right { left: 14px; color: #2c8a5f; border-color: #42b883; transform: rotate(-10deg); }
 .swipe-overlay.left { right: 14px; color: #d14d4d; border-color: #ff6b6b; transform: rotate(10deg); }
+.hint-row {
+  display: flex;
+  justify-content: flex-end;
+  margin: -2px -4px .35rem 0; /* 贴近卡片右上角 */
+}
 .hint-badge {
-  position: absolute; top: 14px; right: 14px;
   background: #eef2fb; color: #4b6cb7;
   font-size: .75rem; padding: 3px 10px; border-radius: 999px;
 }

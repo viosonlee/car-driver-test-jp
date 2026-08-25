@@ -1,20 +1,22 @@
 <script setup lang="ts">
-import { onMounted, computed } from 'vue';
+import { computed, onMounted, ref } from 'vue';
 import { useRouter } from 'vue-router';
 import { useExamEngine } from '../stores/examEngine';
-import { resolveAssetUrl } from '../utils/assetUrl';
+import SwipeCard from '../components/SwipeCard.vue';
 
 const router = useRouter();
-const { 
-  examState, 
-  timeRemaining, 
-  initExam, 
-  finishExam, 
-  nextQuestion, 
-  prevQuestion, 
-  setAnswer, 
-  formatTime 
+const {
+  examState,
+  timeRemaining,
+  initExam,
+  finishExam,
+  nextQuestion,
+  setAnswer,
+  formatTime
 } = useExamEngine();
+
+const cardRef = ref<InstanceType<typeof SwipeCard> | null>(null);
+const advancing = ref(false); // 本题已作答、卡片飞出中，锁定输入
 
 onMounted(() => {
   if (!examState.isActive && !examState.isFinished) {
@@ -23,31 +25,30 @@ onMounted(() => {
 });
 
 const currentQ = computed(() => examState.questions[examState.currentIndex]);
+const answeredCount = computed(
+  () => examState.questions.filter(q => examState.answers[q.id] !== undefined).length
+);
+
+// 考试模式不即时判对错：按滑动方向飞出后自动进入下一题（最后一题则交卷）
+const handleAnswer = (val: boolean) => {
+  if (advancing.value) return;
+  advancing.value = true;
+  setAnswer(currentQ.value.id, val);
+  cardRef.value?.flyOut(val ? 'right' : 'left');
+  setTimeout(() => {
+    advancing.value = false;
+    nextQuestion(); // 内部会在最后一题时调用 finishExam
+  }, 320);
+};
 
 const submitExam = () => {
-  if (confirm('确定要提前交卷吗？')) {
+  if (confirm(`确定要提前交卷吗？（已作答 ${answeredCount.value} / ${examState.questions.length} 题）`)) {
     finishExam();
   }
 };
 
 const goHome = () => {
   router.push('/');
-};
-
-const handleAnswer = (val: boolean) => {
-  setAnswer(currentQ.value.id, val);
-  // Auto advance on single choice
-  if (currentQ.value.type === 'true_false') {
-    setTimeout(() => {
-      nextQuestion();
-    }, 300);
-  }
-};
-
-const handleHazardAnswer = (index: number, val: boolean) => {
-  const currentAns = examState.answers[currentQ.value.id] || [null, null, null];
-  currentAns[index] = val;
-  setAnswer(currentQ.value.id, [...currentAns]);
 };
 </script>
 
@@ -61,62 +62,22 @@ const handleHazardAnswer = (index: number, val: boolean) => {
       <button class="submit-btn" @click="submitExam">交卷</button>
     </header>
 
-    <div class="question-card">
-      <div class="q-type-badge">{{ currentQ.type === 'hazard_prediction' ? '危险预测题 (2分)' : '单选题 (1分)' }}</div>
-      
-      <!-- Question Image -->
-      <div v-if="currentQ.image_url || currentQ.scenario" class="question-image">
-        <img v-if="currentQ.image_url" :src="resolveAssetUrl(currentQ.image_url)" alt="题目图片" />
-        <p v-if="currentQ.scenario" class="scenario-text">{{ currentQ.scenario }}</p>
-      </div>
-
-      <div class="q-text">
-        <p class="cn">{{ currentQ.question }}</p>
-        <p class="jp" v-if="currentQ.question_jp">{{ currentQ.question_jp }}</p>
-      </div>
-
-      <!-- True/False Options -->
-      <div class="options-container" v-if="currentQ.type === 'true_false' || !currentQ.sub_questions?.length">
-        <button 
-          class="option-btn" 
-          :class="{ selected: examState.answers[currentQ.id] === true }"
-          @click="handleAnswer(true)"
-        >
-          <span class="icon">⭕️</span> 正确
-        </button>
-        <button 
-          class="option-btn" 
-          :class="{ selected: examState.answers[currentQ.id] === false }"
-          @click="handleAnswer(false)"
-        >
-          <span class="icon">❌</span> 错误
-        </button>
-      </div>
-
-      <!-- Hazard Sub-questions -->
-      <div class="hazard-options" v-if="currentQ.type === 'hazard_prediction' && currentQ.sub_questions">
-        <div class="sub-q" v-for="(sq, idx) in currentQ.sub_questions" :key="idx">
-          <p class="sub-text">{{ sq.question }}</p>
-          <div class="options-container mini">
-            <button 
-              class="option-btn" 
-              :class="{ selected: examState.answers[currentQ.id]?.[idx] === true }"
-              @click="handleHazardAnswer(idx, true)"
-            >⭕️</button>
-            <button 
-              class="option-btn" 
-              :class="{ selected: examState.answers[currentQ.id]?.[idx] === false }"
-              @click="handleHazardAnswer(idx, false)"
-            >❌</button>
-          </div>
-        </div>
-      </div>
-    </div>
+    <SwipeCard
+      ref="cardRef"
+      :key="currentQ.id"
+      :question="currentQ"
+      :hint="`第 ${examState.currentIndex + 1} 题`"
+      class="exam-card"
+      @answer="handleAnswer"
+    >
+      <template #below>
+        <p class="swipe-tip">左右滑动卡片作答（右滑=正确，左滑=错误），也可点击按钮</p>
+      </template>
+    </SwipeCard>
 
     <footer class="exam-footer">
-      <button :disabled="examState.currentIndex === 0" @click="prevQuestion">上一题</button>
-      <button v-if="examState.currentIndex < examState.questions.length - 1" @click="nextQuestion">下一题</button>
-      <button v-else class="finish-btn" @click="finishExam">完成考试</button>
+      <span class="answered-count">已答 {{ answeredCount }} / {{ examState.questions.length }}</span>
+      <button class="finish-btn" @click="submitExam">提前交卷</button>
     </footer>
   </div>
 
@@ -148,6 +109,11 @@ const handleHazardAnswer = (index: number, val: boolean) => {
   margin-bottom: 1rem;
 }
 
+.progress {
+  font-size: 0.9rem;
+  color: #666;
+}
+
 .timer {
   font-weight: bold;
   color: #4b6cb7;
@@ -172,131 +138,42 @@ const handleHazardAnswer = (index: number, val: boolean) => {
   padding: 4px 12px;
   border-radius: 16px;
   font-size: 0.85rem;
+  cursor: pointer;
 }
 
-.question-card {
+.exam-card {
   flex: 1;
-  background: white;
-  padding: 1.5rem;
-  border-radius: 12px;
-  box-shadow: 0 4px 6px rgba(0,0,0,0.05);
   overflow-y: auto;
 }
 
-.q-type-badge {
-  display: inline-block;
-  background: #eee;
-  padding: 4px 8px;
-  border-radius: 4px;
+.swipe-tip {
+  text-align: center;
   font-size: 0.8rem;
-  color: #666;
-  margin-bottom: 1rem;
-}
-
-.q-text .cn {
-  font-size: 1.15rem;
-  font-weight: 500;
-  color: #333;
-  line-height: 1.5;
-  margin-bottom: 0.5rem;
-}
-
-.q-text .jp {
-  font-size: 0.95rem;
-  color: #888;
-  line-height: 1.4;
-  margin-bottom: 1.5rem;
-}
-
-.question-image {
-  margin-bottom: 1rem;
-}
-
-.question-image img {
-  display: block;
-  width: auto;
-  max-width: 100%;
-  height: auto;
-  border-radius: 8px;
-  max-height: 360px;
-  object-fit: contain;
-  margin-left: auto;
-  margin-right: auto;
-}
-
-.scenario-text {
-  font-size: 0.9rem;
-  color: #666;
-  margin-top: 0.5rem;
-  font-style: italic;
-}
-
-.options-container {
-  display: flex;
-  gap: 1rem;
-  margin-top: 2rem;
-}
-
-.option-btn {
-  flex: 1;
-  padding: 1rem;
-  border: 2px solid #eaeaea;
-  border-radius: 8px;
-  background: white;
-  font-size: 1.1rem;
-  cursor: pointer;
-  transition: all 0.2s;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-}
-
-.option-btn:active {
-  transform: scale(0.98);
-}
-
-.option-btn.selected {
-  border-color: #4b6cb7;
-  background: #f0f4f8;
-}
-
-.mini .option-btn {
-  padding: 0.5rem;
-}
-
-.sub-q {
-  margin-top: 1.5rem;
-  padding-top: 1.5rem;
-  border-top: 1px dashed #eee;
-}
-
-.sub-text {
-  font-size: 1rem;
-  margin-bottom: 0.8rem;
+  color: #aaa;
+  margin: 0.6rem 0 0;
 }
 
 .exam-footer {
   display: flex;
   justify-content: space-between;
+  align-items: center;
   margin-top: 1rem;
 }
 
-.exam-footer button {
-  padding: 12px 24px;
-  border: none;
-  background: #e2e8f0;
-  color: #333;
-  border-radius: 8px;
-  font-weight: 500;
-}
-
-.exam-footer button:disabled {
-  opacity: 0.5;
+.answered-count {
+  font-size: 0.85rem;
+  color: #888;
+  font-variant-numeric: tabular-nums;
 }
 
 .finish-btn {
-  background: #4b6cb7 !important;
-  color: white !important;
+  padding: 10px 24px;
+  border: none;
+  background: #4b6cb7;
+  color: white;
+  border-radius: 8px;
+  font-weight: 500;
+  cursor: pointer;
 }
 
 .result-container {
@@ -339,5 +216,6 @@ const handleHazardAnswer = (index: number, val: boolean) => {
   padding: 12px 32px;
   border-radius: 24px;
   font-size: 1.1rem;
+  cursor: pointer;
 }
 </style>

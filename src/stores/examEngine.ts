@@ -15,16 +15,25 @@ export const examState = reactive({
   isFinished: false
 });
 
+// timeRemaining 必须是模块级单例：timerInterval 也是模块级的，
+// 若把 ref 放在 useExamEngine() 内部，组件重建后会拿到新的空 ref，
+// 而定时器仍写入旧实例 → 界面倒计时永远停在 00:00。
+export const timeRemaining = ref(0);
+
 let timerInterval: number | undefined;
 
 export const useExamEngine = () => {
-  const timeRemaining = ref(0);
 
   const generateExamPaper = () => {
     const allQs = allQuestions as Question[];
     const tfQuestions = allQs.filter(q => q.type === 'true_false');
-    // 外国驾照切换（外免切替）知识确认：50 道判断题。
-    return [...tfQuestions].sort(() => 0.5 - Math.random()).slice(0, 50);
+    // 外国驾照切换（外免切替）知识确认：50 道判断题（Fisher-Yates 洗牌）。
+    const pool = [...tfQuestions];
+    for (let i = pool.length - 1; i > 0; i--) {
+      const j = Math.floor(Math.random() * (i + 1));
+      [pool[i], pool[j]] = [pool[j], pool[i]];
+    }
+    return pool.slice(0, 50);
   };
 
   const initExam = async () => {

@@ -33,4 +33,4 @@ all_questions.backup_*.json
 
 # temp verification files
 .tmp_*
-backup: all_questions.json.bak
+all_questions.json.bak

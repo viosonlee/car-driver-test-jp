@@ -28,12 +28,24 @@ export const useExamEngine = () => {
     const allQs = allQuestions as Question[];
     const tfQuestions = allQs.filter(q => q.type === 'true_false');
     // 外国驾照切换（外免切替）知识确认：50 道判断题（Fisher-Yates 洗牌）。
-    const pool = [...tfQuestions];
-    for (let i = pool.length - 1; i > 0; i--) {
+    const shuffled = [...tfQuestions];
+    for (let i = shuffled.length - 1; i > 0; i--) {
       const j = Math.floor(Math.random() * (i + 1));
-      [pool[i], pool[j]] = [pool[j], pool[i]];
+      [shuffled[i], shuffled[j]] = [shuffled[j], shuffled[i]];
     }
-    return pool.slice(0, 50);
+    // 同一图片在 50 题内只出现一次，避免「同一标志图既判对又判错」的重复感
+    const usedImg = new Set<string>();
+    const paper: Question[] = [];
+    for (const q of shuffled) {
+      if (paper.length >= 50) break;
+      const img = q.image_url;
+      if (img) {
+        if (usedImg.has(img)) continue;
+        usedImg.add(img);
+      }
+      paper.push(q);
+    }
+    return paper;
   };
 
   const initExam = async () => {

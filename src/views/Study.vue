@@ -32,6 +32,33 @@ const shuffle = <T,>(arr: T[]): T[] => {
   return a;
 };
 
+/**
+ * 构建一轮答题队列：
+ * - 文本题全部纳入；
+ * - 图片题按 image_url 分组，同图的多版本（○/✕）按轮次轮流取其中一个，
+ *   保证每张图在单轮内最多出现一次（避免「相同图片刷两次」的重复感）。
+ *   跨轮次（round 递增）会自然覆盖另一版本，整体不丢题。
+ */
+const buildRoundQueue = (round: number): string[] => {
+  const byImg = new Map<string, Question[]>();
+  const textIds: string[] = [];
+  for (const q of all) {
+    if (q.image_url) {
+      const g = byImg.get(q.image_url) ?? [];
+      g.push(q);
+      byImg.set(q.image_url, g);
+    } else {
+      textIds.push(q.id);
+    }
+  }
+  const imgPicks: string[] = [];
+  for (const group of byImg.values()) {
+    const idx = (round - 1) % group.length;
+    imgPicks.push(group[idx].id);
+  }
+  return shuffle([...textIds, ...imgPicks]);
+};
+
 const loadProgress = (): Progress => {
   try {
     const saved = JSON.parse(localStorage.getItem(STORAGE_KEY) || 'null');
@@ -45,7 +72,7 @@ const loadProgress = (): Progress => {
       };
     }
   } catch { /* ignore */ }
-  return { round: 1, remainingIds: shuffle(all.map(q => q.id)), answers: {}, roundStats: { total: 0, correct: 0 } };
+  return { round: 1, remainingIds: buildRoundQueue(1), answers: {}, roundStats: { total: 0, correct: 0 } };
 };
 
 const progress = ref<Progress>(loadProgress());
@@ -100,7 +127,7 @@ const advance = () => {
 
 const startNextRound = () => {
   progress.value.round++;
-  progress.value.remainingIds = shuffle(all.map(q => q.id));
+  progress.value.remainingIds = buildRoundQueue(progress.value.round);
   progress.value.roundStats = { total: 0, correct: 0 };
   roundFinished.value = false;
   persist();
